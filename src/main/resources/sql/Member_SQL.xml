@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="itc.hoseo.soolfarm.member.MemberDAO">
+
+	<insert id="addMember" parameterType="MemberVO">
+		INSERT INTO MEMBER (ID,PW) VALUES(#{id},#{pw})
+	</insert>
+
+	<update id="modifyMember" parameterType="MemberVO">
+		UPDATE MEMBER SET pw = #{pw} WHERE id = #{id}
+	</update>
+
+	<delete id="deleteMember" parameterType="MemberVO">
+		DELETE FROM MEMBER WHERE id = #{id}
+	</delete>
+
+	<select id="getMemberCnt" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM MEMBER WHERE ID = #{id};
+	</select>
+
+	<select id="getMember" parameterType="MemberVO" resultType="MemberVO">
+		SELETE * FROM MEMBER
+	</select>
+</mapper>

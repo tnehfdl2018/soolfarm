@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="itc.hoseo.soolfarm.qna.QnABoardDAO">
+
+	<insert id="addQnA" parameterType="QnABoardVO">
+		INSERT INTO QNA (post_sub,post_contant) VALUES(#{postSub},#{postWriter})
+	</insert>
+	
+	<select id="list" parameterType="QnABoardVO" resultType="QnABoardVO">
+	SELECT * FROM QNA
+	</select>
+
+	<update id="modifyQnA" parameterType="QnABoardVO">
+		UPDATE QNA SET post_contant = #{postContant} WHERE post_sub = #{postSub}
+	</update>
+
+	<delete id="deleteQnA" parameterType="QnABoardVO">
+		DELETE FROM QNA WHERE post_sub = #{postSub}
+	</delete>
+
+</mapper>
