@@ -20,8 +20,6 @@ public class MemeberTest {
 	@Autowired
 	private MemberService memberService;
 	
-	private MemberDAO memberDAO;
-	
 	@Test
 	public void addMemberTest() {
 		MemberVO m = new MemberVO();

@@ -1,6 +1,5 @@
 package itc.hoseo.soolfarm.member.impl;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	@Autowired
 	MemberDAO memberDAO;
-
+	
 	@Override
 	public MemberVO addMember(MemberVO m) {
 		memberDAO.addMember(m);

@@ -15,7 +15,7 @@
 	</delete>
 
 	<select id="getMemberCnt" parameterType="String" resultType="Integer">
-		SELECT COUNT(*) FROM MEMBER WHERE ID = #{id};
+		SELECT COUNT(*) FROM MEMBER WHERE ID = #{id}
 	</select>
 
 	<select id="getMember" parameterType="MemberVO" resultType="MemberVO">

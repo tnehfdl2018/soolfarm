@@ -12,3 +12,13 @@ create table GOODS (
 			gd_name varchar(30),
 			gd_kinds varchar(30)
 			);
+			
+create table SHOPPINGBASKET(
+			sb_num int primary key,
+			sb_name varchar(30),
+			sb_kinds varchar(30),
+			sb_price varchar(30),
+			sb_mu varchar(30),
+			sb_discript varchar(100),
+			sb_status varchar(20)			
+			);

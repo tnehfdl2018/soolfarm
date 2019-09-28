@@ -5,7 +5,7 @@ import java.awt.Image;
 import lombok.Data;
 
 @Data
-public class GoodsBuyed {
+public class GoodsBuyedVO {
 	
 	private int gdNum;
 	private String gdName;

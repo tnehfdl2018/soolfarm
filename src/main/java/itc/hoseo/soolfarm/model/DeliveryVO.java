@@ -3,7 +3,8 @@ package itc.hoseo.soolfarm.model;
 import lombok.Data;
 
 @Data
-public class ShopBsVo {
+public class DeliveryVO {
+	
 	
 	private int gdNum;
 	private String gdName;
@@ -12,5 +13,6 @@ public class ShopBsVo {
 	private String gdMu;
 	private String gdDiscript;
 	private String gdStatus;
+
 
 }
