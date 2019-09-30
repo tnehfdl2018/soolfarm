@@ -1,12 +1,12 @@
 package itc.hoseo.soolfarm.model;
 
+import java.security.Timestamp;
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
 public class MemberVO {
-	
 	private int num;
 	private String id;
 	private String pw;
@@ -15,6 +15,5 @@ public class MemberVO {
 	private String email;
 	private String address;
 	private Date joinDate;
-	private Date modifyDate;
 	
 }

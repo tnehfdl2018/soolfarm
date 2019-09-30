@@ -7,7 +7,7 @@ import itc.hoseo.soolfarm.model.MemberVO;
 public interface MemberService {
 	
 	// 회원가입
-	public MemberVO addMember(MemberVO m);
+	public boolean addMember(MemberVO m);
 	
 	// 회원 수정
 	public MemberVO modifyMember(MemberVO m);

@@ -3,20 +3,16 @@
 <mapper namespace="itc.hoseo.soolfarm.member.MemberDAO">
 
 	<insert id="addMember" parameterType="MemberVO">
-		INSERT INTO MEMBER (ID,PW) VALUES(#{id},#{pw})
+		INSERT INTO MEMBER (email,PW,NAME,TEL,ADDRESS,DATE) VALUES(#{id},#{pw},#{name},#{tel},#{address},#{joinDate})
 	</insert>
 
 	<update id="modifyMember" parameterType="MemberVO">
-		UPDATE MEMBER SET pw = #{pw} WHERE id = #{id}
+		UPDATE MEMBER SET pw = #{pw}, name = #{name}, tel = #{tel}, adress = #{address} WHERE num = #{num}
 	</update>
 
 	<delete id="deleteMember" parameterType="MemberVO">
 		DELETE FROM MEMBER WHERE id = #{id}
 	</delete>
-
-	<select id="getMemberCnt" parameterType="String" resultType="Integer">
-		SELECT COUNT(*) FROM MEMBER WHERE ID = #{id}
-	</select>
 
 	<select id="getMember" parameterType="MemberVO" resultType="MemberVO">
 		SELETE * FROM MEMBER

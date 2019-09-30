@@ -16,9 +16,8 @@ public class MemberServiceImpl implements MemberService{
 	MemberDAO memberDAO;
 	
 	@Override
-	public MemberVO addMember(MemberVO m) {
-		memberDAO.addMember(m);
-		return getMember(m);
+	public boolean addMember(MemberVO m) {
+		return memberDAO.addMember(m)!=0;
 	}
 
 	@Override

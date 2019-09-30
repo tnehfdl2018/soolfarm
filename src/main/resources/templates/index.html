@@ -45,15 +45,16 @@
 					<a href="#"><i class="fa fa-linkedin"></i></a>
 				</div>
 				<div class="user-panel">
-					<a href="#">Join</a> / 
-					<a href="#">Login</a>
+					<a href="join">Join</a> / 
+					<a href="login">Login</a> /
+					<a href="contant.html">contact</a>
 				</div>
 			</div>
 		</div>
 		<div class="header-bottom">
 			<div class="container">
-				<a href="index.html" class="site-logo">
-					<img src="img/logo.png" alt="">
+				<a href="index" class="site-logo">
+					<img src="img/logo.png" alt="" width="334px" height= "107px">
 				</a>
 				<div class="nav-switch">
 					<i class="fa fa-bars"></i>
@@ -62,11 +63,12 @@
 					<a href="#"><i class="fa fa-search"></i></a>
 				</div>
 				<ul class="main-menu">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">Features</a></li>
-					<li><a href="recipes.html">Receipies</a></li>
+					<li><a href="index">Home</a></li>
+					<li><a href="about">Features</a></li>
+					<li><a href="recipes">Receipies</a></li>
 					<li><a href="#">Reviews</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="contact">Contact</a></li>
+					<li><a href="contact">Contact</a></li>					
 				</ul>
 			</div>
 		</div>
@@ -76,21 +78,22 @@
 
 	<!-- Hero section -->
 	<section class="hero-section">
-		<div class="hero-slider owl-carousel">
+		<div class="hero-slider owl-carousel" >
+			<!-- sample
+			img/banner/irin.jpg
 			<div class="hero-slide-item set-bg" data-setbg="img/suzy.png">
 				<div class="hs-text">
-			<!-- 	<h2 class="hs-title-1"><span>Healthy Recipes</span></h2>
+			 		<h2 class="hs-title-1"><span>Healthy Recipes</span></h2>
 					<h2 class="hs-title-2"><span>from the best chefs</span></h2>
-					<h2 class="hs-title-3"><span>for all the foodies</span></h2> -->
+					<h2 class="hs-title-3"><span>for all the foodies</span></h2>
 				</div>
 			</div>
-			<div class="hero-slide-item set-bg" data-setbg="img/irin.jpg">
-				<div class="hs-text">
-			<!-- 	<h2 class="hs-title-1"><span>Healthy Recipes</span></h2>
-					<h2 class="hs-title-2"><span>from the best chefs</span></h2>
-					<h2 class="hs-title-3"><span>for all the foodies</span></h2> -->
-				</div>
-			</div>
+			-->
+			
+			<div class="hero-slide-item set-bg" 
+				th:each="banner : ${banners}" 
+				th:attr="data-setbg='img/banner/' + ${banner.getImgName()}">
+			</div>			
 		</div>
 	</section>
 	<!-- Hero section end -->
