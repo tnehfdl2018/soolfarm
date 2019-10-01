@@ -24,7 +24,7 @@ public class MemeberTest {
 	public void addMemberTest() {
 		MemberVO m = new MemberVO();
 
-		m.setId("444");
+		m.setEmail("444");
 		m.setPw("444");
 		memberService.addMember(m);
 		
@@ -36,7 +36,7 @@ public class MemeberTest {
 	public void modifyMemberTest() {
 		MemberVO m = new MemberVO();
 		
-		m.setId("222");
+		m.setEmail("222");
 		m.setPw("555");
 		memberService.modifyMember(m);
 		
@@ -48,7 +48,7 @@ public class MemeberTest {
 	public void deleteMemberTest() {
 		MemberVO m = new MemberVO();
 		
-		m.setId("222");
+		m.setEmail("222");
 		memberService.deleteMember(m);
 		
 		assertEquals(null, memberService.getMember(m));

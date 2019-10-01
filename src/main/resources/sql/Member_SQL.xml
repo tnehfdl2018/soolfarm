@@ -17,4 +17,20 @@
 	<select id="getMember" parameterType="MemberVO" resultType="MemberVO">
 		SELETE * FROM MEMBER
 	</select>
+	
+	<!-- 로그인 체크 -->
+	<select id="loginCheck" resultType="String">
+		SELECT name FROM MEMBER
+		<where>
+			email = #{email} AND pw = #{pw}
+		</where>
+	</select>
+	
+	<!--로그인 정보 -->
+	<select id="viewMember" resultType="">
+		SELECT eamil, name, tel, address, joinDate FROM MEMBER
+		<where>
+			email = #{email} AND pw = #{pw}
+		</where>
+	</select>
 </mapper>

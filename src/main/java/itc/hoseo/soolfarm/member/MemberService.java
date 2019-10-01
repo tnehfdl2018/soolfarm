@@ -2,6 +2,8 @@ package itc.hoseo.soolfarm.member;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import itc.hoseo.soolfarm.model.MemberVO;
 
 public interface MemberService {
@@ -22,6 +24,12 @@ public interface MemberService {
 	public MemberVO getMember(MemberVO m);
 
 	public List<MemberVO> list(MemberVO memberVO);
+	
+	//로그인
+	public boolean loginCheck(MemberVO vo, HttpSession session);
+	
+	// 로그인 정보
+	public MemberVO viewMember(MemberVO m);
 
 
 	

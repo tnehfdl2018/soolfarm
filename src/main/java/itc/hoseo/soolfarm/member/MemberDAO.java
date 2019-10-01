@@ -21,4 +21,10 @@ public interface MemberDAO {
 	
 	// 회원정보 조회
 	public MemberVO getMember(MemberVO m);
+	
+	// 로그인
+	public boolean loginCheck(MemberVO m);
+	
+	// 로그인 정보
+	public MemberVO viewMember(MemberVO m);
 }
