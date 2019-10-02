@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>술팜 SOOLFARM</title>
 	<meta charset="UTF-8">
@@ -33,46 +33,7 @@
 	</div>
 
 	<!-- Header section -->
-	<header class="header-section">
-		<div class="header-top">
-			<div class="container">
-				<div class="header-social">
-					<a href="#"><i class="fa fa-pinterest"></i></a>
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-				</div>
-				<div class="user-panel">
-					<a href="goJoin">Join</a> / 
-					<a href="login">Login</a> /
-					<a href="contant.html">contact</a>
-				</div>
-			</div>
-		</div>
-		<div class="header-bottom">
-			<div class="container">
-				<a href="index" class="site-logo">
-					<img src="img/logo.png" alt="" width="334px" height= "107px">
-				</a>
-				<div class="nav-switch">
-					<i class="fa fa-bars"></i>
-				</div>
-				<div class="header-search">
-					<a href="#"><i class="fa fa-search"></i></a>
-				</div>
-				<ul class="main-menu">
-					<li><a href="index">Home</a></li>
-					<li><a href="about">Features</a></li>
-					<li><a href="recipes">Receipies</a></li>
-					<li><a href="#">Reviews</a></li>
-					<li><a href="contact">Contact</a></li>
-					<li><a href="contact">Contact</a></li>					
-				</ul>
-			</div>
-		</div>
-	</header>
+<div th:replace="~{header :: header}"></div>
 	<!-- Header section end -->
 
 

@@ -26,13 +26,12 @@ public interface MemberService {
 	public List<MemberVO> list(MemberVO memberVO);
 	
 	//로그인
-	public boolean loginCheck(MemberVO vo, HttpSession session);
+	public MemberVO loginCheck(MemberVO vo);
 	
 	// 로그인 정보
 	public MemberVO viewMember(MemberVO m);
-
-
 	
-	
+	//로그아웃
+	public MemberVO logout(MemberVO m);
 
 }

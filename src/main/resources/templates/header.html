@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<header th:fragment="header" class="header-section">
+		<div class="header-top">
+			<div class="container">
+				<div class="header-social">
+					<a href="#"><i class="fa fa-pinterest"></i></a>
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-dribbble"></i></a>
+					<a href="#"><i class="fa fa-behance"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="user-panel">
+					<a th:if="${session.email==null}" href="goJoin">Join &nbsp;&nbsp;/</a><a th:unless="${session.email==null}" th:text="'Logout &nbsp;'" href="logout"></a>
+					<a th:if="${session.email==null}" href="login">&nbsp;&nbsp;Login</a><a th:unless="${session.email==null}" th:text="'/ &nbsp; Mypage'" href="login"></a>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom">
+			<div class="container">
+				<a href="index" class="site-logo">
+					<img src="img/logo.png" alt="" width="334px" height= "107px">
+				</a>
+				<div class="nav-switch">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="header-search">
+					<a href="#"><i class="fa fa-search"></i></a>
+				</div>
+				<ul class="main-menu">
+					<li><a href="index">Home</a></li>
+					<li><a href="about">Features</a></li>
+					<li><a href="recipes">Receipies</a></li>
+					<li><a href="#">Reviews</a></li>
+					<li><a href="contact">Contact</a></li>
+					<li><a href="contact">Contact</a></li>					
+				</ul>
+			</div>
+		</div>
+	</header>
+	</body>
+</html>

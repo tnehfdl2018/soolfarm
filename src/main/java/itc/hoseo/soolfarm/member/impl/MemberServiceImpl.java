@@ -60,17 +60,13 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public boolean loginCheck(MemberVO vo, HttpSession session) {
-		boolean result = memberDAO.loginCheck(vo);
+	public MemberVO loginCheck(MemberVO vo) {
 		
-		if (result) {  // true일 경우 세션 등록
-			MemberVO vo2 = viewMember(vo);
-			// 세션에 변수 등록
-			session.setAttribute("email", vo2.getEmail());
-			session.setAttribute("name", vo2.getName());
-			
+		if (memberDAO.loginCheck(vo)!=null) {  // true일 경우 세션 등록
+			vo = memberDAO.loginCheck(vo);
+			return vo;
 		}
-		return result;
+		return null;
 	}
 	
 	// 로그인 정보
@@ -78,6 +74,12 @@ public class MemberServiceImpl implements MemberService{
 	public MemberVO viewMember(MemberVO vo) {
 		
 		return memberDAO.viewMember(vo);
+	}
+
+	@Override
+	public MemberVO logout(MemberVO vo) {
+		
+		return memberDAO.logout(vo);
 	}
 	
 }

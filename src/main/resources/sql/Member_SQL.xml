@@ -3,7 +3,7 @@
 <mapper namespace="itc.hoseo.soolfarm.member.MemberDAO">
 
 	<insert id="addMember" parameterType="MemberVO">
-		INSERT INTO MEMBER (email,PW,NAME,TEL,ADDRESS,DATE) VALUES(#{id},#{pw},#{name},#{tel},#{address},#{joinDate})
+		INSERT INTO MEMBER (email,PW,NAME,TEL,ADDRESS,DATE) VALUES(#{email},#{pw},#{name},#{tel},#{address},#{joinDate})
 	</insert>
 
 	<update id="modifyMember" parameterType="MemberVO">
@@ -11,7 +11,7 @@
 	</update>
 
 	<delete id="deleteMember" parameterType="MemberVO">
-		DELETE FROM MEMBER WHERE id = #{id}
+		DELETE FROM MEMBER WHERE num = #{num}
 	</delete>
 
 	<select id="getMember" parameterType="MemberVO" resultType="MemberVO">
@@ -19,15 +19,15 @@
 	</select>
 	
 	<!-- 로그인 체크 -->
-	<select id="loginCheck" resultType="String">
-		SELECT name FROM MEMBER
+	<select id="loginCheck" parameterType="MemberVO" resultType="MemberVO">
+		SELECT email, name FROM MEMBER
 		<where>
 			email = #{email} AND pw = #{pw}
 		</where>
 	</select>
 	
 	<!--로그인 정보 -->
-	<select id="viewMember" resultType="">
+	<select id="viewMember" parameterType="MemberVO">
 		SELECT eamil, name, tel, address, joinDate FROM MEMBER
 		<where>
 			email = #{email} AND pw = #{pw}

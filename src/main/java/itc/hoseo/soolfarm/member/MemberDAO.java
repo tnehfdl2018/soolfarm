@@ -17,14 +17,17 @@ public interface MemberDAO {
 	public int deleteMember(MemberVO m);
 	
 	// 중복 회원 확인 (SELECT COUNT(*) FROM MEBER WHERE ID = ${id} 
-	public int getMemberCnt(String id);
+	public int getMemberCnt(String email);
 	
 	// 회원정보 조회
 	public MemberVO getMember(MemberVO m);
 	
 	// 로그인
-	public boolean loginCheck(MemberVO m);
+	public MemberVO loginCheck(MemberVO m);
 	
 	// 로그인 정보
 	public MemberVO viewMember(MemberVO m);
+	
+	//로그아웃
+	public MemberVO logout(MemberVO m);
 }
