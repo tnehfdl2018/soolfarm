@@ -30,4 +30,7 @@ public interface MemberDAO {
 	
 	//로그아웃
 	public MemberVO logout(MemberVO m);
+	
+	// id 중복 체크
+	public int idCheck(String email);
 }

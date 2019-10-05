@@ -54,11 +54,13 @@ public class MemberServiceImpl implements MemberService{
 		return null;
 	}
 	
+	// 회원 보기
 	@Override
 	public List<MemberVO> list(MemberVO memberVO) {
 		return null;
 	}
 
+	// 로그인
 	@Override
 	public MemberVO loginCheck(MemberVO vo) {
 		
@@ -76,10 +78,18 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.viewMember(vo);
 	}
 
+	// 로그 아웃
 	@Override
 	public MemberVO logout(MemberVO vo) {
 		
 		return memberDAO.logout(vo);
+	}
+
+	// id 중복 검사
+	@Override
+	public int idCheck(String email) {
+		
+		return memberDAO.idCheck(email);
 	}
 	
 }

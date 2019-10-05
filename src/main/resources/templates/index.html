@@ -3,11 +3,9 @@
 <head>
 	<title>술팜 SOOLFARM</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Food Blog Web Template">
-	<meta name="keywords" content="food, unica, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="img/logo/logo.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet">
@@ -40,17 +38,7 @@
 	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel" >
-			<!-- sample
-			img/banner/irin.jpg
-			<div class="hero-slide-item set-bg" data-setbg="img/suzy.png">
-				<div class="hs-text">
-			 		<h2 class="hs-title-1"><span>Healthy Recipes</span></h2>
-					<h2 class="hs-title-2"><span>from the best chefs</span></h2>
-					<h2 class="hs-title-3"><span>for all the foodies</span></h2>
-				</div>
-			</div>
-			-->
-			
+			<!-- 배너영역 -->
 			<div class="hero-slide-item set-bg" 
 				th:each="banner : ${banners}" 
 				th:attr="data-setbg='img/banner/' + ${banner.getImgName()}">
@@ -64,15 +52,16 @@
 	<section class="add-section spad">
 		<div class="container">
 			<div class="add-warp">
-				<div class="add-slider owl-carousel">
-					<div class="as-item set-bg" data-setbg="img/add/aa.jpg"></div>
-					<div class="as-item set-bg" data-setbg="img/add/bb.jpg"></div>
-					<div class="as-item set-bg" data-setbg="img/add/cc.jpg"></div>
+				<div class="row add-slider owl-carousel col-lg-4 col-md-5 offset-lg-8 offset-md-7">
+					<div class="as-item set-bg" 
+						th:each= "add : ${adds}"
+						th:attr= "data-setbg='img/add/' + ${add.getImgName()}">
+					</div>
 				</div>
 				<div class="row add-text-warp">
 					<div class="col-lg-4 col-md-5 offset-lg-8 offset-md-7">
 						<div class="add-text text-white">
-							<!--<div class="at-style"></div> -->
+							<div class="at-style"></div>
 							<h2>Amazing deserts</h2>
 							<ul>
 								<li>Easy to make</li>
@@ -166,7 +155,7 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="recipe">
-						<img src="img/recipes/5.jpg" alt="">
+						<img src="img/add/cc.jpg" alt="">
 						<div class="recipe-info-warp">
 							<div class="recipe-info">
 								<h3>Italian home-made pasta</h3>
@@ -205,7 +194,7 @@
 
 
 	<!-- Footer widgets section -->
-	<section class="bottom-widgets-section spad">
+	<!-- <section class="bottom-widgets-section spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-6 ftw-warp">
@@ -381,12 +370,12 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- Footer widgets section end -->
 
 
-	<!-- Review section end -->
-	<section class="review-section">
+	<!-- Review section  -->
+	<!-- <section class="review-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-8 offset-lg-0 offset-md-2">
@@ -439,58 +428,27 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- Review section end -->
 
 
-	<!-- Gallery section -->
+	<!-- Gallery section (사진 업데이트 요망) -->
 	<div class="gallery">
 		<div class="gallery-slider owl-carousel">
-			<div class="gs-item set-bg" data-setbg="img/instagram/1.jpg"></div>
-			<div class="gs-item set-bg" data-setbg="img/instagram/2.jpg"></div>
-			<div class="gs-item set-bg" data-setbg="img/instagram/3.jpg"></div>
-			<div class="gs-item set-bg" data-setbg="img/instagram/4.jpg"></div>
-			<div class="gs-item set-bg" data-setbg="img/instagram/5.jpg"></div>
-			<div class="gs-item set-bg" data-setbg="img/instagram/6.jpg"></div>
+			<div class="gs-item set-bg" data-setbg="img/gallery/ballantines12.png"></div>
+			<div class="gs-item set-bg" data-setbg="img/gallery/camusvsop.png"></div>
+			<div class="gs-item set-bg" data-setbg="img/gallery/camusxo.png"></div>
+			<div class="gs-item set-bg" data-setbg="img/gallery/hennessyvsop.png"></div>
+			<div class="gs-item set-bg" data-setbg="img/gallery/johnniewalkerplatinum.png"></div>
+			<div class="gs-item set-bg" data-setbg="img/gallery/johnniewalkerblue.png"></div>
 		</div>
 	</div>
 	<!-- Gallery section end -->
 
-
-	<!-- Footer section  -->
-	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="footer-logo">
-						<img src="img/logo.png" alt="">
-					</div>
-					<div class="footer-social">
-						<a href="#"><i class="fa fa-pinterest"></i></a>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
-					</div>
-				</div>
-				<div class="col-lg-6 text-lg-right">
-					<ul class="footer-menu">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Features</a></li>
-						<li><a href="#">Receipies</a></li>
-						<li><a href="#">Reviews</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-					<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Choi Soobin
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<!-- Footer section -->
+		<div th:replace="~{footer :: footer}"></div>
 	<!-- Footer section end -->
+
 
 
 

@@ -6,8 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import itc.hoseo.soolfarm.admin.banner.BannerDao;
 import itc.hoseo.soolfarm.admin.banner.BannerService;
-import itc.hoseo.soolfarm.model.Banner;
+import itc.hoseo.soolfarm.model.BannerVO;
 
 @Service
 public class BannerServiceImpl implements BannerService {
@@ -16,8 +17,8 @@ public class BannerServiceImpl implements BannerService {
 	private BannerDao dao;
 	
 	@Override
-	public List<Banner> getBanners() {
-		Banner param = new Banner();
+	public List<BannerVO> getBanners() {
+		BannerVO param = new BannerVO();
 		param.setEndDttm(new Date());
 		return dao.getBanners(param);
 	}

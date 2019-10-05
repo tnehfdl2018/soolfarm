@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import itc.hoseo.soolfarm.member.MemberService;
 import itc.hoseo.soolfarm.model.MemberVO;
@@ -22,7 +25,7 @@ public class MemberController {
 	// 로그인 페이지로 이동
 	@GetMapping("/login")
 	public String login() {
-		return "/login";
+		return "member/login";
 	}
 	
 	// 로그인 처리
@@ -35,7 +38,7 @@ public class MemberController {
 			return "redirect:/";
 		}else {  // 로그인 실패시 alert 및 로그인 페이지 유지
 			
-			return "/login";
+			return "member/login";
 		}	
 	}
 	
@@ -50,7 +53,7 @@ public class MemberController {
 	// 회원가입 페이지로 이동
 	@GetMapping("/goJoin")
 	public String join() {
-		return "/join";
+		return "member/join";
 	}
 	
 	// 회원가입 폼 작성후 데이터베이스에 전달을 위한 메소드
@@ -61,7 +64,13 @@ public class MemberController {
 		if(service.addMember(vo)) {
 			return "redirect:/";
 		}
-		return "/goJoin";
+		return "member/goJoin";
+	}
+	
+	@GetMapping(value = "/idCheck")
+	@ResponseBody
+	public int idCheck(@RequestParam("email") String email) {
+		return service.idCheck(email);
 	}
 
 }

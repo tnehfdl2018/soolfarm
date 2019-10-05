@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="itc.hoseo.soolfarm.admin.banner.impl.BannerDao">
+<mapper namespace="itc.hoseo.soolfarm.admin.banner.BannerDao">
 
-	<select id="getBanners" parameterType="Banner" resultType="Banner">
+	<select id="getBanners" parameterType="BannerVO" resultType="BannerVO">
 	SELECT * FROM BANNER
 		<where>
 			<if test="startDttm != null">

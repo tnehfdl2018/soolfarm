@@ -63,3 +63,9 @@ create table banner(
 	end_dttm TIMESTAMP,
 	img_name varchar(255) not null
 	);
+	
+create table add(
+	id	int primary key AUTO_INCREMENT,
+	name varchar(255),
+	img_name varchar(255) not null
+	);

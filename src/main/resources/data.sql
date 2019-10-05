@@ -41,7 +41,12 @@ INSERT INTO QNA (post_sub, post_contant, post_writer, post_date) VALUES('저렴�
 
 
 INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('수지',sysdate, null, 'suzy.png')
-INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('아이린',sysdate, null, 'irin.jpg')
-INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('하이트',sysdate, null, 'hite.jpg')
-INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('손나은',sysdate, null, 'day.jpg')
-INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('카스',sysdate, null, 'cass.jpg')
+INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('아이린',sysdate, null, 'irin.png')
+INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('하이트',sysdate, null, 'hite.png')
+INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('손나은',sysdate, null, 'day.png')
+INSERT INTO BANNER (NAME, START_DTTM, END_DTTM, IMG_NAME) VALUES('카스',sysdate, null, 'cass.png')
+
+
+INSERT INTO ADD (NAME, IMG_NAME) VALUES('좋은데이', 'aa.jpg')
+INSERT INTO ADD (NAME, IMG_NAME) VALUES('처음처럼', 'bb.jpg')
+INSERT INTO ADD (NAME, IMG_NAME) VALUES('참이슬', 'cc.jpg')

@@ -1189,7 +1189,7 @@ pre code {
 		margin-left: 50%
 	}
 	.offset-md-7 {
-		margin-left: 58.333333%
+		/* margin-left: 58.333333% */
 	}
 	.offset-md-8 {
 		margin-left: 66.666667%
@@ -1247,7 +1247,7 @@ pre code {
 	.col-lg-6 {
 		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
-		max-width: 50%
+		max-width: none;
 	}
 	.col-lg-7 {
 		-ms-flex: 0 0 58.333333%;
@@ -1364,7 +1364,7 @@ pre code {
 		margin-left: 58.333333%
 	}
 	.offset-lg-8 {
-		margin-left: 66.666667%
+		/* margin-left: 66.666667% */
 	}
 	.offset-lg-9 {
 		margin-left: 75%
@@ -9437,6 +9437,5 @@ body {
 .table .thead-dark th {
 	color: inherit;
 	border-color: #dee2e6
-}
 }
 /*# sourceMappingURL=bootstrap.min.css.map */

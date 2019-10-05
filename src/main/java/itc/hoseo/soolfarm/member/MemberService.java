@@ -33,5 +33,8 @@ public interface MemberService {
 	
 	//로그아웃
 	public MemberVO logout(MemberVO m);
+	
+	// ID중복 체크
+	public int idCheck(String email);
 
 }

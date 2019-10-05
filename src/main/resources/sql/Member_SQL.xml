@@ -33,4 +33,12 @@
 			email = #{email} AND pw = #{pw}
 		</where>
 	</select>
+	
+	<!-- id중복 체크 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM MEMBER
+		<where>
+			email = #{email}
+		</where>
+	</select>
 </mapper>

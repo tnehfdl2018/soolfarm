@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>회원가입</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	<script>
+		$("email").blur(function(){
+			var email = $('email').val();
+			$.ajax({
+				url :'${pageContext.request.contextPath}/idCheck?email' + email,
+				type : 'get',
+				success : function(data){
+					colsole.log("1 = 중복o / 0 = 중복x : " + data);
+					
+					if(data == 1){
+						$("#id_check").text("사용중인 아이디 입니다.");
+						$("#id_check").css("color", "red");
+						$("#joinSubmit").attr("disabled", true);
+					}else{
+						if(idJ.test(email)){
+							$("#email").text('아이디를 입력해 주세요.');
+							$("#email").css('color', 'red');
+							$("#joinSubmit").attr("disabled", true);
+						}
+					}
+				}, error : function(){
+					console.log("실패");
+				}
+			});	
+		});
+	
+	</script>
+	
+	<!-- Header section -->
+	<div th:replace="~{header :: header}"></div>
+	<!-- Header section end -->
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<a href="/"><img src="img/logo/logo.png" alt="IMG">
+						<span class="login100-form-title">
+							Welecome to Soolfarm
+						</span>
+					</a>
+					
+				</div>
+
+				<form class="login100-form validate-form" action="joinSubmit" method="post">
+					<span class="login100-form-title">
+						Member join
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" id="email" name="email" placeholder="email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-id-badge" aria-hidden="true"></i>
+						</span>
+						<div class="check_font" id="id_check"></div>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pw" placeholder="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>		
+					
+					<div class="wrap-input100 validate-input" data-validate = "name is required">
+						<input class="input100" type="text" name="name" placeholder="name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-id-card" aria-hidden="true"></i>
+						</span>
+					</div>
+								
+					<div class="wrap-input100 validate-input" data-validate = "tel is required">
+						<input class="input100" type="tel" name="tel" placeholder="tel">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "adress is required">
+						<input class="input100" type="text" name="address" placeholder="address">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-home" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Join
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="join">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer section -->
+		<div th:replace="~{footer :: footer}"></div>
+	<!-- Footer section end -->
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
