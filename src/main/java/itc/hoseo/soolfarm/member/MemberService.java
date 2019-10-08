@@ -2,8 +2,6 @@ package itc.hoseo.soolfarm.member;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import itc.hoseo.soolfarm.model.MemberVO;
 
 public interface MemberService {

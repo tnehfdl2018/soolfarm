@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import itc.hoseo.soolfarm.model.AddVO;
 
 @Mapper
-public interface AddDao {
+public interface AddDAO {
 
 	public List<AddVO> getAdd(AddVO vo);
 }

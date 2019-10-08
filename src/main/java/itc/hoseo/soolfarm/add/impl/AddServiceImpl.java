@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import itc.hoseo.soolfarm.add.AddDao;
+import itc.hoseo.soolfarm.add.AddDAO;
 import itc.hoseo.soolfarm.add.AddService;
 import itc.hoseo.soolfarm.model.AddVO;
 
@@ -13,7 +13,7 @@ import itc.hoseo.soolfarm.model.AddVO;
 public class AddServiceImpl implements AddService{
 	
 	@Autowired
-	private AddDao dao;
+	private AddDAO dao;
 
 	@Override
 	public List<AddVO> getAdd() {

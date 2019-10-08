@@ -1,5 +1,5 @@
 package itc.hoseo.soolfarm.delivery;
 
-public interface deliveryDAO {
+public interface DeliveryDAO {
 
 }

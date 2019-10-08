@@ -1,68 +1,230 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-	<meta name="description" content="Food Blog Web Template">
-	<meta name="keywords" content="food, unica, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+<head>
+	<title>SoolFarm 술팜</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700" rel="stylesheet">
+<body class="animsition">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+<!-- Header -->
+	<header class="header-v4">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<!-- Topbar -->
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">
+						방문을 환영합니다.
+					</div>
 
+					<div class="right-top-bar flex-w h-full">
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							Help & FAQs
+						</a>
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	</head>
-	<body>
-		<header th:fragment="header" class="header-section">
-		<div class="header-top">
-			<div class="container">
-				<div class="header-social">
-					<a href="#"><i class="fa fa-pinterest"></i></a>
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-				</div>
-				<div class="user-panel">
-					<a th:if="${session.email==null}" href="goJoin">Join &nbsp;&nbsp;/</a><a th:unless="${session.email==null}" th:text="'Logout &nbsp;'" href="logout"></a>
-					<a th:if="${session.email==null}" href="login">&nbsp;&nbsp;Login</a><a th:unless="${session.email==null}" th:text="'/ &nbsp; Mypage'" href="login"></a>
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							My Account
+						</a>
+
+						<a class="flex-c-m trans-04 p-lr-25" th:if="${session.email==null}" href="goJoin">Join</a><a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Logout'" href="logout">
+						</a>
+
+						<a class="flex-c-m trans-04 p-lr-25" th:if="${session.email==null}" href="login">Login</a><a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Mypage'" href="login">
+						</a>
+					</div>
 				</div>
 			</div>
+
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
+					
+					<!-- Logo desktop -->		
+					<a href="#" class="logo">
+						<img src="img/logo/logo.png" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="active-menu">
+								<a href="/">Home</a>
+								
+							</li>
+
+							<li>
+								<a href="product">Shop</a>
+								<ul class="sub-menu">
+									<li><a href="soju">소주</a></li>
+									<li><a href="beer">맥주</a></li>
+									<li><a href="traditionalLiquor">전통주</a></li>
+									<li><a href="liquor">양주</a></li>
+								</ul>
+							</li>
+
+							<li class="label1" data-label1="hot">
+								<a href="#">Features</a>
+							</li>
+
+							<li>
+								<a href="#">Blog</a>
+							</li>
+
+							<li>
+								<a href="#">About</a>
+							</li>
+
+							<li>
+								<a href="#">Contact</a>
+							</li>
+						</ul>
+					</div>	
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+							<i class="zmdi zmdi-search"></i>
+						</div>
+
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+							<i class="zmdi zmdi-favorite-outline"></i>
+						</a>
+					</div>
+				</nav>
+			</div>	
 		</div>
-		<div class="header-bottom">
-			<div class="container">
-				<a href="/" class="site-logo">
-					<img src="img/logo/logo.png" alt="" width="334px" height= "107px">
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
+				</div>
+
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div>
+
+				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+					<i class="zmdi zmdi-favorite-outline"></i>
 				</a>
-				<div class="nav-switch">
-					<i class="fa fa-bars"></i>
-				</div>
-				<div class="header-search">
-					<a href="#"><i class="fa fa-search"></i></a>
-				</div>
-				<ul class="main-menu">
-					<li><a href="soju">Soju</a></li>
-					<li><a href="categories">Beer</a></li>
-					<li><a href="single">Traditional liquid</a></li>
-					<li><a href="#">Wine</a></li>
-					<li><a href="#">Vodka</a></li>
-					<li><a href="contact">Contact</a></li>					
-				</ul>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
 			</div>
 		</div>
-	</header>
-	</body>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="topbar-mobile">
+				<li>
+					<div class="left-top-bar">
+						Free shipping for standard order over $100
+					</div>
+				</li>
+
+				<li>
+					<div class="right-top-bar flex-w h-full">
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							Help & FAQs
+						</a>
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							My Account
+						</a>
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							EN
+						</a>
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							USD
+						</a>
+					</div>
+				</li>
+			</ul>
+
+			<ul class="main-menu-m">
+				<li>
+					<a href="/">Home</a>
+					<ul class="sub-menu-m">
+						<li><a href="#">Homepage 1</a></li>
+						<li><a href="#">Homepage 2</a></li>
+						<li><a href="#">Homepage 3</a></li>
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+
+				<li>
+					<a href="#">Shop</a>
+				</li>
+
+				<li>
+					<a href="#" class="label1 rs1" data-label1="hot">Features</a>
+				</li>
+
+				<li>
+					<a href="#">Blog</a>
+				</li>
+
+				<li>
+					<a href="#">About</a>
+				</li>
+
+				<li>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+		</div>
+
+</body>
 </html>
