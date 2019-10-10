@@ -15,6 +15,9 @@ create table GOODS (
 	gd_kinds varchar(30) not null,
 	gd_price varchar(25) not null,
 	gd_maker varchar(25) not null,
+	gd_alcohol varchar(25) not null,
+	gd_vol varchar(25) not null,
+	gd_startday Date not null,
 	gd_discription varchar(255) not null
 	);
 			

@@ -7,7 +7,7 @@
 	</insert>
 
 
-	<select id="list" parameterType="GoodsVO" resultType="GoodsVO">
+	<select id="getGoods" parameterType="GoodsVO" resultType="GoodsVO">
 		SELECT * FROM GOODS;
 	</select>
 	

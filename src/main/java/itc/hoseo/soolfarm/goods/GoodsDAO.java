@@ -20,7 +20,7 @@ public interface GoodsDAO {
 	public int deleteGoods(int gdNum);
 	
 	// 상품 검색
-	public List<GoodsVO> list(GoodsVO goodsVO);
+	public List<GoodsVO> getGoods(GoodsVO vo);
 	
 
 }

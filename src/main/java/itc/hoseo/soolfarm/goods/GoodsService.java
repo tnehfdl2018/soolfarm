@@ -1,5 +1,7 @@
 package itc.hoseo.soolfarm.goods;
 
+import java.util.List;
+
 import itc.hoseo.soolfarm.model.GoodsVO;
 
 public interface GoodsService {
@@ -12,6 +14,9 @@ public interface GoodsService {
 	
 	// 상품 삭제
 	public GoodsVO deleteGoods(int goodsNum);
+	
+	// 상품 조회
+	public List<GoodsVO> getGoods();
 	
 	
 
