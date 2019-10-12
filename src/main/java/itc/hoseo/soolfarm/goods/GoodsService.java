@@ -18,6 +18,7 @@ public interface GoodsService {
 	// 상품 조회
 	public List<GoodsVO> getGoods();
 	
-	
+	//상품 상세정보
+	public List<GoodsVO> getDetailProduct(int gdNum);
 
 }

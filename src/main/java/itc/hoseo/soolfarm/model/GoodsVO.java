@@ -16,7 +16,7 @@ public class GoodsVO {
 	private String gdAlcohol;
 	private String gdVol;
 	private Date gdStartDay;
-	private String gdDiscript;
+	private String gdDiscription;
 	
 	
 

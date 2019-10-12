@@ -11,4 +11,5 @@ public class BannerVO {
 	private Date startDttm;
 	private Date endDttm;
 	private String imgName;
+	private String scription;
 }

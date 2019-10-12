@@ -20,8 +20,12 @@
 		DELETE FROM GOODS WHERE gd_num = #{gdNum};
 	</delete>
 
-	<select id="getMemberCnt" parameterType="String" resultType="Integer">
-		SELECT COUNT(*) FROM MEMBER WHERE ID = #{id};
+	<!-- 상세 정보 페이지를 위한 쿼리 -->
+	<select id="getDetailProduct" parameterType="int" resultType="GoodsVO">
+		SELECT * FROM GOODS
+		<where>
+			gd_num = #{gdNum}
+		</where>
 	</select>
 
 </mapper>
