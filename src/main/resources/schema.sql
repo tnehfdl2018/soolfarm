@@ -17,18 +17,15 @@ create table GOODS (
 	gd_maker varchar(25) not null,
 	gd_alcohol varchar(25) not null,
 	gd_vol varchar(25) not null,
+	gd_stock int not null,
 	gd_startday Date not null,
 	gd_discription varchar(255) not null
 	);
 			
-create table SHOPPINGBASKET(
-	sb_num int primary key AUTO_INCREMENT,
-	sb_name varchar(45) not null,
-	sb_img varchar(25) not null, 
-	sb_kinds varchar(30) not null,
-	sb_price varchar(25) not null,
-	sb_maker varchar(25) not null,
-	sb_status varchar(20) not null		
+create table SHOPPINGCART(
+	sb_num int primary key,
+	sb_user varchar(75) not null,
+	gd_amount int not null
 	);
 	
 create table delivery(

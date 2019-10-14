@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="itc.hoseo.soolfarm.shoppingCart.ShoppingCartDAO">
+
+<insert id="addShoppingCart" parameterType="ShoppingCartVO">
+	INSERT INTO SHOPPINGCART (sb_num, sb_user, sb_amount) VALUES(#{sbNum}, #{sbUser}, #{sbAmount})
+</insert>
+
+<update id="modifyShoppingCart" parameterType="ShoppingCartVO">
+	UPDATE SHOPPINGCART SET sb_amount = #{sbAmount} WHERE sb_num = #{sbNum}
+</update>
+
+<delete id="deleteShoppingCart" parameterType="ShoppingCartVO">
+	DELETE FROM SHOPPINGCART WHERE sb_num = #{sbNum}
+</delete>
+
+<select id="getShoppingCart" parameterType="ShoppingCartVO" resultType="ShoppingCartVO">
+	SELECT * FROM SHOPPINGCART
+	<where>
+		<if test="@org.apache.commons.lang3.StringUtils@isNotEmpty(sbUser)">
+			sb_user = #{sbUser}
+		</if>
+	</where>
+</select>
+
+</mapper>
