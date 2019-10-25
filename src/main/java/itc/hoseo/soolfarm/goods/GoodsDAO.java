@@ -14,7 +14,7 @@ public interface GoodsDAO {
 	public int addGoods(GoodsVO goodsVO);
 	
 	// 상품 수정
-	public int modifyGoods(GoodsVO goodsVO);
+	public int modifyGoods(int gdNum);
 	
 	// 상품 삭제
 	public int deleteGoods(int gdNum);
@@ -25,5 +25,7 @@ public interface GoodsDAO {
 	//상품 상세정보
 	public List<GoodsVO> getDetailProduct(int gdNum);
 	
+	// Index 상품 조회
+	public List<GoodsVO> getNewArrival();
 
 }

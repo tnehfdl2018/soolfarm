@@ -2,8 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="itc.hoseo.soolfarm.shoppingCart.ShoppingCartDAO">
 
+	<!-- sb_num int primary key,
+	sb_name varchar(45) not null,
+	sb_img varchar(25) not null,
+	sb_price varchar(25) not null,
+	sb_stock int not null,
+	sb_user varchar(75) not null
+	); -->
+
 <insert id="addShoppingCart" parameterType="ShoppingCartVO">
-	INSERT INTO SHOPPINGCART (sb_num, sb_user, sb_amount) VALUES(#{sbNum}, #{sbUser}, #{sbAmount})
+	INSERT INTO SHOPPINGCART (sb_num, sb_name, sb_img, sb_price, sb_stock, sb_user) VALUES(#{sbNum}, #{sbName}, #{sbImg}, #{sbPrice}, #{sbStock}, #{sbUser})
 </insert>
 
 <update id="modifyShoppingCart" parameterType="ShoppingCartVO">

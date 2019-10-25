@@ -9,7 +9,7 @@ import itc.hoseo.soolfarm.model.ShoppingCartVO;
 @Mapper
 public interface ShoppingCartDAO {
 	
-	public int addShoppingCart(ShoppingCartVO sb);
+	public int addShoppingCart (ShoppingCartVO sb);
 	
 	public int modifyShoppingCart(ShoppingCartVO sb);
 	

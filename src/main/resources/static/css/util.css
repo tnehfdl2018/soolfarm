@@ -3560,6 +3560,7 @@ iframe {border: none;}
 	display: flex;
 	-ms-align-items: center;
 	align-items: center;
+	padding-top: 10%;
 }
 
 .flex-str {
@@ -3635,7 +3636,18 @@ iframe {border: none;}
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	justify-content: flex-end;
+	-ms-align-items: center;
+	align-items: center;
+
+	justify-content: flex-end;	
+}
+
+.flex-r-m {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
 	-ms-align-items: center;
 	align-items: center;
 }

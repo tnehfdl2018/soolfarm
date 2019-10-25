@@ -13,7 +13,7 @@
 	
 	
 	<update id="modifyGoods" parameterType="GoodsVO">
-		UPDATE GOODS SET gd_name = #{gdName} WHERE gd_num = #{gdNum};
+		UPDATE GOODS SET gd_name = #{gdName} WHERE gd_stock = #{gdStock};
 	</update>
 
 	<delete id="deleteGoods" parameterType="GoodsVO">
@@ -25,6 +25,14 @@
 		SELECT * FROM GOODS
 		<where>
 			gd_num = #{gdNum}
+		</where>
+	</select>
+	
+	<!-- Index페이지 상품 보여주기 -->
+	<select id="getNewArrival" resultType="GoodsVO">
+		SELECT * FROM GOODS
+		<where>
+			gd_startday >= '2019-01-01'
 		</where>
 	</select>
 

@@ -5,25 +5,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
-//import itc.hoseo.soolfarm.add.AddService;
 import itc.hoseo.soolfarm.banner.BannerService;
+import itc.hoseo.soolfarm.goods.GoodsService;
 
 @Controller
 public class MainController {
 	@Autowired
 	BannerService bannerService;
-//	@Autowired
-//	AddService addService;
+	@Autowired
+	GoodsService proService;
 	
 	
 	@GetMapping("/")
 	public String index(ModelMap model) {
 		model.put("banners", bannerService.getBanners());
-//		model.put("adds", addService.getAdd());
+		model.put("prod", proService.getNewArrival());
 		return "index";
-	}
-	
-	
+	}	
 	
 	@GetMapping("product-detail")
 	public String categories() {

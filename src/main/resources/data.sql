@@ -36,10 +36,8 @@ INSERT INTO GOODS (gd_name, gd_img, gd_kinds, gd_price, gd_maker, gd_alcohol, gd
 INSERT INTO GOODS (gd_name, gd_img, gd_kinds, gd_price, gd_maker, gd_alcohol, gd_vol, gd_stock, gd_startday, gd_discription) VALUES('발렌타인 30Y', 'ballentines30.png', '양주', '260,000원', 'George Ballantine and Son', '43.0', '700ml', 10, '1990-10-14','30년산은 스카치의 최고봉으로 정평이 나 있는 주옥의 고주古酒, 30년의 세월이 갈고닦은 위스키 숙성의 극치의 맛을 즐길 수 있다.')
 
 
-INSERT INTO SHOPPINGCART (sb_num, sb_user, gd_amount) VALUES(1, 'tnehfdl2011@gmail.com', 5)
-INSERT INTO SHOPPINGCART (sb_num, sb_user, gd_amount) VALUES(5, 'tnehfdl2011@gmail.com', 3)
-INSERT INTO SHOPPINGCART (sb_num, sb_user, gd_amount) VALUES(20, 'ferendevelop@gmail.com', 1)
-INSERT INTO SHOPPINGCART (sb_num, sb_user, gd_amount) VALUES(15, 'ferendevelop@gmail.com', 2)
+INSERT INTO SHOPPINGCART (sb_num, sb_name, sb_img, sb_price, sb_stock, sb_user) VALUES(28, '발렌타인 21Y', 'ballentines21.png', '180,000원',  2, 'a@a.com')
+INSERT INTO SHOPPINGCART (sb_num, sb_name, sb_img, sb_price, sb_stock, sb_user) VALUES(16, '처음처럼 진한', 'first_strong.png', '1,200원',  4, 'tnehfdl2011@gmail.com')
 			
 	
 INSERT INTO DELIVERY (del_name, del_img, del_kinds, del_price, del_maker, del_status) VALUES('참이슬 Fresh','irin_goods.png','소주','1,500원','하이트진로','배송중')

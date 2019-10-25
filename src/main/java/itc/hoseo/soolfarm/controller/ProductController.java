@@ -1,18 +1,23 @@
 package itc.hoseo.soolfarm.controller;
 
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import itc.hoseo.soolfarm.goods.GoodsService;
-import itc.hoseo.soolfarm.model.MemberVO;
 import itc.hoseo.soolfarm.model.ShoppingCartVO;
-import itc.hoseo.soolfarm.shoppingCart.ShoppingCartDAO;
 import itc.hoseo.soolfarm.shoppingCart.ShoppingCartService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -49,21 +54,31 @@ public class ProductController {
 		return "product/productDetail";
 	}
 	
-	@GetMapping("addShoppingCart")
-	public String addShoppingCart(@RequestParam (value = "gdNum") int gdNum, ModelMap model, HttpSession session) {
-		ShoppingCartVO sVo = new ShoppingCartVO();
-		MemberVO mVo = new MemberVO();
-		// 세션을 이용하여 로그인 되어있는 사용자의 아이디를 가져온다.
-		session.setAttribute("email", mVo.getEmail());
-		
+	
+	// 장바구니에 담기
+	@PostMapping("porductDetail")
+	public String addShoppingCart(@ModelAttribute ShoppingCartVO vo, ModelMap model, HttpSession session) {	
 		// 파라미터로 가져온 상품번호와, 세션을 이용해 가져온 사용자를 아이디를 세트한다.
-		sVo.setSbNum(gdNum);
-		sVo.setSbUser("email");
 		
-		model.put("cart", cartService.addShoppingCart(sVo));
+		String id = (String) session.getAttribute("email");
 		
+		vo.setSbUser(id);
+		model.put("cart", cartService.addShoppingCart(vo));	
+
+		return"redirect:/detail?gdNum=" + vo.getSbNum();
+	}
+	
+
+	// 장바구니 불러오기	
+	@GetMapping("shoppingCart")
+	public String getShoppingCart(ShoppingCartVO vo, HttpSession session, ModelMap model) {
+		
+//		String id = (String) session.getAttribute("email");
+//		vo.setSbUser(id);		
+//		model.put("cart", cartService.getShoppingCart(vo));
 		
 		return "shoppingCart";
+//		return "redirect:/shoppingCart?sbUser=" + vo.getSbUser();
 	}
 
 }

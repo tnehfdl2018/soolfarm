@@ -23,9 +23,12 @@ create table GOODS (
 	);
 			
 create table SHOPPINGCART(
-	sb_num int primary key,
-	sb_user varchar(75) not null,
-	gd_amount int not null
+	sb_num int not null,
+	sb_name varchar(45) not null,
+	sb_img varchar(25) not null,
+	sb_price varchar(25) not null,
+	sb_stock int not null,
+	sb_user varchar(75) not null
 	);
 	
 create table delivery(

@@ -52,6 +52,15 @@ public class GoodsServiceImpl implements GoodsService{
 		return dao.getDetailProduct(gdNum);
 	}
 
+	// Index페이지 상품 조회
+	@Override
+	public List<GoodsVO> getNewArrival() {
+		
+		return dao.getNewArrival();
+	}
+	
+	
+
 	
 
 }
