@@ -1,0 +1,276 @@
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+body, div, dl, dt, dd, ul, ol, menu, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, th, td, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    font-family: dotum,sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #666;
+    background: #f5f5f5 url(//img1a.coupangcdn.com/image/www/header/v1/bg_body.gif);
+}
+
+body, input, textarea, select, button, table {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    color: -internal-root-color;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+td, th {
+    padding: 0;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+div.member-container {
+    min-height: 900px;
+    padding: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+div {
+    display: block;
+}
+
+caption, th {
+    text-align: left;
+}
+
+button, label {
+    cursor: pointer;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.usermodify-title {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+.usermodify-table th {
+    width: 100px;
+}
+
+.usermodify-table .usermodify-password td {
+    border-left: 0;
+    padding: 0;
+}
+
+.usermodify-table .usermodify-password th, .usermodify-table .usermodify-password td {
+    border-bottom: 0;
+}
+
+.usermodify-email-change-btn, .usermodify-name-changename-btn, .usermodify-phone-change, .usermodify-phone-auth-resend, .usermodify-password-submit, .usermodify-util-button, .usermodify-cancel, .pincode-content__button {
+    border-color: #bcbfc6;
+    color: #777;
+    background-color: #fafbf6;
+    background-image: -webkit-linear-gradient(#fff,#f1f1f1);
+    background-image: linear-gradient(#fff,#f1f1f1);
+}
+
+.usermodify-email-change-btn, .usermodify-name-changename-btn, .usermodify-phone-change, .usermodify-phone-auth-resend, .usermodify-password-submit, .usermodify-util-button, .usermodify-cancel, .find-id-auth-send-btn, .find-id-auth-submit-btn, .secession-validate-user-submit, .usermodify-auth-submit, .usermodify-email-change-auth-send, .usermodify-email-change-submit, .usermodify-email-change-resend, .usermodify-name-auth-phone-btn, .usermodify-phone-auth-send-submit, .usermodify-phone-auth-submit, .usermodify-submit, .pincode-content__button, .find-id-mailmember-join, .find-id-auth-resend-btn, .usermodify-auth-cancel, .usermodify-email-change-cancel, .usermodify-email-change-done-cancel, .usermodify-phone-cancelchange, .usermodify-phone-auth-cancel {
+    min-width: 40px;
+    *min-width: auto;
+    padding: 5px 10px;
+    *padding: 4px 5px 3px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.usermodify-secession-btn, .usermodify-email-change-btn, .usermodify-name-changename-btn, .usermodify-phone-change, .usermodify-phone-auth-resend, .usermodify-password-submit, .usermodify-util-button, .usermodify-cancel, .find-id-auth-send-btn, .find-id-auth-submit-btn, .secession-validate-user-submit, .usermodify-auth-submit, .usermodify-email-change-auth-send, .usermodify-email-change-submit, .usermodify-email-change-resend, .usermodify-name-auth-phone-btn, .usermodify-phone-auth-send-submit, .usermodify-phone-auth-submit, .usermodify-submit, .pincode-content__button, .find-id-mailmember-join, .find-id-auth-resend-btn, .usermodify-auth-cancel, .usermodify-email-change-cancel, .usermodify-email-change-done-cancel, .usermodify-phone-cancelchange, .usermodify-phone-auth-cancel, .emailonly-btn-join, .login-joinbox-link, .login-submit, .activate-submit, .find-id-by-auth-phone-btn, .find-id-result-login-btn, .find-dormant-id-result-email-send-btn, .find-password-selecttype-submit-btn, .find-password-reset-submit-btn, .find-password-result-login-btn, .find-password-nomember-join, .secession-step2-submit, .secession-poll-submit, .secession-done-btn, .usermodify-complete-mailchange-login, .usermodify-complete-mailchange-gohome, .pincode-modal__footer input[type="button"], .couponsms-sms-send, .couponsms-mms-send, .couponsms-cancel {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #0085da;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.usermodify-util-button {
+    margin-top: 16px;
+    float: right;
+}
+
+.usermodify-secession-btn {
+    border-color: #898989;
+    color: #fff;
+    background-color: #a8a8a8;
+}
+
+.usermodify-secession-btn {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -1px;
+}
+
+.usermodify-auth-submit, .usermodify-auth-cancel, .usermodify-submit, .usermodify-cancel {
+    margin: 0 2px;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.usermodify-secession {
+    margin-top: 10px;
+    text-align: right;
+    color: #97979f;
+}
+
+.usermodify-foot {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.usermodify-table .usermodify-password th {
+    font-weight: normal;
+    padding: 10px 6px 10px 0;
+    background-color: #fff;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.find-id-table th, .find-password-table th, .find-password-reset-table th, .usermodify-table th, .pincode-input__table th {
+    background-color: #eef1f8;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.find-id-table th, .find-password-table th, .find-password-reset-table th, .usermodify-table th, .pincode-input__table th, .find-id-table td, .find-password-table td, .find-password-reset-table td, .usermodify-table td, .pincode-input__table td {
+    padding: 14px 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.find-id-table td, .find-password-table td, .find-password-reset-table td, .usermodify-table td, .pincode-input__table td {
+    border-left: 1px solid #ddd;
+}
+
+.find-id-table, .find-password-table, .find-password-reset-table, .usermodify-table, .pincode-input__table {
+    width: 100%;
+    border-top: 2px solid #969696;
+    border-collapse: collapse;
+}
+
+.find-id-auth-send-btn, .find-id-auth-submit-btn, .secession-validate-user-submit, .usermodify-auth-submit, .usermodify-email-change-auth-send, .usermodify-email-change-submit, .usermodify-email-change-resend, .usermodify-name-auth-phone-btn, .usermodify-phone-auth-send-submit, .usermodify-phone-auth-submit, .usermodify-submit, .pincode-content__button, .find-id-mailmember-join, .find-id-auth-resend-btn, .usermodify-auth-cancel, .usermodify-email-change-cancel, .usermodify-email-change-done-cancel, .usermodify-phone-cancelchange, .usermodify-phone-auth-cancel {
+    min-width: 40px;
+    *min-width: auto;
+    padding: 5px 10px;
+    *padding: 4px 5px 3px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.emailonly-title, .login-label, .login-joinbox-title, .login-title, .find-account-title, .find-account-tab-link, .secession-title, .couponsms-title, .usermodify-auth-title, .usermodify-title, .usermodify-complete-mailchange-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+:-webkit-any(article,aside,nav,section) :-webkit-any(article,aside,nav,section) h1 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+:-webkit-any(article,aside,nav,section) h1 {
+    font-size: 2.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

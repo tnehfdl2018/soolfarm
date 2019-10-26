@@ -57,7 +57,7 @@
 						<a class="flex-c-m trans-04 p-lr-25" th:if="${session.email==null}" href="goJoin">Join</a>
 						<a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Logout'" href="logout"> </a>
 						<a class="flex-c-m trans-04 p-lr-25" th:if="${session.email==null}" href="login">Login</a>
-						<a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Mypage'" href="login"> </a>
+						<a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Mypage'" href="myPage"> </a>
 					</div>
 				</div>
 			</div>

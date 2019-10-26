@@ -71,11 +71,11 @@ public class ProductController {
 
 	// 장바구니 불러오기	
 	@GetMapping("shoppingCart")
-	public String getShoppingCart(ShoppingCartVO vo, HttpSession session, ModelMap model) {
+	public String getShoppingCart(@ModelAttribute ShoppingCartVO vo, HttpSession session, ModelMap model) {
 		
-//		String id = (String) session.getAttribute("email");
-//		vo.setSbUser(id);		
-//		model.put("cart", cartService.getShoppingCart(vo));
+		String id = (String) session.getAttribute("email");
+		vo.setSbUser(id);		
+		model.put("cart", cartService.getShoppingCart(vo));
 		
 		return "shoppingCart";
 //		return "redirect:/shoppingCart?sbUser=" + vo.getSbUser();

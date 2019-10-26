@@ -71,5 +71,11 @@ public class MemberController {
 	public int idCheck(@RequestParam("email") String email) {
 		return service.idCheck(email);
 	}
+	
+	@GetMapping("myPage")
+	public String myPage() {
+		
+		return "member/myPage";
+	}
 
 }

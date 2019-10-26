@@ -213,17 +213,65 @@
     });
 
     /*==================================================================
-    [ +/- num product ]*/
+     *[ +/- num product ]*/
     $('.btn-num-product-down').on('click', function(){
         var numProduct = Number($(this).next().val());
         if(numProduct > 0) $(this).next().val(numProduct - 1);
+        numProduct = Number($(this).next().val());
+        
+        var parent = $(this).parents("tr");
+        
+        var price = removeComma($('.itemPrice', parent).text())
+		
+		var total = numberWithCommas(Number(numProduct) * Number(price));
+		
+        $(".column-5",parent).text(total);
+        calcTotal();
     });
 
     $('.btn-num-product-up').on('click', function(){
-        var numProduct = Number($(this).prev().val());
+    	var numProduct = Number($(this).prev().val());
         $(this).prev().val(numProduct + 1);
-    });
+        numProduct = Number($(this).prev().val());
+      
+        var parent = $(this).parents("tr");
+        
+        var price = removeComma($('.itemPrice', parent).text())
 
+		var total = numberWithCommas(Number(numProduct) * Number(price));
+        
+        $(".column-5",parent).text(total);
+        calcTotal();
+    });
+    
+    function calcTotal(){
+    	var total = 0;
+    	$(".table-shopping-cart .table_row").each(function(idx,item){
+    		total += Number(removeComma($(".column-5",item).text()))
+    	});
+    	$(".total-p").text(numberWithCommas(total));
+    	$(".subtotal-p").text(numberWithCommas(total));
+    	allTotal();    	
+    }
+    
+    function allTotal(){
+    	var lastTotal = 0;    	
+    	lastTotal = Number(removeComma($(".subtotal-p").text()));
+    	
+    	lastTotal = lastTotal + 3000;
+    	$(".allTotal").text(numberWithCommas(lastTotal));
+    }
+    
+    
+    // 콤마 제거
+    function removeComma(str){
+    	return parseInt(str.replace(/,/g,""));
+    }
+    // 콤마 찍기
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
     /*==================================================================
     [ Rating ]*/
     $('.wrap-rating').each(function(){
@@ -276,7 +324,11 @@
     $('.js-hide-modal1').on('click',function(){
         $('.js-modal1').removeClass('show-modal1');
     });
-
+    
+    // 총액계산 표현 최초
+    calcTotal();
+    // 배송비 포함 총액
+    allTotal();
 
 
 })(jQuery);

@@ -8,7 +8,7 @@ public class ShoppingCartVO {
 	private int sbNum;
 	private String sbName;
 	private String sbImg;
-	private String sbPrice;
+	private int sbPrice;
 	private int sbStock;
 	private String sbUser;
 	

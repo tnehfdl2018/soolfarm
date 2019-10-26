@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>MyPage</title>
+
+<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/common.min.css" type="text/css">
+<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/side.css" type="text/css">
+<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/list.css" type="text/css">
+<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/ddp.css" type="text/css">
+<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/productReview.min.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/myPage.css">
+</head>
+
+
+<body>
+	<div
+		class="member-container  page-modify page-modify-index env-production"
+		data-controller="modify"
+		data-log-pack="{ &quot;isMobile&quot;:false }">
+
+		<section class="usermodify">
+			<h1 class="usermodify-title">회원정보 수정</h1>
+			<div class="usermodify-sub-option">
+				<form class="usermodify-util-form"
+					action="/login/showPersonalInformationUseHistory.pang" method="get">
+					<button type="submit" class="usermodify-util-button">개인정보
+						이용내역 보기 &gt;</button>
+				</form>
+			</div>
+
+			<form name="userModifyForm" id="userModifyForm">
+				<input type="hidden" id="confirmTicket" name="confirmTicket"
+					value="j3cGP2TNhlAAcqRih17RlOxtLdCZKoi65yBlNHJrCAM="> <input
+					type="hidden" id="successMessage" name="successMessage" value="">
+			</form>
+			<table class="usermodify-table">
+				<tbody>
+					<tr>
+						<th scope="row">아이디(이메일)</th>
+						<td><div class="usermodify-email">
+								<input type="hidden" id="originEmail"
+									value="tnehfdl2011@gmail.com"> <input type="hidden"
+									id="regEmail" value="tnehfdl2011@gmail.com"> <input
+									type="hidden" id="emailDupCheck" value="N"> <input
+									type="hidden" id="changeEmail" value=""> <strong
+									class="usermodify-email-current-mail">tnehfdl2011@gmail.com</strong>
+								<button type="button" class="usermodify-email-change-btn">이메일
+									변경</button>
+								<button type="button" class="usermodify-email-change-cancel"
+									style="display: none;">이메일 변경취소</button>
+
+								<form class="usermodify-email-change-auth"
+									action="/login/checkEmailDuplication.pang" method="POST"
+									style="display: none;">
+									<input data-errmsg="이미 가입된 메일주소입니다. 다른 이메일을 입력하여 주세요."
+										data-target="usermodify-email-change-errmsg"
+										class="usermodify-email-tf" type="text"
+										value="tnehfdl2011@gmail.com">
+									<button type="submit" class="usermodify-email-change-auth-send">인증메일
+										전송</button>
+									<div class="form-err usermodify-email-change-errmsg"
+										style="display: none;"></div>
+								</form>
+
+								<form class="usermodify-email-change-form"
+									action="/member/modify/sendEmail.pang" method="POST"
+									style="display: none;">
+									<input type="password" class="usermodify-email-change-tf">
+									<button type="submit" class="usermodify-email-change-submit">비밀번호
+										확인</button>
+									<span class="usermodify-email-change-msg">안전한 변경을 위해 쿠팡
+										비밀번호를 입력해주세요.</span>
+								</form>
+
+								<div class="usermodify-email-change-done">
+									<div class="usermodify-email-change-done-msg">
+										회원님은 현재 이메일주소를 변경하여, 신청하신 이메일(<strong
+											class="usermodify-email-change-done-email"></strong>)로 인증메일이
+										발송되었습니다. <br> 이메일 확인 후 <strong>회원정보 수정 인증</strong> 버튼을
+										클릭하시면 이메일 변경이 완료되며, 변경하신 이메일주소로 로그인 하실 수 있습니다.
+									</div>
+									<div class="usermodify-email-change-done-foot">
+										<button type="button"
+											class="usermodify-email-change-done-cancel">이메일 변경취소</button>
+										<button type="button" class="usermodify-email-change-resend">인증메일
+											재전송</button>
+									</div>
+								</div>
+							</div></td>
+					</tr>
+					<tr>
+						<th scope="row">이름</th>
+						<td><div class="usermodify-name">
+								<span class="usermodify-name-name">최수빈</span>
+								<button type="button" class="usermodify-name-changename-btn">
+									개명하셨다면? <strong>이름변경 &gt;</strong>
+								</button>
+								<div class="usermodify-name-changename-success"
+									style="display: none;">
+									<strong>개명하신 이름으로 변경되어 저장되었습니다.</strong>
+								</div>
+								<span class="usermodify-name-errmsg" style="display: none;">
+									<i class="icon-alert-gray"></i> 본인확인이 필요합니다.
+								</span>
+								<div class="usermodify-name-auth" style="display: none;">
+									<div
+										class="usermodify-name-auth-msg usermodify-name-auth-msg__auth">본인
+										미인증 고객의 경우, 입력하신 정보가 기존 회원정보와 상이할 시 입력하신 정보로 회원정보가 자동 변경됩니다.</div>
+									<div
+										class="usermodify-name-auth-msg usermodify-name-auth-msg__change"
+										style="display: none;">개명하신 경우 본인인증을 하시면 자동으로 이름이 변경됩니다.</div>
+									<div class="usermodify-name-auth-method">
+										<label class="usermodify-name-auth-method-radio active">
+											<input class="usermodify-name-auth-method-phone"
+											id="usermodify-name-auth-method-phone"
+											name="usermodify-name-auth-method" type="radio" checked="">
+											<span>본인명의 휴대폰으로 인증</span>
+										</label>
+									</div>
+									<div class="usermodify-name-auth-box">
+										<div class="usermodify-name-auth-phone">
+											회원님의 명의로 등록된 휴대폰으로 본인인증을 진행합니다.
+											<button type="button" class="usermodify-name-auth-phone-btn">본인명의
+												휴대폰으로 인증</button>
+										</div>
+									</div>
+								</div>
+							</div></td>
+					</tr>
+					<tr>
+						<th scope="row">휴대폰 번호</th>
+						<td><div class="usermodify-phone">
+								<input type="hidden" id="originPhoneNumber" value="01020421992">
+								<strong class="usermodify-phone-current-number">01020421992</strong>
+								<button type="button" class="usermodify-phone-change">휴대폰
+									번호 변경</button>
+								<button type="button" class="usermodify-phone-cancelchange"
+									style="display: none;">휴대폰 번호 변경 취소</button>
+								<form class="usermodify-phone-auth-send"
+									action="/member/modify/sendSmsAuthNumber.pang" method="post"
+									style="display: none;">
+									<input type="text" class="usermodify-phone-tf"
+										value="01020421992">
+									<button type="submit" class="usermodify-phone-auth-send-submit">인증번호
+										전송</button>
+									<div class="form-err usermodify-phone-auth-errmsg"></div>
+								</form>
+								<form class="usermodify-phone-authform"
+									action="/member/modify/changePhone.pang" method="post"
+									style="display: none;">
+									<input type="text" class="usermodify-phone-auth-tf"
+										placeholder="인증번호 입력">
+									<button type="submit" class="usermodify-phone-auth-submit">인증</button>
+									<button type="button" class="usermodify-phone-auth-resend">인증번호
+										재전송</button>
+									<div class="form-err usermodify-phone-auth-errmsg"></div>
+								</form>
+								<div class="usermodify-phone-auth-msg" style="display: none;">입력하신
+									번호로 인증번호가 발송 되었습니다.</div>
+							</div></td>
+					</tr>
+					<tr>
+						<th scope="row">비밀번호변경</th>
+						<td><div class="usermodify-password">
+								<table>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<div class="usermodify-password-notice">
+													비밀번호는 6~15자 이내로 영문 (대문자,소문자), 숫자, 특수 문자 3가지 조합중 2가지 이상을
+													조합하셔서 작성하시면 됩니다.<br>단, 3가지 모두를 조합하실 경우 더욱 강력한 패스워드 구현이
+													가능합니다.
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>현재 비밀번호</th>
+											<td><input type="password"
+												class="usermodify-password-currentpassword-tf"></td>
+										</tr>
+										<tr>
+											<th>신규 비밀번호</th>
+											<td><input type="password"
+												class="usermodify-password-newpassword-tf"></td>
+										</tr>
+										<tr>
+											<th>비밀번호 다시 입력</th>
+											<td><input type="password"
+												class="usermodify-password-newpassword-confirm-tf">
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<div class="form-err usermodify-password-err-msg"></div>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<button type="button" class="usermodify-password-submit">비밀번호
+													변경</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div></td>
+					</tr>
+					<tr>
+						<th scope="row">배송지</th>
+						<td>배송지 주소 관리는 <a href="#" id="deliveryAddressPopUp"><strong>[배송지
+									관리]</strong></a>에서 수정, 등록 합니다.
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">수신설정</th>
+						<td><div class="modify__group modify__group--subscribe">
+								<div class="modify__row modify__row--subscribe">
+									<label
+										class="modify__label-wrap modify__label-wrap--subscribe-all">
+										<input type="checkbox"
+										class="modify__checkbox modify__checkbox--subscribe-all">
+										<span
+										class="modify__label-text modify__label-text--subscribe-all">특가상품,
+											할인쿠폰, 이벤트 소식 수신 동의</span>
+									</label> ( <label
+										class="modify__label-wrap modify__label-wrap--subscribe-email">
+										<input type="checkbox"
+										class="modify__checkbox modify__checkbox--subscribe-email">
+										<span
+										class="modify__label-text modify__label-text--subscribe-email">이메일</span>
+									</label> <label
+										class="modify__label-wrap modify__label-wrap--subscribe-sms">
+										<input type="checkbox"
+										class="modify__checkbox modify__checkbox--subscribe-sms">
+										<span
+										class="modify__label-text modify__label-text--subscribe-sms">SMS</span>
+									</label> )
+								</div>
+								<div class="modify__row modify__row--guide">회원정보 구매정보 및
+									서비스 주요 정책 관련 내용은 수신 동의 여부와 관계없이 발송됩니다.</div>
+							</div></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="usermodify-secession">
+				탈퇴를 원하시면 우측의 회원탈퇴 버튼을 눌러주세요. <a class="usermodify-secession-btn"
+					href="secession.pang">회원탈퇴</a>
+			</div>
+			<div class="usermodify-foot">
+				<button type="button" class="usermodify-cancel">나가기</button>
+			</div>
+		</section>
+
+	</div>
+</body>
+</html>

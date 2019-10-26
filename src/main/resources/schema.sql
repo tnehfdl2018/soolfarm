@@ -13,7 +13,7 @@ create table GOODS (
 	gd_name varchar(45) not null,
 	gd_img varchar(25) not null, 
 	gd_kinds varchar(30) not null,
-	gd_price varchar(25) not null,
+	gd_price int not null,
 	gd_maker varchar(25) not null,
 	gd_alcohol varchar(25) not null,
 	gd_vol varchar(25) not null,
@@ -26,7 +26,7 @@ create table SHOPPINGCART(
 	sb_num int not null,
 	sb_name varchar(45) not null,
 	sb_img varchar(25) not null,
-	sb_price varchar(25) not null,
+	sb_price int not null,
 	sb_stock int not null,
 	sb_user varchar(75) not null
 	);
@@ -36,7 +36,7 @@ create table delivery(
 	del_name varchar(45) not null,
 	del_img varchar(25) not null, 
 	del_kinds varchar(30) not null,
-	del_price varchar(25) not null,
+	del_price int not null,
 	del_maker varchar(25) not null,
 	del_status varchar(20) not null		
 	);
@@ -46,7 +46,7 @@ create table buyed(
 	buy_name varchar(45) not null,
 	buy_img varchar(25) not null, 
 	buy_kinds varchar(30) not null,
-	buy_price varchar(25) not null,
+	buy_price int not null,
 	buy_maker varchar(25) not null,
 	buy_status varchar(20) not null		
 	);
