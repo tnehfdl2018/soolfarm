@@ -89,5 +89,13 @@ public class MemberServiceImpl implements MemberService{
 		
 		return memberDAO.idCheck(email);
 	}
+
+	
+	// myPage 정보
+	@Override
+	public List<MemberVO> getinfo(MemberVO vo) {
+		
+		return memberDAO.getinfo(vo);
+	}
 	
 }

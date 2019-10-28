@@ -77,7 +77,7 @@ public class ProductController {
 		vo.setSbUser(id);		
 		model.put("cart", cartService.getShoppingCart(vo));
 		
-		return "shoppingCart";
+		return "product/shoppingCart";
 //		return "redirect:/shoppingCart?sbUser=" + vo.getSbUser();
 	}
 

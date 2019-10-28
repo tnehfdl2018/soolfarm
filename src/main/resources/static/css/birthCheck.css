@@ -1,0 +1,299 @@
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    color: -internal-root-color;
+}
+
+a {
+    color: #777;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border-style: none;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #222;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+div {
+    display: block;
+}
+
+body, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, form, fieldset, legend, button, table, th, td, p, pre, code, figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #292929;
+    color: #777;
+    font-size: 13px;
+    font-family: NanumBarunGothic, "나눔바른고딕", "나눔고딕", NanumGothic, "돋움", Dotum, sans-serif;
+    line-height: 1.5384615384615385;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+}
+
+[role=button], button {
+    cursor: pointer;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+}
+
+select:not(:-internal-list-box) {
+    overflow: visible !important;
+}
+
+select {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: white;
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;
+}
+
+#brand_age_check {
+    display: none;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1500;
+    background: #ff62b2 url(img/main_backgound.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    text-align: center;
+}
+
+
+#brand_age_check .alert span {
+    color: #30ffe8;
+    font-weight: normal;
+}
+
+#brand_age_check .alert em {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border-radius: 11px;
+    border: 2px solid #30ffe8;
+    color: #30ffe8;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+#brand_age_check .alert {
+    color: #fff;
+    line-height: 22px;
+}
+
+#brand_age_check .select {
+    padding: 25px 0 35px;
+}
+
+#brand_age_check .submit {
+    padding: 50px 0 30px;
+}
+
+#brand_age_check .submit button {
+    width: 200px;
+    height: 42px;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+#brand_age_check .select select {
+    display: inline-block;
+    width: 175px;
+    height: 72px;
+    margin: 0 3px;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #1f59d0;
+    font-size: 16px;
+}
+
+#brand_age_check h1 {
+    padding: 50px 0 0 40px;
+    text-align: left;
+    opacity: .5;
+}
+
+#brand_age_check h2 {
+    padding: 200px 0 70px;
+}
+
+#brand_age_check .checkbox span {
+    color: #c1d2f6;
+}
+
+#brand_age_check .checkbox span:before {
+    top: 0;
+    margin-top: 3px;
+}
+
+#brand_age_check .checkbox span:after {
+    top: 0;
+    margin-top: 8px;
+    background: #fff;
+}
+
+:-webkit-any(article,aside,nav,section) :-webkit-any(article,aside,nav,section) h1 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+.radio input + span, .checkbox input + span {
+    display: inline-block;
+    padding-top: 2px;
+}
+
+.radio label, .checkbox label {
+    position: relative;
+    display: inline-block;
+    min-height: 16px;
+    padding-left: 23px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radio input[type="radio"] + span:before, .checkbox input[type="checkbox"] + span:before {
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-top: -8px;
+    border: 1px solid #ccc;
+}
+
+.radio input[type="radio"] + span:before, .radio input[type="radio"] + span:after, .checkbox input[type="checkbox"] + span:before, .checkbox input[type="checkbox"] + span:after {
+    position: absolute;
+    top: 50%;
+    content: "";
+}
+
+.form select {
+    padding: 0 1px 0 5px;
+    line-height: normal;
+}
+
+.form input[type="search"], .form input[type="text"], .form input[type="tel"], .form input[type="password"], .form select {
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 15px 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 14px;
+    font-family: NanumBarunGothic, "나눔바른고딕", "나눔고딕", NanumGothic, "돋움", Dotum, sans-serif;
+    line-height: 16px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+

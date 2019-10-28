@@ -41,4 +41,11 @@
 			email = #{email}
 		</where>
 	</select>
+	
+	<select id="getinfo" parameterType="MemberVO" resultType="MemberVO">
+		SELECT * FROM MEMBER
+		<where>
+			email = #{email}
+		</where>
+	</select>
 </mapper>

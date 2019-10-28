@@ -106,6 +106,42 @@ button, input, optgroup, select, textarea {
     margin: 0;
 }
 
+input {
+    vertical-align: middle;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type="password" i] {
+    -webkit-text-security: disc !important;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
 .usermodify-title {
     margin: 0 0 10px;
     font-size: 30px;
@@ -196,6 +232,10 @@ button, input, optgroup, select, textarea {
     width: 1%;
 }
 
+.usermodify-password-currentpassword-tf {
+    width: 140px;
+}
+
 .find-id-table th, .find-password-table th, .find-password-reset-table th, .usermodify-table th, .pincode-input__table th {
     background-color: #eef1f8;
     text-align: left;
@@ -247,9 +287,20 @@ button, input, optgroup, select, textarea {
     text-align: center;
 }
 
+.login-tf, .find-id-name-tf, .find-id-phone-tf, .find-id-auth-tf, .find-password-name-tf, .find-password-email-tf, .find-password-temp-password-tf, .find-password-new-password-tf, .find-password-new-password-confirm-tf, .find-password-birthday-confirm-tf, .find-password-phonenumber-confirm-tf, .secession-validate-user input[type="text"], .secession-validate-user input[type="password"], .usermodify-auth-password-tf, .usermodify-email-tf, .usermodify-email-change-tf, .usermodify-phone-tf, .usermodify-phone-auth-tf, .usermodify-password-currentpassword-tf, .usermodify-password-newpassword-tf, .usermodify-password-newpassword-confirm-tf {
+    height: 22px;
+    padding: 2px 5px;
+    line-height: 22px;
+}
 
+.login-tf, .find-id-name-tf, .find-id-phone-tf, .find-id-auth-tf, .find-password-name-tf, .find-password-email-tf, .find-password-temp-password-tf, .find-password-new-password-tf, .find-password-new-password-confirm-tf, .find-password-birthday-confirm-tf, .find-password-phonenumber-confirm-tf, .secession-validate-user input[type="text"], .secession-validate-user input[type="password"], .usermodify-auth-password-tf, .usermodify-email-tf, .usermodify-email-change-tf, .usermodify-phone-tf, .usermodify-phone-auth-tf, .usermodify-password-currentpassword-tf, .usermodify-password-newpassword-tf, .usermodify-password-newpassword-confirm-tf, .find-id-phone-select, .usermodify-phone-select {
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
 
-
+.resetting-btn{
+	padding-top : 10px;
+}
 
 
 

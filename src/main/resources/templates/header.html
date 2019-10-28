@@ -66,17 +66,17 @@
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="/" class="logo"> <img src="img/logo/logo.png" 	alt="IMG-LOGO">
+					<a href="main" class="logo"> <img src="img/logo/logo.png" 	alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu"><a href="/">Home</a></li>
+							<li class="active-menu"><a href="main">Home</a></li>
 
 							<li><a href="product" data-label1="hot">product</a>
 
-							<li><a href="about">About</a></li>
+							<li><a href="/">About</a></li>
 
 							<li><a href="mysoolfarm">mysoolfarm</a></li>
 						</ul>
@@ -172,32 +172,22 @@
 						<a class="flex-c-m trans-04 p-lr-25" th:if="${session.email==null}" href="goJoin">Join</a>
 						<a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Logout'" href="logout"> </a>
 						<a class="flex-c-m trans-04 p-lr-25" th:if="${session.email==null}" href="login">Login</a>
-						<a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}" th:text="'Mypage'" href="login"> </a>
+						<a class="flex-c-m trans-04 p-lr-25" th:unless="${session.email==null}"  th:text="'Mypage'" href="myPage"> </a>
 					</div>
 				</li>
 			</ul>
 
 			<ul class="main-menu-m">
-				<li><a href="/">Home</a> <span class="arrow-main-menu-m">
+				<li><a href="main">Home</a>
+				 <span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 				</span></li>
 
 				<li><a href="product" data-label1="hot">product</a>
-					<!-- <ul class="sub-menu">
-						<li><a href="soju">소주</a></li>
-						<li><a href="beer">맥주</a></li>
-						<li><a href="traditionalLiquor">전통주</a></li>
-						<li><a href="liquor">양주</a></li>
-					</ul></li> -->
+				
+				<li><a href="about">About</a></li>
 
-				<li><a href="#" class="label1 rs1" data-label1="hot">Features</a>
-				</li>
-
-				<li><a href="#">Blog</a></li>
-
-				<li><a href="#">About</a></li>
-
-				<li><a href="#">Contact</a></li>
+				<li><a href="mysoolfarm">mysoolfarm</a></li>
 			</ul>
 		</div>
 	</header>

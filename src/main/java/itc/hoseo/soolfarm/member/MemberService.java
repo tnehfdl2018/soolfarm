@@ -34,5 +34,8 @@ public interface MemberService {
 	
 	// ID중복 체크
 	public int idCheck(String email);
+	
+	// myPage 정보
+	public List<MemberVO> getinfo(MemberVO vo);
 
 }

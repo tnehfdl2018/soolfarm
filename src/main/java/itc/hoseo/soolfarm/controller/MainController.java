@@ -17,10 +17,16 @@ public class MainController {
 	
 	
 	@GetMapping("/")
+	public String main() {
+		
+		return "index";
+	}
+	
+	@GetMapping("main")
 	public String index(ModelMap model) {
 		model.put("banners", bannerService.getBanners());
 		model.put("prod", proService.getNewArrival());
-		return "index";
+		return "main";
 	}	
 	
 	@GetMapping("product-detail")
@@ -28,10 +34,7 @@ public class MainController {
 		return "product-detail";
 	}
 	
-	@GetMapping("mysoolfarm")
-	public String single() {
-		return "mysoolfarm";
-	}
+	
 	
 	
 }
