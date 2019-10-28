@@ -28,8 +28,10 @@ public class MainController {
 		return "product-detail";
 	}
 	
-	@GetMapping("single")
+	@GetMapping("mysoolfarm")
 	public String single() {
-		return "/single";
+		return "mysoolfarm";
 	}
+	
+	
 }
