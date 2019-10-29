@@ -72,13 +72,13 @@
 		
 	    <tbody>	    
 		    <tr th:each="member : ${memberList}">
-		    	<td th:text = "${member.getGdNum()}"></td>
-		        <td th:text= "${member.getGdEmail()}" ></td>		        
-		        <td th:text = "${member.getGdName()}"></td>
-		        <td th:text = "${member.getGdTel()}"></td>
-		        <td th:text = "${member.getGdAddress()}"></td>
-		        <td th:text = "${member.getGdJoinDate()}"></td>
-		    </tr>		    
+		    	<td th:text = "${member.getNum()}"></td>
+		        <td th:text= "${member.getEmail()}" ></td>		        
+		        <td th:text = "${member.getName()}"></td>
+		        <td th:text = "${member.getTel()}"></td>
+		        <td th:text = "${member.getAddress()}"></td>
+		        <td th:text = "${#dates.format(member.getJoinDate(), 'yyyy-MM-dd')}"></td>
+		    </tr>
 	    </tbody>
     </table>
 	

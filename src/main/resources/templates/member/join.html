@@ -22,36 +22,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util2.css">
 	<link rel="stylesheet" type="text/css" href="css/main2.css">
-<!--===============================================================================================-->
-
-<script>
-		$("email").blur(function(){
-			var email = $('email').val();
-			$.ajax({
-				url :'${pageContext.request.contextPath}/idCheck?email' + email,
-				type : 'get',
-				success : function(data){
-					colsole.log("1 = 중복o / 0 = 중복x : " + data);
-					
-					if(data == 1){
-						$("#id_check").text("사용중인 아이디 입니다.");
-						$("#id_check").css("color", "red");
-						$("#joinSubmit").attr("disabled", true);
-					}else{
-						if(idJ.test(email)){
-							$("#email").text('아이디를 입력해 주세요.');
-							$("#email").css('color', 'red');
-							$("#joinSubmit").attr("disabled", true);
-						}
-					}
-				}, error : function(){
-					console.log("실패");
-				}
-			});	
-		});
-	
-	</script>
-	
+<!--===============================================================================================-->	
 </head>
 <body>
 	
@@ -156,6 +127,34 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main2.js"></script>
+<!--===============================================================================================-->
+	<script>
+		$("email").blur(function(){
+			var email = $('email').val();
+			$.ajax({
+				url :'${pageContext.request.contextPath}/idCheck?email' + email,
+				type : 'get',
+				success : function(data){
+					colsole.log("1 = 중복o / 0 = 중복x : " + data);
+					
+					if(data == 1){
+						$("#id_check").text("사용중인 아이디 입니다.");
+						$("#id_check").css("color", "red");
+						$("#joinSubmit").attr("disabled", true);
+					}else{
+						if(idJ.test(email)){
+							$("#email").text('아이디를 입력해 주세요.');
+							$("#email").css('color', 'red');
+							$("#joinSubmit").attr("disabled", true);
+						}
+					}
+				}, error : function(){
+					console.log("실패");
+				}
+			});	
+		});
+<!--===============================================================================================-->
+	</script>
 
 </body>
 </html>

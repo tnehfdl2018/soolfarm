@@ -47,7 +47,7 @@ public class MemberController {
 	public String logout(@ModelAttribute MemberVO vo, HttpSession session) {
 		session.removeAttribute("email");
 		
-		return "redirect:/";
+		return "redirect:/main";
 	}
 	
 	// 회원가입 페이지로 이동
@@ -62,7 +62,7 @@ public class MemberController {
 		vo.setJoinDate(new Date());
 		System.out.println(vo.getJoinDate().toString());
 		if(service.addMember(vo)) {
-			return "redirect:/";
+			return "redirect:/main";
 		}
 		return "member/goJoin";
 	}

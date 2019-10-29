@@ -1,3 +1,9 @@
+.imgTd {
+	size: 15px;
+	width: 15px;
+	height: 15px;
+}
+
 #btn1 {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -33,7 +39,13 @@
 	
 }
 
-button{
+h2 {
+	 text-align: center;
+	 padding-top: 5%;
+}
+
+/* --------------------------------------------------------------------- */
+.btn{
 	height: 100px; 
     width: 100px; 
     margin: -20px -50px; 
@@ -43,12 +55,6 @@ button{
     margin: 0 auto;
 }
 
-h2 {
-	 text-align: center;
-	 padding-top: 5%;
-}
-
-/* --------------------------------------------------------------------- */
 .thead{
 	border:2px solid #000;
 }
@@ -70,16 +76,21 @@ h2 {
     font-weight: bold;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
+    text-align: center;
     
 }
 .type04 td {
     width: 350px;
     padding: 10px;
-    vertical-align: top;
+    vertical-align: middle;
     border-bottom: 1px solid #ccc;
-    
+    text-align: center;	
 }
 
-
-
+.btns{
+	margin: 5px;
+	border: 1px solid pink;
+	background-color: rgba(0,0,0,0);
+	color: pink;
+}
 /* --------------------------------------------------------------------- */

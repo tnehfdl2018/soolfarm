@@ -46,14 +46,6 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.getMemberCnt(id) > 0 ? true : false;
 	}
 
-	
-	// 관리자 페이지 회원 정보
-	@Override
-	public List<MemberVO> getMemberList(MemberVO memberVO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	// 로그인
 	@Override
 	public MemberVO loginCheck(MemberVO vo) {

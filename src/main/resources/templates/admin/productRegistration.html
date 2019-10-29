@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 관리 페이지</title>
+
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -46,23 +47,31 @@
 
 	<table class="type04">
 	    <tr>
-	        <th scope="row">항목명</th>
-	        <td>제품 코드</td>
-	        <td>제품 사진</td>
-	        <td>제품 명</td>
-	        <td>가격</td>
-	        <td>제조사</td>
-	        <td>재고</td>	        
+	        <th scope="row">제품 코드</th>
+	        <th>제품 사진</th>
+	        <th>제품 명</th>
+	        <th>가격</th>
+	        <th>종류</th>
+	        <th>제조사</th>
+	        <th>도수</th>
+	        <th>재고</th>
+	        <th>출시일</th>
+	        <th>설명</th>	
+	        <th>수정</th>      
 	    </tr>
 	    
-	     <tr>
-	        <th scope="row">항목명</th>
-	        <td>제품 코드</td>
-	        <td>제품 사진</td>
-	        <td>제품 명</td>
-	        <td>가격</td>
-	        <td>제조사</td>
-	        <td>재고</td>	        
+	     <tr th:each = "proList : ${pro}">
+	        <td scope="row"  th:text = "${proList.getGdNum()}"></td>
+	        <td class="imgTd"><img width="130px" height="150px" th:src="@{'img/goods/' + ${proList.getGdImg()}}" alt="IMG-PRODUCT"></td>
+	        <td th:text = "${proList.getGdName()}"></td>
+	        <td th:text = "${#numbers.formatInteger(proList.getGdPrice(),3,'COMMA')} + '원'"></td>
+	        <td th:text = "${proList.getGdKinds()}"></td>
+	        <td th:text = "${proList.getGdMaker()}"></td>
+	        <td th:text = "${proList.getGdAlcohol()} + '%'"></td>
+	        <td th:text = "${proList.getGdStock()} + '병'"></td>
+	        <td th:text = "${#dates.format(proList.getGdStartDay(), 'yyyy-MM-dd')}"></td>
+	        <td th:text = "${proList.getGdDiscription()}"></td>	  
+	        <td><a><button class = "btns">수정</button></a><a><button class = "btns">삭제</button></a></td>
 	    </tr>
     </table>
 	
