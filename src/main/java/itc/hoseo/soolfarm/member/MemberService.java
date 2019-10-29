@@ -21,7 +21,7 @@ public interface MemberService {
 	// 회원정보 조회
 	public MemberVO getMember(MemberVO m);
 
-	public List<MemberVO> list(MemberVO memberVO);
+	public List<MemberVO> getMemberList(MemberVO memberVO);
 	
 	//로그인
 	public MemberVO loginCheck(MemberVO vo);

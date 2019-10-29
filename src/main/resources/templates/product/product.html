@@ -108,13 +108,10 @@
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a th:text="${goods.getGdName()}" href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									
-								</a>
+								<a th:text="${goods.getGdName()}" href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"></a>
 
-								<span class="stext-105 cl3" th:text="${goods.getGdPrice()}">
-									
-								</span>
+								<span class="stext-105 cl3" th:text="${#numbers.formatInteger(goods.getGdPrice(),3,'COMMA')} + '원'"></span>
+								
 							</div>
 						</div>
 					</div>

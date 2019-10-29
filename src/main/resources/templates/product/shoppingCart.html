@@ -62,8 +62,10 @@
 									<th class="column-1">Product</th>
 									<th class="column-2"></th>
 									<th class="column-3">Price</th>
+									<th class="column-3-1"></th>
 									<th class="column-4">Quantity</th>
 									<th class="column-5">Total</th>
+									<th class="column-6"></th>
 								</tr>
 
 								<tr class="table_row" th:each="shoppingCart : ${cart}">
@@ -72,8 +74,9 @@
 											<img th:src="@{'img/goods/' + ${shoppingCart.getSbImg()}}" alt="IMG">
 										</div>
 									</td>
-									<a href= ""><td class="column-2" th:text = "${shoppingCart.getSbName()}"></td></a>
+									<td class="column-2"th:onclick="|detail(${shoppingCart.getSbNum()})|" th:text = "${shoppingCart.getSbName()}"></td>
 									<td class="column-3 itemPrice" th:text = "${#numbers.formatInteger(shoppingCart.getSbPrice(),3,'COMMA')}"></td>
+									<td class="column-3-1">원</td>
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -88,13 +91,16 @@
 										</div>
 									</td>
 									<td class="column-5 tt" th:text= "${#numbers.formatInteger(shoppingCart.sbPrice * shoppingCart.sbStock ,3,'COMMA')}"></td>
+									<td class="column-6">원</td>
 								</tr>
 								<tr class="table_head">
 									<th class="column-1"></th>
 									<th class="column-2"></th>
 									<th class="column-3"></th>
+									<th class="column-3-1"></th>
 									<th class="column-4">총 액</th>
 									<th class="column-5 total-p">0</th>
+									<th class="column-6">원</th>
 								</tr>
 							</table>
 						</div>
@@ -119,7 +125,7 @@
 							<div class="size-209">
 								<span class="mtext-110 cl2 subtotal-p">
 									0
-								</span>
+								</span>원
 							</div>
 						</div>
 
@@ -132,7 +138,7 @@
 							<div class="size-209">
 								<span class="mtext-110 cl2 shipping-p">
 									3,000
-								</span>
+								</span>원
 							</div>
 						</div>
 
@@ -145,8 +151,8 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2 allTotal">
-									0
-								</span>
+									
+								</span>원
 							</div>
 						</div>
 
@@ -207,6 +213,10 @@
 				ps.update();
 			})
 		});
+		
+		function detail(num){
+			location.href="detail?gdNum=" + num;
+		}
 		
 	</script>
 <!--===============================================================================================-->

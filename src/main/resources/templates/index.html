@@ -8,8 +8,8 @@
 </head>
 <body>
 
-
 <aside id="brand_age_check" style="display: block;">
+
 	<h1>
 		<a href="/">
 			<img src="img/logo/logo.png" alt="SOOLFARM">
@@ -26,7 +26,7 @@
 			<em>19</em>홈페이지는 만 19세 이상만 이용이 가능합니다. <span>생년월일</span>을 입력해주세요.
 		</p>
 		<div class="select">
-			<select id="brand_age_check_year">
+			<select id="brand_age_check_year" onchange="changedYear()">
 				<option value="">연도</option>
 				<option value="2019">2019</option>
 				<option value="2018">2018</option>
@@ -119,7 +119,7 @@
 				<option value="1931">1931</option>
 				<option value="1930">1930</option>
 			</select>
-			<select id="brand_age_check_month">
+			<select id="brand_age_check_month" onchange="changedMonth()">
 				<option value="">월</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -134,7 +134,7 @@
 				<option value="11">11</option>
 				<option value="12">12</option>
 			</select>
-			<select id="brand_age_check_date">
+			<select id="brand_age_check_date" onchange="changedDay()">
 				<option value="">일</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -180,28 +180,59 @@
 			</div> -->
 			
 		<div class="submit">
-			<button type="submit" id="enter_btn">입장하기</button>
+			<button type="submit" id="enter_btn" onclick="check_for_enter">입장하기</button>
 		</div>		
 	</form>	
+
 </aside>
 
 
 <!-- ////////////////////////////////////////////////////////////////// -->
-<script type="text/javascript">
-	var enter_btn = document.getElementById("enter_btn");
-	enter_btn.disabled = true;
+<script>
+/* id="brand_age_check_year" onchange="changedyear" */
+/* <select id="brand_age_check_month" onchange="changedMonth()"> */
+/* <select id="brand_age_check_date" onchange="changedDay()"> */
+ 
+ var year, month, day;
+ 
+function changedYear() {	
+	var selectYear = document.getElementById("brand_age_check_year");
+	year = selectYear.options[selectYear.selectedIndex].value;	
+}
+
+function changedMonth() {
+	var selectMonth = document.getElementById("brand_age_check_month");
+	month = selectYear.options[selectYear.selectedIndex].value;	
+}
+
+function changedDay() {	
+	var selectDay = document.getElementById("brand_age_check_date");
+	day = selectYear.options[selectYear.selectedIndex].value;
+}
+
+function check_for_enter() {
+	var date = new Date();
 	
-	function changeSelect(){
-		var select = document.getElementById("brand_age_check_year");
-		
-		var value = select.options[select.selectedIndex].value;
-		
-		consol.log(value);
+	var button = document.getElementById("enter_btn");
+	
+	var n_year = date.getFullYear();
+	var n_month = date.getMonth();
+	var n_day = date.getDate();
+	
+	if((n_year-year) < 19){
+		alert("만 19세 이상만 이용이 가능합니다.");
+		button.disabled = 'disabled';
+	}else if (n_month < month){
+		alert("만 19세 이상만 이용이 가능합니다.");
+		button.disabled = 'disabled';
+	}else if (n_day < day){
+		alert("만 19세 이상만 이용이 가능합니다.");
+		button.disabled = 'disabled';
+	}else{
+		button.disabled = false;
 	}
-	/* $(".brand_age_check_year").on("change", function(){
-		alert($(this).val());
-		
-	}) */
+}
+
 	
 
 </script>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>상품 관리 페이지</title>
+<title>멤버 관리 페이지</title>
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -34,6 +34,8 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
 <!--===============================================================================================-->
+
+
 </head>
 
 
@@ -43,33 +45,46 @@
 	<div th:replace="~{header :: header}"></div>
 	<!-- Header section end -->
 	
+	
+	<!-- private int num;
+	private String email;
+	private String pw;
+	private String name;
+	private String tel;
+	private String address;
+	private Date joinDate;
+	 -->
+	 <!-- th:each="goods : ${prod}"
+	 th:text="${goods.getGdName()}" -->
+
 
 	<table class="type04">
-	    <tr>
-	        <th scope="row">항목명</th>
-	        <td>제품 코드</td>
-	        <td>제품 사진</td>
-	        <td>제품 명</td>
-	        <td>가격</td>
-	        <td>제조사</td>
-	        <td>재고</td>	        
-	    </tr>
-	    
-	     <tr>
-	        <th scope="row">항목명</th>
-	        <td>제품 코드</td>
-	        <td>제품 사진</td>
-	        <td>제품 명</td>
-	        <td>가격</td>
-	        <td>제조사</td>
-	        <td>재고</td>	        
-	    </tr>
+		<thead class="thead">
+			<tr>
+		        <th>회원번호</th>
+		        <th>아이디</th>
+		        <th>이름</th>
+		        <th>전화번호</th>
+		        <th>주소</th>
+		        <th>가입일</th>
+	        </tr>
+		</thead>
+		
+	    <tbody>	    
+		    <tr th:each="member : ${memberList}">
+		    	<td th:text = "${member.getGdNum()}"></td>
+		        <td th:text= "${member.getGdEmail()}" ></td>		        
+		        <td th:text = "${member.getGdName()}"></td>
+		        <td th:text = "${member.getGdTel()}"></td>
+		        <td th:text = "${member.getGdAddress()}"></td>
+		        <td th:text = "${member.getGdJoinDate()}"></td>
+		    </tr>		    
+	    </tbody>
     </table>
 	
 	
 	<!-- footer section -->
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- footer section end -->
-	
 </body>
 </html>

@@ -1934,6 +1934,12 @@ input.num-product::-webkit-inner-spin-button {
 .table-shopping-cart .column-3 {
   width: 120px;
   font-size: 16px;
+  text-align: right;
+}
+
+.column-3-1 {
+	
+	padding-right: 50px;
 }
 
 .table-shopping-cart .column-4 {
@@ -1943,9 +1949,14 @@ input.num-product::-webkit-inner-spin-button {
 
 .table-shopping-cart .column-5 {
   width: 172px;
-  padding-right: 50px;
   text-align: right;
   font-size: 16px;
+}
+
+.column-6 {
+	text-align: left;
+	padding-left: 10px;
+    padding-right: 50px;
 }
 
 .table-shopping-cart .table_row {
@@ -3533,6 +3544,8 @@ input.num-product::-webkit-inner-spin-button {
   color: #fff;
 }
 
+
+
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
@@ -3571,3 +3584,4 @@ input.num-product::-webkit-inner-spin-button {
     padding: 100px 15px 33px 15px;
   }
 }
+

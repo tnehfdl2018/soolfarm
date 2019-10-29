@@ -89,8 +89,7 @@
 					<div class="col-md-6 col-lg-5 p-b-30">
 						<div class="p-r-50 p-t-5 p-lr-0-lg">
 							<h4 class="mtext-105 cl2 js-name-detail p-b-14" th:text="${detail.getGdName()}"></h4>
-	
-							<span class="mtext-106 cl2" th:text="'가격 : ' + ${detail.getGdPrice()}"></span><br>
+							<span class="mtext-106 cl2" th:text="'가격 : ' + ${#numbers.formatInteger(detail.getGdPrice(),3,'COMMA')} + '원'"></span><br>
 							<br> <span class="mtext-106 cl2" th:text="'종류 : ' + ${detail.getGdKinds()}"></span><br>
 							<br> <span class="mtext-106 cl2" th:text="'제조사 : ' + ${detail.getGdMaker()}"></span><br>
 							<br> <span class="mtext-106 cl2" th:text="'도수 : ' + ${detail.getGdAlcohol()} + '%'"></span><br>
