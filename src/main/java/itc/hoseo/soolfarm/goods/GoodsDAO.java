@@ -11,7 +11,7 @@ import itc.hoseo.soolfarm.model.GoodsVO;
 public interface GoodsDAO {
 	
 	// 상품 추가
-	public int addGoods(GoodsVO goodsVO);
+	public int addProduct(GoodsVO goodsVO);
 	
 	// 상품 수정
 	public int modifyGoods(int gdNum);

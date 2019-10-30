@@ -18,9 +18,9 @@ public class GoodsServiceImpl implements GoodsService{
 
 	// 상품 추가
 	@Override
-	public GoodsVO addGoods(GoodsVO goodsVO) {
-		// TODO Auto-generated method stub
-		return null;
+	public int addProduct(GoodsVO vo) {
+		
+		return dao.addProduct(vo);
 	}
 
 	// 상품 수정

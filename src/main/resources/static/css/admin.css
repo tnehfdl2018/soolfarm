@@ -63,11 +63,9 @@ h2 {
     border-collapse: separate;
     border-spacing: 1px;
     text-align: left;
-    line-height: 1.5;
-    border-top: 1px solid #ccc;
+    line-height: 1.5;    
     border-bottom: 1px solid #ccc;
-  	margin : 20px 10px;
-  	padding-top: 5%;
+  	margin : 20px 10px;  	
   	padding-bottom: 5%;
 }
 .type04 th {
@@ -93,4 +91,37 @@ h2 {
 	background-color: rgba(0,0,0,0);
 	color: pink;
 }
+
+.addbtn {
+	width: 100%;
+	height: 50px;
+}
+
+.addForm{
+	align-content: center;
+	margin-top:4%;
+	margin-left:30%;
+	margin-right:30%;
+	margin-bottom:6%;
+
+}
+
+.addDiv {
+	background: skyblue;
+	text-align: center;
+	align-items: center;
+	border: 1px solid #000;	
+}
+
+.addTable {
+	align-content: center;
+	width: 100%;
+}
+
+.addInput {
+	width: 100%;
+}
+
+
+
 /* --------------------------------------------------------------------- */

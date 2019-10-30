@@ -1,11 +1,6 @@
 package itc.hoseo.soolfarm.controller;
 
-import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import itc.hoseo.soolfarm.goods.GoodsService;
+import itc.hoseo.soolfarm.model.GoodsVO;
 import itc.hoseo.soolfarm.model.ShoppingCartVO;
 import itc.hoseo.soolfarm.shoppingCart.ShoppingCartService;
 import lombok.extern.slf4j.Slf4j;
@@ -36,11 +32,13 @@ public class ProductController {
 		return "product/product";
 	}
 	
-	@GetMapping("about")
-	public String productDetail2(ModelMap model) {
-		model.put("prod", proService.getGoods());
-		return "product/productDetail";
-	}
+	// 상품 등록
+		@GetMapping("addProduct")
+		public String addProduct(@ModelAttribute GoodsVO vo, ModelMap model) {
+			
+			
+			return "admin/addProduct";
+		}
 	
 	// 상품 정보 페이지 
 	@GetMapping("detail")
@@ -80,5 +78,7 @@ public class ProductController {
 		return "product/shoppingCart";
 //		return "redirect:/shoppingCart?sbUser=" + vo.getSbUser();
 	}
+	
+	
 
 }

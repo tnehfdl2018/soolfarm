@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>상품 수정</title>
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+<!--===============================================================================================-->
+
+<link th:href="@{vendor/fontawesome-free/css/all.min.css}"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300&display=swap" rel="stylesheet">
+<link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Teko:300&display=swap&subset=devanagari,latin-ext" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+<!-- Custom styles for this template-->
+<link th:href="@{css/sb-admin-2.min.css}" rel="stylesheet">
+<link th:href="@{css/sewAddProd.css}" rel="stylesheet">
+<link rel="icon" th:href="@{img/logo/favicon.png}">
+</head>
+<body>
+
+
+	<!-- Header section -->
+	<div th:replace="~{header :: header}"></div>
+	<!-- Header section end -->
+	
+	
+	
+	<div id="sewAddProdContainer">				
+		<form id="sewAddProdForm" name="sewAddProdForm" method="post" action="addProd.do" enctype="multipart/form-data">
+			<table>
+				<tbody>
+					<tr>
+						<th scope="row">
+							상품 명
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodName">
+						</td>									
+					</tr>
+					<tr>
+						<th scope="row">
+							이미지
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="file" name="files1">										
+						</td>							
+					</tr>				
+					<tr>
+						<th scope="row">
+							종류
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodName">									
+						</td>									
+					</tr>
+					<tr id="topCat" style="display: none">
+						<th scope="row">
+							가격
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodName">
+						</td>									
+					</tr>
+					<tr id="botCat" style="display: none">
+						<th scope="row">
+							제조사
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodName">
+						</td>									
+					</tr>
+					<tr>
+						<th scope="row">
+							도수
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodListP" numberOnly>
+						</td>									
+					</tr>
+					<tr>
+						<th scope="row">
+							용량
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodPrice" numberOnly>
+						</td>									
+					</tr>
+					<tr>
+						<th scope="row">
+							출시일
+						</th>
+					<td>
+							<input class="form-control" id="addProdName" type="date" name="prodDeli" numberOnly>
+						</td>									
+					</tr>
+					<tr>
+						<th scope="row">
+							재고
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodCode">
+						</td>									
+					</tr>
+					<tr>
+						<th scope="row">
+							설명
+						</th>
+						<td>
+							<input class="form-control" id="addProdName" type="text" name="prodOrigin">
+						</td>									
+					</tr>
+				</tbody>
+			</table>
+			<div class="buttonsBox" style="margin-top: 1.5rem !important;">
+				<input type="submit" id="addProdSubmit" value="등록하기">
+				<input type="button" name="cancel" value="취소" onclick="location.href='/management.do'">							
+			</div>						
+		</form>
+	</div>
+				<!-- /.container-fluid -->
+
+	<!-- footer section -->
+	<div th:replace="~{footer :: footer}"></div>
+	<!-- footer section end -->
+	
+	<!-- Bootstrap core JavaScript-->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script th:src="@{vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script th:src="@{js/sb-admin-2.min.js}"></script>
+
+	<!-- Page level plugins -->
+	<script th:src="@{vendor/chart.js/Chart.min.js}"></script>
+
+	<!-- Page level custom scripts -->
+	<script th:src="@{js/demo/chart-area-demo.js}"></script>
+	<script th:src="@{js/demo/chart-pie-demo.js}"></script>
+	<script th:src="@{js/sewAddProd.js}"></script>
+	
+	<script type="text/javascript">
+		$("form").submit(function(e){
+			e.preventDefault();
+			var prodName = document.sewAddProdForm.prodName.value;			
+			var prodGen = document.sewAddProdForm.prodGen.value;
+			var prodType = document.sewAddProdForm.prodType.value;
+			var prodCat = document.sewAddProdForm.prodCat.value;
+			var prodMsize = document.sewAddProdForm.prodMsize.value;  
+			var prodLsize = document.sewAddProdForm.prodLsize.value;
+			var prodXLsize = document.sewAddProdForm.prodXLsize.value;
+			var prodListP = document.sewAddProdForm.prodListP.value;
+			var prodPrice = document.sewAddProdForm.prodPrice.value;
+			var prodDeli = document.sewAddProdForm.prodDeli.value;
+			var prodOrigin = document.sewAddProdForm.prodOrigin.value;
+			var file1 = document.sewAddProdForm.file1.value;
+			var file2 = document.sewAddProdForm.file2.value;		
+			
+			if (prodGen!="none" && prodType!="none" && prodCat!="none" &&
+				prodName!="" && prodMsize!="" && prodLsize!="" && prodXLsize!="" &&
+				prodListP!="" && prodPrice!="" && prodDeli!="" && prodOrigin!="" &&
+				file1!="" && file2!=""){
+				$("form").unbind("submit").submit();
+			}
+		}
+	</script>
+	
+</body>
+</html>

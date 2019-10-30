@@ -45,6 +45,10 @@
 	<!-- Header section end -->
 	
 
+	<form action="addProduct" method="get">
+		<button class = "btns addbtn" type="submit">추가</button>
+	</form>
+	
 	<table class="type04">
 	    <tr>
 	        <th scope="row">제품 코드</th>
@@ -57,7 +61,7 @@
 	        <th>재고</th>
 	        <th>출시일</th>
 	        <th>설명</th>	
-	        <th>수정</th>      
+	        <th>수정 및 삭제</th>      
 	    </tr>
 	    
 	     <tr th:each = "proList : ${pro}">
