@@ -21,7 +21,7 @@
 	</h2>
 	
 	
-	<form class="form" method="get" action="main">			
+			
 		<p class="alert">
 			<em>19</em>홈페이지는 만 19세 이상만 이용이 가능합니다. <span>생년월일</span>을 입력해주세요.
 		</p>
@@ -180,14 +180,16 @@
 			</div> -->
 			
 		<div class="submit">
-			<button type="submit" id="enter_btn" onclick="check_for_enter">입장하기</button>
+			<button type="submit" id="enter_btn" onclick="check_for_enter(this)">입장하기</button>
 		</div>		
-	</form>	
+
 
 </aside>
 
 
 <!-- ////////////////////////////////////////////////////////////////// -->
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 /* id="brand_age_check_year" onchange="changedyear" */
 /* <select id="brand_age_check_month" onchange="changedMonth()"> */
@@ -202,34 +204,38 @@ function changedYear() {
 
 function changedMonth() {
 	var selectMonth = document.getElementById("brand_age_check_month");
-	month = selectYear.options[selectYear.selectedIndex].value;	
+	month = selectMonth.options[selectMonth.selectedIndex].value;	
 }
 
 function changedDay() {	
 	var selectDay = document.getElementById("brand_age_check_date");
-	day = selectYear.options[selectYear.selectedIndex].value;
+	day = selectDay.options[selectDay.selectedIndex].value;
 }
 
-function check_for_enter() {
+function check_for_enter(self) {
 	var date = new Date();
 	
-	var button = document.getElementById("enter_btn");
 	
 	var n_year = date.getFullYear();
-	var n_month = date.getMonth();
+	var n_month = date.getMonth() + 1;
 	var n_day = date.getDate();
 	
 	if((n_year-year) < 19){
-		alert("만 19세 이상만 이용이 가능합니다.");
-		button.disabled = 'disabled';
+		alert("만 19세 이상만 이용이 가능합니다." + (n_year-year) );
+		
 	}else if (n_month < month){
-		alert("만 19세 이상만 이용이 가능합니다.");
-		button.disabled = 'disabled';
-	}else if (n_day < day){
-		alert("만 19세 이상만 이용이 가능합니다.");
-		button.disabled = 'disabled';
+			alert("만 19세 이상만 이용이 가능합니다.");
+	}
+	
+	if (n_month == month){		
+		if (n_day < day){
+			alert("만 19세 이상만 이용이 가능합니다.");
+		}else{
+			alert("만 19세 이상만 이용이 가능합니다.");
+		}
+	
 	}else{
-		button.disabled = false;
+		$(location).attr("href", "/main");
 	}
 }
 

@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title>MyPage</title>
 
-<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/common.min.css" type="text/css">
-<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/side.css" type="text/css">
-<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/list.css" type="text/css">
-<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/ddp.css" type="text/css">
-<link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/productReview.min.css" type="text/css">
+<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/common.min.css" type="text/css"> -->
+<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/side.css" type="text/css"> -->
+<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/list.css" type="text/css"> -->
+<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/ddp.css" type="text/css"> -->
+<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/productReview.min.css" type="text/css"> -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" type="text/css" href="css/myPage.css">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
@@ -45,141 +46,219 @@
 
 <body>
 
-<!-- Header section -->
+	<!-- Header section -->
 	<div th:replace="~{header :: header}"></div>
 	<!-- Header section end -->
 	
-	<div class="member-container  page-modify page-modify-index env-production" data-controller="modify" data-log-pack="{ &quot;isMobile&quot;:false }"> 
-		<section class="usermodify" >
-			<h1 class="usermodify-title">회원정보 수정</h1>
-			<div class="usermodify-sub-option">
-				<form class="usermodify-util-form"
-					action="/login/showPersonalInformationUseHistory.pang" method="get">
-					<button type="submit" class="usermodify-util-button">개인정보 이용내역 보기 &gt;</button>
-				</form>
-			</div>
-
-			<form name="userModifyForm" id="userModifyForm">
-				<input type="hidden" id="confirmTicket" name="confirmTicket"
-					value="j3cGP2TNhlAAcqRih17RlOxtLdCZKoi65yBlNHJrCAM=">
-				<input type="hidden" id="successMessage" name="successMessage" value="">
-			</form>
-			<!-- th:each = "member : ${reset}"
-			th:text="${member.getEmail()}" -->
-			<table class="usermodify-table" th:each = "member : ${reset}">
-				<tbody>
-					<tr>
-						<th scope="row">아이디(이메일)</th>
-						<td>
-							<div class="usermodify-email">
-								<input type="hidden" id="originEmail" value="tnehfdl2011@gmail.com">
-								<input type="hidden" id="regEmail" value="tnehfdl2011@gmail.com">
-									<input type="hidden" id="emailDupCheck" value="N">
-									<input type="hidden" id="changeEmail" value="">
-									<strong class="usermodify-email-current-mail" th:text="${member.getEmail()}"></strong>
-								<button type="button" class="usermodify-email-change-btn">이메일 변경</button>
-
-									<div class="usermodify-email-change-done-foot resetting-btn">
-										<button type="button"
-											class="usermodify-email-change-done-cancel">이메일 변경취소</button>
-										<button type="button" class="usermodify-email-change-resend">인증메일
-											재전송</button>
-									</div>								
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">이름</th>
-						<td><div class="usermodify-name">
-								<span class="usermodify-name-name" th:text="${member.getName()}">이룸</span>
-								
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">휴대폰 번호</th>
-						<td>
-							<div class="usermodify-phone">
-								<input type="hidden" id="originPhoneNumber" value="01020421992">
-								<strong class="usermodify-phone-current-number" th:text = "${member.getTel()}">01020421992</strong>
-								<button type="button" class="usermodify-phone-change">휴대폰
-									번호 변경</button>
+	
+	<!-- right_cm -->
+	<div class="right_cm">
+		<section>
+			<h4><i class='far fa-edit' style='font-size:36px;'></i>내 정보수정</h4>
+			<div class="right_cm_cont">
+					<!-- 서브컨텐츠 -->
+					<!-- 내 정보수정 -->
+				<div class="table_wrap mT25">
+					<p class="table_title mB10">개인정보 변경<span class="mL10 cl2a2a2a fs13">회원님의 개인정보 보호를 위해 주기적으로 비밀번호를 변경해 주세요.</span></p>
+					<table summary="내 정보수정-패스워드 변경" class="table_edit border-top-2" th:each = "member : ${reset}">
+						<caption></caption>
+						<colgroup>
+							<col width="224">
+							<col width="/">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>아이디</th>
+								<td th:text="${member.getEmail()}"></td>
+							</tr>
+							
+							<tr>
+								<th>이름</th>
+								<td th:text="${member.getName()}"></td>
+							</tr>
+							
+							<tr>
+								<th>현재 비밀번호</th>
+								<td><input type="password" class="t_input" style="width:226px" title="현재 비밀번호를 입력하세요." id="signPwd" name="signPwd" maxlength="20" onkeydown="onKeyDown();" onpaste="return false;" oncopy="return false;"></td>
+							</tr>
+							<tr>
+								<th>새 비밀번호</th>
+								<td><input type="password" class="t_input" style="width:226px" title="6~20자 영문, 숫자, 특수문자만 사용 가능합니다." id="signPwdNew" name="signPwdNew" maxlength="20" onkeydown="onKeyDown();" onpaste="return false;" oncopy="return false;"></td>
+							</tr>
+							<tr>
+								<th>새 비밀번호 확인</th>
+								<td><input type="password" class="t_input" style="width:226px" title="비밀번호를 한번 더 입력해 주세요." id="signPwdChk" name="signPwdChk" maxlength="20" onkeydown="onKeyDown();" onpaste="return false;" oncopy="return false;"><!--span class="mL10 fs12">비밀번호는 4~20자의 영문, 숫자를 혼합하여 사용</span--></td>
+							</tr>	
+													
+							<tr>
+							<th>휴대폰 번호</th>
+								<td><input type="text" class="t_input" id="cell_number" name="cell_number" maxlength="11" placeholder="[-]없이 숫자로 입력해 주세요." style="width:226px" title="휴대폰 번호를 [-]없이 숫자로 입력해 주세요."><input type="button" value="인증번호발송" class="btn_basic btn_sm mL10" id="btn_smsSend"></td>
+							</tr>							
+							<tr>
+								<th>인증 번호</th>
+								<td><input type="password" class="t_input" style="width:226px" id="cert_number" name="cert_number" maxlength="6" placeholder="발송된 인증번호를 입력해 주세요." title="발송된 인증번호를 입력해 주세요."></td>
+							</tr>
+							
+							<tr>
+								<th>가입일</th>
+								<td th:text="${#dates.format(member.getJoinDate(),'yyyy-MM-dd hh-mm')}"></td>
+							</tr>		
+												
+							<tr>
+								<th>주소</th>
+								<td>
+								<span class="fb" th:text = "${member.getAddress()}"></span>
+								<input type="button" value="변경하기" class="btn_basic btn_sm mL20" onclick="javascript:location.href='/event/birthday/birth_main.asp'">
+							</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="tac mT30">
+						<input type="button" value="변경하기" class="btn_basic fs14" id="btn_changeData">
+					</div>
+				</div>
+					<!-- /내 정보수정 -->
 					
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">비밀번호변경</th>
-						<td>
-							<div class="usermodify-password">
-								<table>
-									<tbody>
-										<tr>
-											<td colspan="2">
-												<div class="usermodify-password-notice">
-													비밀번호는 6~15자 이내로 영문 (대문자,소문자), 숫자, 특수 문자 3가지 조합중 2가지 이상을
-													조합하셔서 작성하시면 됩니다.<br>단, 3가지 모두를 조합하실 경우 더욱 강력한 패스워드 구현이
-													가능합니다.
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th>현재 비밀번호</th>
-											<td><input type="password" class="usermodify-password-currentpassword-tf"></td>
-										</tr>
-										<tr>
-											<th>신규 비밀번호</th>
-											<td><input type="password" class="usermodify-password-newpassword-tf"></td>
-										</tr>
-										<tr>
-											<th>비밀번호 다시 입력</th>
-											<td><input type="password" class="usermodify-password-newpassword-confirm-tf"></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>
-												<div class="form-err usermodify-password-err-msg"></div>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>
-												<button type="button" class="usermodify-password-submit">비밀번호
-													변경</button>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">배송지</th>
-						<td>
-							<div class="usermodify-name">
-								<span class="usermodify-name-name" th:text = "${member.getAddress()}">현재 배송지</span>
-								<button type="button" class="usermodify-name-changename-btn">
-									배송지 변경
-								</button>
-							</div>
-						</td>
-					</tr>
-					
-				</tbody>
-			</table>
-			<div class="usermodify-secession">
-				탈퇴를 원하시면 우측의 회원탈퇴 버튼을 눌러주세요. <a class="usermodify-secession-btn"
-					href="secession.pang">회원탈퇴</a>
-			</div>
-			<div class="usermodify-foot">
-				<button type="button" class="usermodify-cancel">나가기</button>
+				
 			</div>
 		</section>
 	</div>
-	
+			
 	<!-- footer section -->
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- footer section end -->
+	
+<!-- 	<div class="member-container  page-modify page-modify-index env-production" data-controller="modify" data-log-pack="{ &quot;isMobile&quot;:false }">  -->
+<!-- 		<section class="usermodify" > -->
+<!-- 			<h1 class="usermodify-title">회원정보 수정</h1> -->
+<!-- 			<div class="usermodify-sub-option"> -->
+<!-- 				<form class="usermodify-util-form" -->
+<!-- 					action="/login/showPersonalInformationUseHistory.pang" method="get"> -->
+<!-- 					<button type="submit" class="usermodify-util-button">개인정보 이용내역 보기 &gt;</button> -->
+<!-- 				</form> -->
+<!-- 			</div> -->
+
+<!-- 			<form name="userModifyForm" id="userModifyForm"> -->
+<!-- 				<input type="hidden" id="confirmTicket" name="confirmTicket" -->
+<!-- 					value="j3cGP2TNhlAAcqRih17RlOxtLdCZKoi65yBlNHJrCAM="> -->
+<!-- 				<input type="hidden" id="successMessage" name="successMessage" value=""> -->
+<!-- 			</form> -->
+<!-- 			<!-- th:each = "member : ${reset}" -->
+<!-- 			th:text="${member.getEmail()}" -->
+<!-- 			<table class="usermodify-table" th:each = "member : ${reset}"> -->
+<!-- 				<tbody> -->
+<!-- 					<tr> -->
+<!-- 						<th scope="row">아이디(이메일)</th> -->
+<!-- 						<td> -->
+<!-- 							<div class="usermodify-email"> -->
+<!-- 								<input type="hidden" id="originEmail" value="tnehfdl2011@gmail.com"> -->
+<!-- 								<input type="hidden" id="regEmail" value="tnehfdl2011@gmail.com"> -->
+<!-- 									<input type="hidden" id="emailDupCheck" value="N"> -->
+<!-- 									<input type="hidden" id="changeEmail" value=""> -->
+<!-- 									<strong class="usermodify-email-current-mail" th:text="${member.getEmail()}"></strong> -->
+<!-- 								<button type="button" class="usermodify-email-change-btn">이메일 변경</button> -->
+
+<!-- 									<div class="usermodify-email-change-done-foot resetting-btn"> -->
+<!-- 										<button type="button" -->
+<!-- 											class="usermodify-email-change-done-cancel">이메일 변경취소</button> -->
+<!-- 										<button type="button" class="usermodify-email-change-resend">인증메일 -->
+<!-- 											재전송</button> -->
+<!-- 									</div>								 -->
+<!-- 							</div> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<th scope="row">이름</th> -->
+<!-- 						<td><div class="usermodify-name"> -->
+<!-- 								<span class="usermodify-name-name" th:text="${member.getName()}">이룸</span> -->
+								
+<!-- 							</div> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<th scope="row">휴대폰 번호</th> -->
+<!-- 						<td> -->
+<!-- 							<div class="usermodify-phone"> -->
+<!-- 								<input type="hidden" id="originPhoneNumber" value="01020421992"> -->
+<!-- 								<strong class="usermodify-phone-current-number" th:text = "${member.getTel()}">01020421992</strong> -->
+<!-- 								<button type="button" class="usermodify-phone-change">휴대폰 -->
+<!-- 									번호 변경</button> -->
+					
+<!-- 							</div> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<th scope="row">비밀번호변경</th> -->
+<!-- 						<td> -->
+<!-- 							<div class="usermodify-password"> -->
+<!-- 								<table> -->
+<!-- 									<tbody> -->
+<!-- 										<tr> -->
+<!-- 											<td colspan="2"> -->
+<!-- 												<div class="usermodify-password-notice"> -->
+<!-- 													비밀번호는 6~15자 이내로 영문 (대문자,소문자), 숫자, 특수 문자 3가지 조합중 2가지 이상을 -->
+<!-- 													조합하셔서 작성하시면 됩니다.<br>단, 3가지 모두를 조합하실 경우 더욱 강력한 패스워드 구현이 -->
+<!-- 													가능합니다. -->
+<!-- 												</div> -->
+<!-- 											</td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>현재 비밀번호</th> -->
+<!-- 											<td><input type="password" class="usermodify-password-currentpassword-tf"></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>신규 비밀번호</th> -->
+<!-- 											<td><input type="password" class="usermodify-password-newpassword-tf"></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<th>비밀번호 다시 입력</th> -->
+<!-- 											<td><input type="password" class="usermodify-password-newpassword-confirm-tf"></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<td></td> -->
+<!-- 											<td> -->
+<!-- 												<div class="form-err usermodify-password-err-msg"></div> -->
+<!-- 											</td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<td></td> -->
+<!-- 											<td> -->
+<!-- 												<button type="button" class="usermodify-password-submit">비밀번호 -->
+<!-- 													변경</button> -->
+<!-- 											</td> -->
+<!-- 										</tr> -->
+<!-- 									</tbody> -->
+<!-- 								</table> -->
+<!-- 							</div> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<th scope="row">배송지</th> -->
+<!-- 						<td> -->
+<!-- 							<div class="usermodify-name"> -->
+<!-- 								<span class="usermodify-name-name" th:text = "${member.getAddress()}">현재 배송지</span> -->
+<!-- 								<button type="button" class="usermodify-name-changename-btn"> -->
+<!-- 									배송지 변경 -->
+<!-- 								</button> -->
+<!-- 							</div> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
+					
+<!-- 				</tbody> -->
+<!-- 			</table> -->
+<!-- 			<div class="usermodify-secession"> -->
+<!-- 				탈퇴를 원하시면 우측의 회원탈퇴 버튼을 눌러주세요. <a class="usermodify-secession-btn" -->
+<!-- 					href="secession.pang">회원탈퇴</a> -->
+<!-- 			</div> -->
+<!-- 			<div class="usermodify-foot"> -->
+<!-- 				<button type="button" class="usermodify-cancel">나가기</button> -->
+<!-- 			</div> -->
+<!-- 		</section> -->
+<!-- 	</div> -->
+
+
+	
+	
 	
 	
 	<!--===============================================================================================-->	

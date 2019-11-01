@@ -45,8 +45,9 @@
 	<!-- Header section end -->
 	
 
-	<form action="addProduct" method="get">
-		<button class = "btns addbtn" type="submit">추가</button>
+	<form action="addProduct" method="get" class="top_btns">
+		<button class = "btns top" type="submit">상품 추가</button>
+		<button class = "btns top" type="button" onclick="back_onclick()">뒤로가기</button>
 	</form>
 	
 	<table class="type04">
@@ -65,7 +66,7 @@
 	    </tr>
 	    
 	     <tr th:each = "proList : ${pro}">
-	        <td scope="row"  th:text = "${proList.getGdNum()}"></td>
+	        <td scope="row" class="number" th:text = "${proList.getGdNum()}"></td>
 	        <td class="imgTd"><img width="130px" height="150px" th:src="@{'img/goods/' + ${proList.getGdImg()}}" alt="IMG-PRODUCT"></td>
 	        <td th:text = "${proList.getGdName()}"></td>
 	        <td th:text = "${#numbers.formatInteger(proList.getGdPrice(),3,'COMMA')} + '원'"></td>
@@ -75,7 +76,12 @@
 	        <td th:text = "${proList.getGdStock()} + '병'"></td>
 	        <td th:text = "${#dates.format(proList.getGdStartDay(), 'yyyy-MM-dd')}"></td>
 	        <td th:text = "${proList.getGdDiscription()}"></td>	  
-	        <td><a><button class = "btns">수정</button></a><a><button class = "btns">삭제</button></a></td>
+	        <td>
+	        	<a href = "prodModify">
+	        		<button class = "btns">수정</button>
+        		</a>
+       			<button class = "btns" onclick="proDelete(this)">삭제</button>
+     		</td>
 	    </tr>
     </table>
 	
@@ -83,6 +89,22 @@
 	<!-- footer section -->
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- footer section end -->
+	
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function back_onclick(){
+			history.back();
+		}
+	
+	</script>
+	
+	<script type="text/javascript">
+		function proDelete(self){
+			var gdNum = $(self).parent('td').parent('tr').children('.number').text();
+			$(location).attr("href", "/prodDelete?gdNum="+gdNum);
+		}
+	
+	</script>
 	
 </body>
 </html>

@@ -18,9 +18,9 @@ public class GoodsServiceImpl implements GoodsService{
 
 	// 상품 추가
 	@Override
-	public int addProduct(GoodsVO vo) {
+	public boolean addProduct(GoodsVO vo) {
 		
-		return dao.addProduct(vo);
+		return dao.addProduct(vo)? true:false;
 	}
 
 	// 상품 수정
@@ -32,9 +32,9 @@ public class GoodsServiceImpl implements GoodsService{
 
 	// 상품 삭제
 	@Override
-	public GoodsVO deleteGoods(int goodsNum) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean deleteGoods(int gdNum) {
+		
+		return dao.deleteGoods(gdNum)? true:false;
 	}
 
 	// 상품 조회

@@ -3,7 +3,7 @@
 <mapper namespace="itc.hoseo.soolfarm.goods.GoodsDAO">
 
 	<insert id="addProduct" parameterType="GoodsVO">
-		INSERT INTO GOODS (gd_name, gd_name, gd_img, gd_kinds, gd_price, gd_maker, gd_alcohol, gd_vol, gd_startDay, gd_stock, gd_discription) VALUES(#{gdName}, #{gdImg}, #{gdKinds}, #{gdPrice}, #{gdMaker}, #{gdAlcohol}, #{gdVol}, #{gdStartDay}, #{gdStock}, #{gdDiscription})
+		INSERT INTO GOODS (gd_name, gd_img, gd_kinds, gd_price, gd_maker, gd_alcohol, gd_vol, gd_startDay, gd_stock, gd_discription) VALUES(#{gdName}, #{gdImg}, #{gdKinds}, #{gdPrice}, #{gdMaker}, #{gdAlcohol}, #{gdVol}, #{gdStartDay}, #{gdStock}, #{gdDiscription})
 	</insert>
 
 

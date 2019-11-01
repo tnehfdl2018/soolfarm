@@ -33,12 +33,25 @@ public class ProductController {
 	}
 	
 	// 상품 등록
-		@GetMapping("addProduct")
-		public String addProduct(@ModelAttribute GoodsVO vo, ModelMap model) {
+		@PostMapping("addPro")
+		public String addProduct(@ModelAttribute GoodsVO vo) {
 			
-			
-			return "admin/addProduct";
+			if(proService.addProduct(vo)) {
+				
+				return "admin/productRegistration";
+			}
+			return "admin/addProduct";			
 		}
+		
+	// 상품 삭제
+		@GetMapping("prodDelete")
+		public String productDelete(@RequestParam(value = "gdNum") int gdNum) {
+			
+			proService.deleteGoods(gdNum);
+			
+			return "redirect:/productRegistration";
+		}
+		
 	
 	// 상품 정보 페이지 
 	@GetMapping("detail")

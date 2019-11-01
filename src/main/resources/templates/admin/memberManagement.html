@@ -57,34 +57,49 @@
 	 <!-- th:each="goods : ${prod}"
 	 th:text="${goods.getGdName()}" -->
 
-
-	<table class="type04">
-		<thead class="thead">
-			<tr>
-		        <th>회원번호</th>
-		        <th>아이디</th>
-		        <th>이름</th>
-		        <th>전화번호</th>
-		        <th>주소</th>
-		        <th>가입일</th>
-	        </tr>
-		</thead>
-		
-	    <tbody>	    
-		    <tr th:each="member : ${memberList}">
-		    	<td th:text = "${member.getNum()}"></td>
-		        <td th:text= "${member.getEmail()}" ></td>		        
-		        <td th:text = "${member.getName()}"></td>
-		        <td th:text = "${member.getTel()}"></td>
-		        <td th:text = "${member.getAddress()}"></td>
-		        <td th:text = "${#dates.format(member.getJoinDate(), 'yyyy-MM-dd')}"></td>
-		    </tr>
-	    </tbody>
-    </table>
-	
+		<table class="type04">
+			<thead class="thead">
+				<tr>
+			        <th>회원번호</th>
+			        <th>아이디</th>
+			        <th>이름</th>
+			        <th>전화번호</th>
+			        <th>주소</th>
+			        <th>가입일</th>
+		        </tr>
+			</thead>
+			
+		    <tbody>	    
+			    <tr th:each="member : ${memberList}">
+			    	<td th:text = "${member.getNum()}"></td>
+			        <td th:text= "${member.getEmail()}" ></td>		        
+			        <td th:text = "${member.getName()}"></td>
+			        <td th:text = "${member.getTel()}"></td>
+			        <td th:text = "${member.getAddress()}"></td>
+			        <td th:text = "${#dates.format(member.getJoinDate(), 'yyyy-MM-dd')}"></td>
+			    </tr>
+			    <tr>
+			    	<td></td>
+			    	<td></td>
+			 		<td></td>
+			 		<td></td>
+			 		<td></td>
+			    	<td><button type="button" onclick="back_onclick()">뒤로가기</button></td>
+			    </tr>
+		    </tbody>
+	    </table>
 	
 	<!-- footer section -->
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- footer section end -->
+	
+	
+	<!-- 뒤로가기 -->
+<script type="text/javascript">
+	function back_onclick(){
+		history.back();
+	}
+	
+</script>
 </body>
 </html>

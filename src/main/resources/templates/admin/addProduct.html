@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>상품 수정</title>
+<title>상품 추가</title>
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -35,17 +35,10 @@
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
 <!--===============================================================================================-->
 
-<link th:href="@{vendor/fontawesome-free/css/all.min.css}"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700"
-	rel="stylesheet">
+<link th:href="@{vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300&display=swap" rel="stylesheet">
 <link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300&display=swap" rel="stylesheet">
@@ -66,7 +59,7 @@
 	
 	
 	<div id="sewAddProdContainer">				
-		<form id="sewAddProdForm" name="sewAddProdForm" method="post" action="addProd.do" enctype="multipart/form-data">
+		<form id="sewAddProdForm" name="sewAddProdForm" method="post" action="addPro" enctype="multipart/form-data">
 			<table>
 				<tbody>
 					<tr>
@@ -74,7 +67,7 @@
 							상품 명
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodName">
+							<input class="form-control" id="addProdName" type="text" name="gdName">
 						</td>									
 					</tr>
 					<tr>
@@ -82,7 +75,7 @@
 							이미지
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="file" name="files1">										
+							<input class="form-control" id="addProdName" type="file" name="gdImg">										
 						</td>							
 					</tr>				
 					<tr>
@@ -90,23 +83,23 @@
 							종류
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodName">									
+							<input class="form-control" id="addProdName" type="text" name="gdKinds">									
 						</td>									
 					</tr>
-					<tr id="topCat" style="display: none">
+					<tr>
 						<th scope="row">
 							가격
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodName">
+							<input class="form-control" id="addProdName" type="number" name="gdPrice">
 						</td>									
 					</tr>
-					<tr id="botCat" style="display: none">
+					<tr>
 						<th scope="row">
 							제조사
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodName">
+							<input class="form-control" id="addProdName" type="text" name="gdMaker">
 						</td>									
 					</tr>
 					<tr>
@@ -114,7 +107,7 @@
 							도수
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodListP" numberOnly>
+							<input class="form-control" id="addProdName" type="number" name="gdAlcohol">
 						</td>									
 					</tr>
 					<tr>
@@ -122,7 +115,7 @@
 							용량
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodPrice" numberOnly>
+							<input class="form-control" id="addProdName" type="number" name="gdVol">
 						</td>									
 					</tr>
 					<tr>
@@ -130,7 +123,7 @@
 							출시일
 						</th>
 					<td>
-							<input class="form-control" id="addProdName" type="date" name="prodDeli" numberOnly>
+							<input class="form-control" id="addProdName" type="date" name="gdStartDay">
 						</td>									
 					</tr>
 					<tr>
@@ -138,7 +131,7 @@
 							재고
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodCode">
+							<input class="form-control" id="addProdName" type="number" name="gdStock">
 						</td>									
 					</tr>
 					<tr>
@@ -146,15 +139,16 @@
 							설명
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="prodOrigin">
+							<input class="form-control" id="addProdName" type="text" name="gdDiscription">
 						</td>									
 					</tr>
 				</tbody>
 			</table>
-			<div class="buttonsBox" style="margin-top: 1.5rem !important;">
-				<input type="submit" id="addProdSubmit" value="등록하기">
-				<input type="button" name="cancel" value="취소" onclick="location.href='/management.do'">							
-			</div>						
+			
+			
+				<button type="submit" id="addProdSubmit" value="등록하기"> 등록 </button>
+				<button type="button" name="cancel" value="취소"> 취소 </button>							
+								
 		</form>
 	</div>
 				<!-- /.container-fluid -->
@@ -180,32 +174,6 @@
 	<script th:src="@{js/demo/chart-area-demo.js}"></script>
 	<script th:src="@{js/demo/chart-pie-demo.js}"></script>
 	<script th:src="@{js/sewAddProd.js}"></script>
-	
-	<script type="text/javascript">
-		$("form").submit(function(e){
-			e.preventDefault();
-			var prodName = document.sewAddProdForm.prodName.value;			
-			var prodGen = document.sewAddProdForm.prodGen.value;
-			var prodType = document.sewAddProdForm.prodType.value;
-			var prodCat = document.sewAddProdForm.prodCat.value;
-			var prodMsize = document.sewAddProdForm.prodMsize.value;  
-			var prodLsize = document.sewAddProdForm.prodLsize.value;
-			var prodXLsize = document.sewAddProdForm.prodXLsize.value;
-			var prodListP = document.sewAddProdForm.prodListP.value;
-			var prodPrice = document.sewAddProdForm.prodPrice.value;
-			var prodDeli = document.sewAddProdForm.prodDeli.value;
-			var prodOrigin = document.sewAddProdForm.prodOrigin.value;
-			var file1 = document.sewAddProdForm.file1.value;
-			var file2 = document.sewAddProdForm.file2.value;		
-			
-			if (prodGen!="none" && prodType!="none" && prodCat!="none" &&
-				prodName!="" && prodMsize!="" && prodLsize!="" && prodXLsize!="" &&
-				prodListP!="" && prodPrice!="" && prodDeli!="" && prodOrigin!="" &&
-				file1!="" && file2!=""){
-				$("form").unbind("submit").submit();
-			}
-		}
-	</script>
 	
 </body>
 </html>

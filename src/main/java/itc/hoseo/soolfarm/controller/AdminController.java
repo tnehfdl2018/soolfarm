@@ -39,5 +39,9 @@ public class AdminController {
 		return "admin/memberManagement";
 	}
 	
+	@GetMapping("addProduct")
+	public String addProduct() {
+		return "admin/addProduct";
+	}
 	
 }
