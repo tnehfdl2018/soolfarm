@@ -59,7 +59,7 @@ public class ProductController {
 		if (proService.addProduct(vo)) {
 			return "admin/productRegistration";
 		}
-		return "admin/addProduct";
+		return "admin/productRegistration";
 	}
 
 	// 상품 삭제

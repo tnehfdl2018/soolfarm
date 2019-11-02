@@ -34,7 +34,10 @@ Paragrap        : 18px/1.6 '', Arial, sans-serif;
 Input, textarea : 14px/1.6 '', Arial, sans-serif;
 -------------------------------------------------------------------*/
 
-
+.sized {
+	width: 261px;
+	height: 324px;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
@@ -3588,4 +3591,6 @@ input.num-product::-webkit-inner-spin-button {
     padding: 100px 15px 33px 15px;
   }
 }
+
+
 
