@@ -32,22 +32,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="css/addAndModi.css">
 <!--===============================================================================================-->
-
-<link th:href="@{vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300&display=swap" rel="stylesheet">
-<link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Teko:300&display=swap&subset=devanagari,latin-ext" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
-<!-- Custom styles for this template-->
-<link th:href="@{css/sb-admin-2.min.css}" rel="stylesheet">
-<link th:href="@{css/sewAddProd.css}" rel="stylesheet">
-<link rel="icon" th:href="@{img/logo/favicon.png}">
 </head>
 <body>
 
@@ -58,8 +44,9 @@
 	
 	
 	
-	<div id="sewAddProdContainer">				
-		<form id="sewAddProdForm" name="sewAddProdForm" method="post" action="addPro" enctype="multipart/form-data">
+	<div id="sewAddProdContainer" class="mainFrame">
+		<h2>상품 추가</h2>				
+		<form class="mainForm" id="sewAddProdForm" name="sewAddProdForm" method="post" action="addPro" enctype="multipart/form-data">
 			<table>
 				<tbody>
 					<tr>
@@ -83,15 +70,21 @@
 							종류
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="text" name="gdKinds">									
+							<select class="form-control" name="gdKinds">
+								<option>소주</option>
+								<option>맥주</option>
+								<option>전통주</option>
+								<option>양주</option>
+							</select>
+<!-- 							<input class="form-control" id="addProdName" type="text" name="gdKinds" placeholder="소주 / 맥주 / 전통주 / 양주">									 -->
 						</td>									
 					</tr>
 					<tr>
 						<th scope="row">
 							가격
 						</th>
-						<td>
-							<input class="form-control" id="addProdName" type="number" name="gdPrice">
+						<td>							
+							<input class="form-control" id="addProdName" type="number" name="gdPrice" placeholder="숫자만 입력하세요.">
 						</td>									
 					</tr>
 					<tr>
@@ -107,7 +100,7 @@
 							도수
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="number" name="gdAlcohol">
+							<input class="form-control" id="addProdName" type="number" name="gdAlcohol" placeholder="숫자만 입력하세요.">
 						</td>									
 					</tr>
 					<tr>
@@ -115,7 +108,7 @@
 							용량
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="number" name="gdVol">
+							<input class="form-control" id="addProdName" type="number" name="gdVol" placeholder="숫자만 입력하세요.">
 						</td>									
 					</tr>
 					<tr>
@@ -131,7 +124,7 @@
 							재고
 						</th>
 						<td>
-							<input class="form-control" id="addProdName" type="number" name="gdStock">
+							<input class="form-control" id="addProdName" type="number" name="gdStock" placeholder="숫자만 입력하세요.">
 						</td>									
 					</tr>
 					<tr>
@@ -145,35 +138,26 @@
 				</tbody>
 			</table>
 			
-			
-				<button type="submit" id="addProdSubmit" value="등록하기"> 등록 </button>
-				<button type="button" name="cancel" value="취소"> 취소 </button>							
-								
+			<div class="addAndcnsBtn">
+				<button class="addBtn" type="submit" id="addProdSubmit" value="등록하기"> 등록 </button>
+				<button class="cancelBtn" type="button" name="cancel" value="취소" onclick="back_onclick()"> 취소 </button>							
+			</div>				
 		</form>
 	</div>
-				<!-- /.container-fluid -->
+
 
 	<!-- footer section -->
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- footer section end -->
 	
-	<!-- Bootstrap core JavaScript-->
-	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
-	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
-
-	<!-- Core plugin JavaScript-->
-	<script th:src="@{vendor/jquery-easing/jquery.easing.min.js}"></script>
-
-	<!-- Custom scripts for all pages-->
-	<script th:src="@{js/sb-admin-2.min.js}"></script>
-
-	<!-- Page level plugins -->
-	<script th:src="@{vendor/chart.js/Chart.min.js}"></script>
-
-	<!-- Page level custom scripts -->
-	<script th:src="@{js/demo/chart-area-demo.js}"></script>
-	<script th:src="@{js/demo/chart-pie-demo.js}"></script>
-	<script th:src="@{js/sewAddProd.js}"></script>
+	
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		function back_onclick(){
+			history.back();
+		}
+	
+	</script>
 	
 </body>
 </html>

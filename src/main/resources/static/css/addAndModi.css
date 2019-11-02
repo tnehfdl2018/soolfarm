@@ -1,0 +1,31 @@
+.mainFrame {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.mainForm {
+	position: relative;
+}
+
+.addAndcnsBtn {
+	margin-left: 30px;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+td {
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+
+.cancelBtn, .addBtn {
+	border: 1px solid #000;
+	position: relative;
+	width: 130px;
+	height: 50px;
+	margin-left: 40px;
+}

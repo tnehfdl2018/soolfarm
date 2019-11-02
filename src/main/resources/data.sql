@@ -58,11 +58,11 @@ INSERT INTO QNA (post_sub, post_contant, post_writer, post_date) VALUES('여기�
 INSERT INTO QNA (post_sub, post_contant, post_writer, post_date) VALUES('저렴한 술은 Soolfarm', '룰루랄랄라~' ,'최수빈' ,sysdate)
 
 
-INSERT INTO BANNER (name, start_dttm, end_dttm, img_name, scription) VALUES('발렌타인',sysdate, null, 'ballentines_banner.png', '발렌타인의 특징은 향보다는 질감이라 할 수 있습니다.')
-INSERT INTO BANNER (name, start_dttm, end_dttm, img_name, scription) VALUES('조니워커',sysdate, null, 'johnniwalker_banner.png', '국내에서는 미군에 의해 널리 알려진 제품')
-INSERT INTO BANNER (name, start_dttm, end_dttm, img_name, scription) VALUES('처음처럼',sysdate, null, 'first_banner.png', '저도소주로 젋은 감각에 맞춰 개발되었습니다.')
-INSERT INTO BANNER (name, start_dttm, end_dttm, img_name, scription) VALUES('좋은데이',sysdate, null, 'goodday_banner.png', '72시간 산소숙성과 10단계 여과로 더 부드러워진 좋은데이')
-INSERT INTO BANNER (name, start_dttm, end_dttm, img_name, scription) VALUES('참이슬',sysdate, null, 'true_banner.png', '대한민국 청정지역에서만 선별된 대나무 숯으로 4번 걸러 더 깨끗한 목넘김')
+INSERT INTO BANNER (name, start_dttm, end_dttm, img_name) VALUES('발렌타인',sysdate, null, 'ballentines_banner.png')
+INSERT INTO BANNER (name, start_dttm, end_dttm, img_name) VALUES('조니워커',sysdate, null, 'johnniwalker_banner.png')
+INSERT INTO BANNER (name, start_dttm, end_dttm, img_name) VALUES('처음처럼',sysdate, null, 'first_banner.png')
+INSERT INTO BANNER (name, start_dttm, end_dttm, img_name) VALUES('좋은데이',sysdate, null, 'goodday_banner.png')
+INSERT INTO BANNER (name, start_dttm, end_dttm, img_name) VALUES('참이슬',sysdate, null, 'true_banner.png')
 
 
 INSERT INTO ADD (NAME, IMG_NAME) VALUES('좋은데이', 'aa.jpg')

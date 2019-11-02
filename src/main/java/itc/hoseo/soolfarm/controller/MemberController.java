@@ -60,7 +60,8 @@ public class MemberController {
 	@PostMapping("/joinSubmit")
 	public String join(MemberVO vo) {
 		vo.setJoinDate(new Date());
-		System.out.println(vo.getJoinDate().toString());
+		
+		
 		if(service.addMember(vo)) {
 			return "redirect:/main";
 		}

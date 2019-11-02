@@ -6,7 +6,7 @@ create table MEMBER (
 	tel varchar(25) not null,
 	zip_code varchar (10) not null,
 	address1 varchar(100) not null,
-	address2 varchar(100) not null,
+	address2 varchar(100),
 	join_date TIMESTAMP not null default sysdate
 	);
 
@@ -66,8 +66,7 @@ create table banner(
 	name varchar(255),
 	start_dttm TIMESTAMP not null default sysdate,
 	end_dttm TIMESTAMP,
-	img_name varchar(255) not null,
-	scription varchar(100) not null
+	img_name varchar(255) not null	
 	);
 	
 create table add(

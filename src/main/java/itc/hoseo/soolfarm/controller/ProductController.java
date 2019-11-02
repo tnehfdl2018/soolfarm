@@ -57,9 +57,9 @@ public class ProductController {
 			}
 		}
 		if (proService.addProduct(vo)) {
-			return "admin/productRegistration";
+			return "redirect:/productRegistration";
 		}
-		return "admin/productRegistration";
+		return "redirect:/productRegistration";
 	}
 
 	// 상품 삭제
