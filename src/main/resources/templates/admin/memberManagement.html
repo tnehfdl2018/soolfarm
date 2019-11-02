@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>멤버 관리 페이지</title>
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+	<link rel="icon" type="image/png" href="img/logo/logo.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -75,7 +75,7 @@
 			        <td th:text= "${member.getEmail()}" ></td>		        
 			        <td th:text = "${member.getName()}"></td>
 			        <td th:text = "${member.getTel()}"></td>
-			        <td th:text = "${member.getAddress()}"></td>
+			        <td th:text = "${member.getAddress1()} + ' ' + ${member.getAddress2()}"></td>
 			        <td th:text = "${#dates.format(member.getJoinDate(), 'yyyy-MM-dd')}"></td>
 			    </tr>
 			    <tr>

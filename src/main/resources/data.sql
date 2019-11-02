@@ -1,8 +1,5 @@
-INSERT INTO MEMBER (email, pw, name, tel, address, date) VALUES('tnehfdl2011@gmail.com', '123', '최수빈', '010-2042-1992', '서울시 강북구 삼양동', sysdate)
-INSERT INTO MEMBER (email, pw, name, tel, address, date) VALUES('tnehfdl2004@naver.com', '23456', '수빈','010-2042-1992', '서울시 강북구 삼양동', sysdate)
-INSERT INTO MEMBER (email, pw, name, tel, address, date) VALUES('tnehfdl2002@hanmail.net', '34567', '수비니', '010-2042-1992', '서울시 강북구 삼양동', sysdate)
-INSERT INTO MEMBER (email, pw, name, tel, address, date) VALUES('tnehfdl2002@yahoo.co.kr', '45678', '숩쵸이', '010-2042-1992', '서울시 강북구 삼양동', sysdate)
-INSERT INTO MEMBER (email, pw, name, tel, address, date) VALUES('ferendevelop@gmail.com', '56789', '정성태', '010-4083-8192', '서울시 강서구 마곡동', sysdate)
+INSERT INTO MEMBER (email, pw, name, tel, zip_code, address1, address2, join_date) VALUES('tnehfdl2011@gmail.com', '123', '최수빈', '010-2042-1992', '01189', '서울 강북구 삼양로35가길 30', '1층',  sysdate)
+
 
 	
 INSERT INTO GOODS (gd_name, gd_img, gd_kinds, gd_price, gd_maker, gd_alcohol, gd_vol, gd_stock, gd_startday, gd_discription) VALUES('좋은데이' ,'gd_origin.png', '소주', 1200, '무학소주', '16.5', '360ml(Bottle)', 10, '2009-10-14','72시간 산소숙성과 10단계 여과로 더 부드러워진 좋은데이 좋은데이의 시그니처 도수 16.9도는 유지하면서 부드러운 목넘김과 깔끔한 맛이 더욱 새로워 졌습니다.')

@@ -3,7 +3,7 @@
 <mapper namespace="itc.hoseo.soolfarm.member.MemberDAO">
 
 	<insert id="addMember" parameterType="MemberVO">
-		INSERT INTO MEMBER (email,PW,NAME,TEL,ADDRESS,DATE) VALUES(#{email},#{pw},#{name},#{tel},#{address},#{joinDate})
+		INSERT INTO MEMBER (email, PW, NAME, TEL, ZIP_CODE, ADDRESS1, ADDRESS2, DATE) VALUES(#{email},#{pw}, #{name}, #{tel}, #{zipCode}, #{address1}, #{address2}, #{joinDate})
 	</insert>
 
 	<update id="modifyMember" parameterType="MemberVO">

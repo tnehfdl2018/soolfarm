@@ -11,7 +11,9 @@ public class MemberVO {
 	private String pw;
 	private String name;
 	private String tel;
-	private String address;
+	private String zipCode;
+	private String address1;
+	private String address2;
 	private Date joinDate;
 	
 }

@@ -35,7 +35,7 @@ public class MemberController {
 			MemberVO result = service.loginCheck(vo);
 			session.setAttribute("email", result.getEmail());
 			session.setAttribute("name", result.getName());
-			return "redirect:/";
+			return "redirect:/main";
 		}else {  // 로그인 실패시 alert 및 로그인 페이지 유지
 			
 			return "member/login";

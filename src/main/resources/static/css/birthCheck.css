@@ -157,7 +157,7 @@ select {
 
 
 #brand_age_check .alert span {
-    color: #30ffe8;
+    color: red;
     font-weight: normal;
 }
 
@@ -167,8 +167,8 @@ select {
     height: 18px;
     margin-right: 10px;
     border-radius: 11px;
-    border: 2px solid #30ffe8;
-    color: #30ffe8;
+    border: 2px solid red;
+    color: red;
     font-style: normal;
     font-size: 11px;
     line-height: 18px;

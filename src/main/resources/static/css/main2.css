@@ -186,7 +186,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 177px 130px 33px 95px;
+  padding: 100px 130px 33px 95px;
 }
 
 /*------------------------------------------------------------------
@@ -204,7 +204,7 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 .login100-form {
-  width: 290px;
+  width: 350px;
 }
 
 .login100-form-title {
@@ -242,6 +242,85 @@ iframe {
   padding: 0 30px 0 68px;
 }
 
+.input100_1 {
+	margin-bottom: 10px;
+}
+
+.email_size {
+/*   position: relative; */
+/*   width: 100%; */
+/*   z-index: 1; */
+/*   margin-bottom: 10px; */
+}
+
+.post_num {
+	font-family: Poppins-Medium;
+	font-size: 15px;
+	line-height: 1.5;
+	color: #666666;
+	
+	width: 55%;
+	background: #e6e6e6;
+	height: 50px;
+	border-radius: 25px;
+	padding: 0 30px 0 68px;
+}
+
+.post_num_btn {
+	font-family: Montserrat-Bold;
+  	font-size: 15px;
+ 	line-height: 1.5;
+ 	color: #000000;
+ 	text-transform: uppercase;
+  
+	width: 40%;
+	height: 50px;
+ 	border-radius: 25px;
+ 	border: 1px solid #ff2a6b;
+ 	background: #fff;
+/*   display: -webkit-box; */
+/*   display: -webkit-flex; */
+/*   display: -moz-box; */
+/*   display: -ms-flexbox; */
+/*   display: flex; */
+  	justify-content: center;
+ 	align-items: center;
+  	padding: 0 25px;
+  	margin-left: 3%;
+  
+  	-webkit-transition: all 0.4s;
+  	-o-transition: all 0.4s;
+  	-moz-transition: all 0.4s;
+  	transition: all 0.4s;
+	
+}
+
+.post-form-btn {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #000000;
+  text-transform: uppercase;
+
+  width: 30%;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #ff2a6b;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
 
 /*------------------------------------------------------------------
 [ Focus ]*/
@@ -348,7 +427,7 @@ iframe {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
+.login100-form-btn:hover, .post_num_btn:hover{
   background: #ff2a6b;
   color: #fff;
 }

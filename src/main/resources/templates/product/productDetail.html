@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="images/icons/favicon.png" />
+<link rel="icon" type="image/png" href="img/logo/logo.png"/>
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="vendor/bootstrap/css/bootstrap.min.css">
@@ -64,7 +64,7 @@
 
 
 	<!-- Product Detail -->
-	<form action="porductDetail" method="post">
+	<form id="addCart" action="porductDetail" method="post">
 		<section class="sec-product-detail bg0 p-t-65 p-b-60">
 			<div class="container">
 				<div class="row" th:each="detail : ${prodDetail}">
@@ -219,7 +219,19 @@
 		$('.js-addcart-detail').each(function(){
 			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
+				
+				event.preventDefault();
+				 $.ajax({ // create an AJAX call...
+			        data: $("#addCart").serialize(), // get the form data
+			        type: "POST", // GET or POST
+			        url: $("#addCart").attr('action'), // the file to call
+			        success: function (response) { // on success..
+			        	var vo = response.vo;
+			        	swal(vo.sbName, vo.sbStock + "개 가 장바구니에 추가되었습니다.", "success");
+			        	//$('#here').html(response); // update the DIV
+			        }
+			    });
+				
 			});
 		});
 	

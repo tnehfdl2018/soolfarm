@@ -4,8 +4,10 @@ create table MEMBER (
 	pw varchar(30) not null,
 	name varchar(45) not null,
 	tel varchar(25) not null,
-	address varchar(100) not null,
-	date TIMESTAMP not null default sysdate
+	zip_code varchar (10) not null,
+	address1 varchar(100) not null,
+	address2 varchar(100) not null,
+	join_date TIMESTAMP not null default sysdate
 	);
 
 create table GOODS (

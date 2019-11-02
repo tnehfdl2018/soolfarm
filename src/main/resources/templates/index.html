@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Soolfarm 술팜</title>
 
+<link rel="icon" type="image/png" href="img/logo/logo.png"/>
 <link rel="stylesheet" type="text/css" href="css/birthCheck.css">
 </head>
 <body>
@@ -221,17 +222,13 @@ function check_for_enter(self) {
 	var n_day = date.getDate();
 	
 	if((n_year-year) < 19){
-		alert("만 19세 이상만 이용이 가능합니다." + (n_year-year) );
+		alert("만 19세 이상만 이용이 가능합니다.");
 		
-	}else if (n_month < month){
-			alert("만 19세 이상만 이용이 가능합니다.");
-	}
-	
-	if (n_month == month){		
+	}else if (n_month <= month){
 		if (n_day < day){
 			alert("만 19세 이상만 이용이 가능합니다.");
 		}else{
-			alert("만 19세 이상만 이용이 가능합니다.");
+			$(location).attr("href", "/main");
 		}
 	
 	}else{

@@ -2,6 +2,8 @@ package itc.hoseo.soolfarm.model;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Data;
 
 @Data
@@ -19,6 +21,7 @@ public class GoodsVO {
 	private int gdStock;
 	private String gdDiscription;
 	
+	private MultipartFile imgFile;
 	
 
 

@@ -3544,6 +3544,10 @@ input.num-product::-webkit-inner-spin-button {
   color: #fff;
 }
 
+.post {
+	width: 30%;
+}
+
 
 
 /*------------------------------------------------------------------
