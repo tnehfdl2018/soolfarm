@@ -36,5 +36,7 @@ public interface MemberService {
 	
 	// myPage 정보
 	public List<MemberVO> getinfo(MemberVO vo);
+	
+	
 
 }

@@ -107,5 +107,11 @@ public class ProductController {
 		return "product/shoppingCart";
 //		return "redirect:/shoppingCart?sbUser=" + vo.getSbUser();
 	}
+	
+	// 결제 페이지
+	@PostMapping("account")
+	public String account() {
+		return "product/account";
+	}
 
 }

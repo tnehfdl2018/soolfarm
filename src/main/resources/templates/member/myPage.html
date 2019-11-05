@@ -4,11 +4,7 @@
 <meta charset="UTF-8">
 <title>MyPage</title>
 
-<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/common.min.css" type="text/css"> -->
-<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/side.css" type="text/css"> -->
-<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/list.css" type="text/css"> -->
-<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/ddp.css" type="text/css"> -->
-<!-- <link rel="stylesheet" href="https://www.coupang.com/resources/20191025215303/np/css/productReview.min.css" type="text/css"> -->
+
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" type="text/css" href="css/myPage.css">
@@ -107,8 +103,8 @@
 							<tr>
 								<th>주소</th>
 								<td>
-								<span class="fb" th:text = "${member.getAddress()}"></span>
-								<input type="button" value="변경하기" class="btn_basic btn_sm mL20" onclick="javascript:location.href='/event/birthday/birth_main.asp'">
+								<span class="fb" th:text = "${member.getAddress1()}"></span>
+								<input type="button" value="변경하기" class="btn_basic btn_sm mL20" onclick = "changeAddress()">
 							</td>
 							</tr>
 						</tbody>
@@ -158,58 +154,19 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-	<script>
-		$('.gallery-lb').each(function() { // the containers for all your galleries
-			$(this).magnificPopup({
-		        delegate: 'a', // the selector for gallery item
-		        type: 'image',
-		        gallery: {
-		        	enabled:true
-		        },
-		        mainClass: 'mfp-fade'
-		    });
-		});
-	</script>
 <!--===============================================================================================-->
 	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2').on('click', function(e){
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
+	
+	<script type="text/javascript">
+	function changeAddress(){
+		window.open("address", "window", "width= 400, height = 400", "location = no");
+	}
+	
 	
 	</script>
+
 <!--===============================================================================================-->
 	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>

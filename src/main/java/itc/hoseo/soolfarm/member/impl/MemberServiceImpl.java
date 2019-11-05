@@ -16,43 +16,43 @@ import itc.hoseo.soolfarm.model.MemberVO;
 public class MemberServiceImpl implements MemberService{
 	
 	@Autowired
-	MemberDAO memberDAO;
+	MemberDAO dao;
 	
 	Logger log = LoggerFactory.getLogger(MemberServiceImpl.class);
 	
 	// 회원가입
 	@Override
 	public boolean addMember(MemberVO m) {
-		return memberDAO.addMember(m)!=0;
+		return dao.addMember(m)!=0;
 	}
 
 	// 회원 수정
 	@Override
 	public MemberVO modifyMember(MemberVO m) {
 //		m.setModifyDate(new Date());
-		memberDAO.modifyMember(m);
+		dao.modifyMember(m);
 		return  getMember(m);
 	}
 
 	// 회원 삭제
 	@Override
 	public boolean deleteMember(MemberVO m) {
-		memberDAO.deleteMember(m);
+		dao.deleteMember(m);
 		return false;
 	}
 
 	@Override
 	public boolean isMemberExists(String id) {
 		// TODO Auto-generated method stub
-		return memberDAO.getMemberCnt(id) > 0 ? true : false;
+		return dao.getMemberCnt(id) > 0 ? true : false;
 	}
 
 	// 로그인
 	@Override
 	public MemberVO loginCheck(MemberVO vo) {
 		
-		if (memberDAO.loginCheck(vo)!=null) {  // true일 경우 세션 등록
-			vo = memberDAO.loginCheck(vo);
+		if (dao.loginCheck(vo)!=null) {  // true일 경우 세션 등록
+			vo = dao.loginCheck(vo);
 			return vo;
 		}
 		return null;
@@ -62,21 +62,21 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public MemberVO viewMember(MemberVO vo) {
 		
-		return memberDAO.viewMember(vo);
+		return dao.viewMember(vo);
 	}
 
 	// 로그 아웃
 	@Override
 	public MemberVO logout(MemberVO vo) {
 		
-		return memberDAO.logout(vo);
+		return dao.logout(vo);
 	}
 
 	// id 중복 검사
 	@Override
 	public int idcheck(String email) {
 		
-		return memberDAO.idcheck(email);
+		return dao.idcheck(email);
 	}
 
 	
@@ -84,7 +84,7 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public List<MemberVO> getinfo(MemberVO vo) {
 		
-		return memberDAO.getinfo(vo);
+		return dao.getinfo(vo);
 	}
 
 	@Override
@@ -92,6 +92,9 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+	
 
 	
 	

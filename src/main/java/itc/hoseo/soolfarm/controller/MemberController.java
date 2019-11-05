@@ -101,5 +101,11 @@ public class MemberController {
 		model.put("reset", service.getinfo(vo));
 		return "member/myPage";
 	}
+	
+	@GetMapping("address")
+	public String address() {
+	
+		return "member/address";
+	}
 
 }

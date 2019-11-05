@@ -39,4 +39,6 @@ public interface MemberDAO {
 	
 	// myPage 정보
 	public List<MemberVO> getinfo(MemberVO vo);
+	
+	
 }
