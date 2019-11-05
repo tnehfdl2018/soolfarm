@@ -1,6 +1,7 @@
 package itc.hoseo.soolfarm.member;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -34,7 +35,7 @@ public interface MemberDAO {
 	public MemberVO logout(MemberVO m);
 	
 	// id 중복 체크
-	public int idCheck(String email);
+	public int idcheck(String email);
 	
 	// myPage 정보
 	public List<MemberVO> getinfo(MemberVO vo);

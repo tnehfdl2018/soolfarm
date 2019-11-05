@@ -1,6 +1,7 @@
 package itc.hoseo.soolfarm.member.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,9 +74,9 @@ public class MemberServiceImpl implements MemberService{
 
 	// id 중복 검사
 	@Override
-	public int idCheck(String email) {
+	public int idcheck(String email) {
 		
-		return memberDAO.idCheck(email);
+		return memberDAO.idcheck(email);
 	}
 
 	

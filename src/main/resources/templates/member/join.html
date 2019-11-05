@@ -13,7 +13,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome2.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate2.css">
 <!--===============================================================================================-->	
@@ -24,9 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util2.css">
 	<link rel="stylesheet" type="text/css" href="css/main2.css">
 <!--===============================================================================================-->	
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 <body>
@@ -48,18 +46,19 @@
 					<span class="login100-form-title">
 						Member join
 					</span>
-
-					<div class="wrap-input100 validate-input email_div" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="email_size input100" type="email" id="email" name="email" placeholder="email">
+					
+					<div class="wrap-input100 validate-input" >
+						<input type="text" class="email_size" name="email" id="email" placeholder="이메일을 입력해주세요.">
+						<input type="button" class="check_btn" id="checkBtn" value="중복 확인">
+						<img id ="check_sucess" style="display: none;">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-id-badge" aria-hidden="true"></i>
+							<i class="fa fa-id-badge" aria-hidden = "true"></i>
 						</span>
-<!-- 						<i class="fa fa-close"></i> -->
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pw" placeholder="password">
+						<input class="input100" type="password" name="pw" id="pw" placeholder="비밀번호를 입력해주세요.">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -67,7 +66,7 @@
 					</div>		
 					
 					<div class="wrap-input100 validate-input" data-validate = "name is required">
-						<input class="input100" type="text" name="name" placeholder="name">
+						<input class="input100" type="text" name="name" placeholder="이름을 입력해주세요.">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-id-card" aria-hidden="true"></i>
@@ -75,7 +74,7 @@
 					</div>
 								
 					<div class="wrap-input100 validate-input" data-validate = "tel is required">
-						<input class="input100" type="tel" name="tel" placeholder="tel">
+						<input class="input100" type="tel" name="tel" placeholder="전화번호를 입력해주세요.">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-phone" aria-hidden="true"></i>
@@ -85,11 +84,24 @@
 					<div class="wrap-input100 validate-input">
 						<input class="post_num" type="text" id="sample6_postcode" name="zipCode" placeholder="우편번호">
 						<input class="post_num_btn" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-address-book" aria-hidden = "true"></i>
+						</span>
 					</div>
 					
 					<div class="wrap-input100 validate-input">
 						<input class="input100 input100_1" type="text" id="sample6_address" name="address1" placeholder="주소">
-						<input class="input100" type="text" id="sample6_detailAddress" name="address2" placeholder="상세주소">
+						<span class="symbol-input100">
+							<i class="fa fa-address-book" aria-hidden = "true"></i>
+						</span>
+					</div>	
+					
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" id="sample6_detailAddress" name="address2" placeholder="상세주소">	
+						<span class="symbol-input100">
+							<i class="fa fa-address-book" aria-hidden = "true"></i>
+						</span>					
 					</div>			
 
 					<div class="container-login100-form-btn">
@@ -135,31 +147,41 @@
 <!--===============================================================================================-->
 	<script src="js/main2.js"></script>
 <!--===============================================================================================-->
-	<script>
-		$("email").blur(function(){
-			var email = $('email').val();
+<!-- 	< class="email_size" id="email" > -->
+<!-- 	<class="check_btn" id="checkBtn" onclick= "click()"> -->
+<!-- if ($('.email_size').val() == ''){ -->
+<!-- 			alert("이메일을 입력해주세요."); -->
+<!-- 			return; -->
+<!-- 		} -->
+	<script>	
+	var idck = 0;
+	
+	$(function(){
+		
+		$("#check_btn").click(function(){
+			var email = $("#email_size").val;
+			
 			$.ajax({
-				url :'${pageContext.request.contextPath}/idCheck?email' + email,
-				type : 'get',
-				success : function(data){
-					colsole.log("1 = 중복o / 0 = 중복x : " + data);
-					
-					if(data == 1){
-						$("#id_check").text("사용중인 아이디 입니다.");
-						$("#id_check").css("color", "red");
-						$("#joinSubmit").attr("disabled", true);
+				async: true,
+				type: "POST",
+				data: email,
+				url: "idcheck",
+				dataType: "json",
+				contentType: "application/json; charset=UTF-8",
+				success: function(data){
+					if (data.cnt > 0){
+						alert("존재하는 아이디입니다.");
 					}else{
-						if(idJ.test(email)){
-							$("#email").text('아이디를 입력해 주세요.');
-							$("#email").css('color', 'red');
-							$("#joinSubmit").attr("disabled", true);
-						}
+						alert("사용가능한 아이디입니다.");
+						idck = 1;
 					}
-				}, error : function(){
-					console.log("실패");
+				},
+				error: function(error){
+					alert("error: " + error);
 				}
-			});	
-		});
+			});					
+		});		
+	});
 	</script>
 
 <!--===============================================================================================-->	

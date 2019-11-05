@@ -247,10 +247,17 @@ iframe {
 }
 
 .email_size {
-/*   position: relative; */
-/*   width: 100%; */
-/*   z-index: 1; */
-/*   margin-bottom: 10px; */
+/* 	float: left; */
+  	font-family: Poppins-Medium;
+  	font-size: 15px;
+  	line-height: 1.5;
+  	color: #666666;
+
+  width: 78%;
+  background: #e6e6e6;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px 0 68px;
 }
 
 .post_num {
@@ -427,9 +434,39 @@ iframe {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover, .post_num_btn:hover{
+.login100-form-btn:hover, .post_num_btn:hover, .check_btn:hover{
   background: #ff2a6b;
   color: #fff;
+}
+
+.check_btn {
+  	font-family: Montserrat-Bold;
+  	font-size: 15px;
+ 	line-height: 1.5;
+ 	color: #000000;
+ 	text-transform: uppercase;
+  
+  	float: right;
+	width: 20%;
+	height: 50px;
+ 	border-radius: 25px;
+ 	border: 1px solid #ff2a6b;
+ 	background: #fff;
+/*   display: -webkit-box; */
+/*   display: -webkit-flex; */
+/*   display: -moz-box; */
+/*   display: -ms-flexbox; */
+/*   display: flex; */
+/*   justify-content: center; */
+/*  align-items: center; */
+/*   padding: 0 25px; */
+/*   margin-left: 3%; */
+  
+  	-webkit-transition: all 0.4s;
+  	-o-transition: all 0.4s;
+  	-moz-transition: all 0.4s;
+  	transition: all 0.4s;
+	
 }
 
 

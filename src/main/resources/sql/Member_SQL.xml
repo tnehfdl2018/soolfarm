@@ -35,7 +35,7 @@
 	</select>
 	
 	<!-- id중복 체크 -->
-	<select id="idCheck" parameterType="String" resultType="int">
+	<select id="idcheck" parameterType="String" resultType="Integer">
 		SELECT COUNT(*) FROM MEMBER
 		<where>
 			email = #{email}

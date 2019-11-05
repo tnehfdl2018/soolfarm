@@ -1,3 +1,4 @@
+INSERT INTO MEMBER (email, pw, name, tel, zip_code, address1, address2, join_date) VALUES('admin', '123', '최수빈', '010-2042-1992', '01189', '서울 강북구 삼양로35가길 30', '1층',  sysdate)
 INSERT INTO MEMBER (email, pw, name, tel, zip_code, address1, address2, join_date) VALUES('tnehfdl2011@gmail.com', '123', '최수빈', '010-2042-1992', '01189', '서울 강북구 삼양로35가길 30', '1층',  sysdate)
 
 

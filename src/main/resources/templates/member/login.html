@@ -9,7 +9,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome2.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate2.css">
 <!--===============================================================================================-->	
@@ -35,13 +35,13 @@
 					
 				</div>
 
-				<form class="login100-form validate-form" >	<!-- action="loginSubmit" method="post" -->
+				<form class="login100-form validate-form" action="loginSubmit" method="post">	<!-- action="loginSubmit" method="post" -->
 					<span class="login100-form-title">
 						Member Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" id="mail" placeholder="Email">
+						<input class="input100" type="text" name="email" id="mail" placeholder="Email" onclick="changeID()">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -105,42 +105,39 @@
 <!--===============================================================================================-->
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
-		$("form").submit(function(e){
-			var id = document.getElementById('mail').value;
-			var pw = document.getElementById('pass').value;
-			
-e.preventDefault();
-			
-			if (id==""){						
-				alert("아이디 확인");
-			}
-			if (pw=="") {				
-				alert("비밀번호 확인");
-			}
-			if (id!="" && pw!=""){
-				$.ajax({
-					async: true,
-				    type : 'POST',
-				    data : JSON.stringify({"email": id, "pw": pw}),
-				    url : "validIdPw",
-				    dataType : "json",
-				    contentType: "application/json; charset=UTF-8",
-				    success : function(data) {
-				        if (data.valid) {                
-				            //아이디가 존재 안할 경우				            
-				        	$("#idChkBox1").hide();
-				        	$("form").unbind("submit").submit();
-				        } else {
-				            //아이디가 존재할 경우				            
-				            $("#idChkBox1").show();
-				        }
-				    },
-				    error : function(error) {
-				        alert("error : " + error);
-				    }
-				});								
-			}	   			
-		});
+	
+// 	function changeID() {
+// 		var id = document.getElementById('mail').value;
+// 		var pw = document.getElementById('pass').value;
+// 		var checkId = {"ID" : id};
+// 		$("input100").css("border", "blue");
+// 		if (id == null){
+// 			alert("아이디를 입력하세요.");
+// 		}else{
+// 			$.ajax({
+// 				type : "POST",
+// 				url : "checkId",
+// 				data : "checkId",
+// 				dataType : "json",
+// 				error : function(error) {
+// 					alert("응답이 없음니다.");
+// 					$("input100").css("border", "red");
+// 				},
+// 				success : function (result){
+// 					if (result == 1){
+// 						$("input100").css("border", "red");
+// 					}else{
+// 						alert("에러가 발생했습니다.");
+// 						$("input100").css("border", "red");
+// 					}
+// 				}
+// 			})
+// 		}
+		
+// 	}
+
+		
+
 	</script>
 </body>
 </html>
