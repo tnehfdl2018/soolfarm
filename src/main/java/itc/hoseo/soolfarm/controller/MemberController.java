@@ -35,15 +35,18 @@ public class MemberController {
 	// 로그인 처리
 	@PostMapping("/loginSubmit")
 	public String login(@ModelAttribute MemberVO vo, HttpSession session) {
-		if(service.loginCheck(vo)!=null) {  // 로그인 성공시 메시지로 success전달 및 index페이지로 이동
+		
+		// 로그인 성공시 메시지로 success전달 및 index페이지로 이동
+		if(service.loginCheck(vo)!=null) {  
 			MemberVO result = service.loginCheck(vo);
 			session.setAttribute("email", result.getEmail());
 			session.setAttribute("name", result.getName());
+			
 			if (result.getEmail().equals("admin")) {
 				return "admin/adminMain";
 			}
 			return "redirect:/main";
-		}else {  // 로그인 실패시 alert 및 로그인 페이지 유지
+		}else {  // 로그인 실패시 로그인 페이지 유지
 			
 			return "member/login";
 		}	
@@ -68,7 +71,7 @@ public class MemberController {
 	public String join(MemberVO vo) {
 		vo.setJoinDate(new Date());
 		
-		
+		System.out.println(vo);
 		if(service.addMember(vo)) {
 			return "redirect:/main";
 		}
@@ -76,16 +79,17 @@ public class MemberController {
 	}
 	
 		
-	@PostMapping("idcheck")
+	@PostMapping("/idcheck")
 	@ResponseBody
 	public Map<Object, Object> idCheck(@RequestBody String email) {
-		
+		System.out.println(email);
 		int count = 0;
 		Map<Object, Object> map = new HashMap<Object, Object>();
 		
 		count = service.idcheck(email);
 		map.put("cnt", count);
-		
+		System.out.println("sdddfdfwedbrw");
+		System.out.println(map);
 		return map;
 	}
 	
