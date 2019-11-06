@@ -16,9 +16,6 @@ public interface MemberService {
 	// 회원 삭제
 	public boolean deleteMember(MemberVO m);
 	
-	// 중복 회원 확인(맴버가 있으면 True / 없으면 false)
-	public boolean isMemberExists(String id);
-	
 	// 회원정보 조회
 	public MemberVO getMember(MemberVO m);
 	

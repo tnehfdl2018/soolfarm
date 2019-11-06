@@ -74,6 +74,7 @@
 											<img th:src="@{'img/goods/' + ${shoppingCart.getSbImg()}}" alt="IMG">
 										</div>
 									</td>
+									
 									<td class="column-2"th:onclick="|detail(${shoppingCart.getSbNum()})|" th:text = "${shoppingCart.getSbName()}"></td>
 									<td class="column-3 itemPrice" th:text = "${#numbers.formatInteger(shoppingCart.getSbPrice(),3,'COMMA')}"></td>
 									<td class="column-3-1">원</td>
@@ -92,6 +93,12 @@
 									</td>
 									<td class="column-5 tt" th:text= "${#numbers.formatInteger(shoppingCart.sbPrice * shoppingCart.sbStock ,3,'COMMA')}"></td>
 									<td class="column-6">원</td>
+									<td hidden="hidden">
+										<input th:value="${shoppingCart.getSbNum()}" hidden="hidden" name="sbNum">
+										<input th:value="${shoppingCart.getSbName()}" hidden="hidden" name="sbName">
+										<input th:value="${shoppingCart.getSbImg()}" hidden="hidden" name="sbImg">
+										<input th:value="${shoppingCart.getSbPrice()}" hidden="hidden" name="sbPrice">
+									</td>
 								</tr>
 								<tr class="table_head">
 									<th class="column-1"></th>
@@ -108,6 +115,7 @@
 						
 					</div>
 				</div>
+				
 
 				<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
 					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm cartTotals">
@@ -162,7 +170,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
 	</form>
 		
 	

@@ -7,7 +7,10 @@
 	</insert>
 
 	<update id="modifyMember" parameterType="MemberVO">
-		UPDATE MEMBER SET pw = #{pw}, name = #{name}, tel = #{tel}, adress = #{address} WHERE num = #{num}
+		UPDATE MEMBER SET pw = #{pw}, name = #{name}, tel = #{tel}, zipCode = #{zip_code}, address1 = #{address1}, address2 = #{address2}
+		<where>
+			num = #{num}
+		</where>
 	</update>
 
 	<delete id="deleteMember" parameterType="MemberVO">

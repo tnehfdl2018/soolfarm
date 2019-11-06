@@ -29,7 +29,7 @@ public class MemberServiceImpl implements MemberService{
 	// 회원 수정
 	@Override
 	public MemberVO modifyMember(MemberVO m) {
-//		m.setModifyDate(new Date());
+
 		dao.modifyMember(m);
 		return  getMember(m);
 	}
@@ -39,12 +39,6 @@ public class MemberServiceImpl implements MemberService{
 	public boolean deleteMember(MemberVO m) {
 		dao.deleteMember(m);
 		return false;
-	}
-
-	@Override
-	public boolean isMemberExists(String id) {
-		// TODO Auto-generated method stub
-		return dao.getMemberCnt(id) > 0 ? true : false;
 	}
 
 	// 로그인

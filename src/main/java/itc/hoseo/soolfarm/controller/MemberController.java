@@ -60,6 +60,8 @@ public class MemberController {
 		return "redirect:/main";
 	}
 	
+///////////////////////////////////////////////////////////////////////////////////////////
+	
 	// 회원가입 페이지로 이동
 	@GetMapping("/goJoin")
 	public String join() {
@@ -78,7 +80,8 @@ public class MemberController {
 		return "member/goJoin";
 	}
 	
-		
+	
+	// id 중복 확인
 	@PostMapping("/idcheck")
 	@ResponseBody
 	public Map<Object, Object> idCheck(@RequestBody String email) {
@@ -88,10 +91,12 @@ public class MemberController {
 		
 		count = service.idcheck(email);
 		map.put("cnt", count);
-		System.out.println("sdddfdfwedbrw");
+		
 		System.out.println(map);
 		return map;
 	}
+	
+///////////////////////////////////////////////////////////////////////////////////////////
 	
 	// myPage 이동
 	@GetMapping("myPage")
@@ -102,10 +107,19 @@ public class MemberController {
 		return "member/myPage";
 	}
 	
+	// 주소수정을 위한 popup창 
 	@GetMapping("address")
 	public String address() {
 	
 		return "member/address";
+	}
+	
+	// 주소 수정
+	@PostMapping("changePost")
+	public String changePost(@ModelAttribute MemberVO vo) {
+		service.modifyMember(vo);
+		
+		return "member/mypage";
 	}
 
 }

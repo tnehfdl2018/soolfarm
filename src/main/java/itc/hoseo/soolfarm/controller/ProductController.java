@@ -21,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import itc.hoseo.soolfarm.account.AccountService;
 import itc.hoseo.soolfarm.goods.GoodsService;
+import itc.hoseo.soolfarm.model.AccountVO;
 import itc.hoseo.soolfarm.model.GoodsVO;
 import itc.hoseo.soolfarm.model.ShoppingCartVO;
 import itc.hoseo.soolfarm.shoppingCart.ShoppingCartService;
@@ -37,6 +39,8 @@ public class ProductController {
 	GoodsService proService;
 	@Autowired
 	ShoppingCartService cartService;
+	@Autowired
+	AccountService GbService;
 
 	@GetMapping("product")
 	public String product(ModelMap model) {
@@ -110,7 +114,13 @@ public class ProductController {
 	
 	// 결제 페이지
 	@PostMapping("account")
-	public String account() {
+	public String account(@ModelAttribute AccountVO vo, HttpSession session, ModelMap model) {
+		String id = (String) session.getAttribute("email");
+		vo.setGbUser(id);
+		model.put("pro", GbService.addAccount(vo));
+		
+		model.put("account", value);
+		
 		return "product/account";
 	}
 

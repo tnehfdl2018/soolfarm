@@ -19,9 +19,6 @@ public interface MemberDAO {
 	// 회원 삭제 (DELTE ~
 	public int deleteMember(MemberVO m);
 	
-	// 중복 회원 확인 (SELECT COUNT(*) FROM MEBER WHERE ID = ${id} 
-	public int getMemberCnt(String email);
-	
 	// 회원정보 조회
 	public MemberVO getMember(MemberVO m);
 	
