@@ -19,7 +19,7 @@ body {
 }
 
 div {
-    display: block;
+    display: inline;
 }
 
 element.style {
@@ -123,7 +123,7 @@ tbody {
 
 
 td {
-    display: table-cell;
+    display: inline;
     vertical-align: inherit;
 }
 

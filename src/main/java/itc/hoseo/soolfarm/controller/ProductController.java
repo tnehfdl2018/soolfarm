@@ -115,11 +115,11 @@ public class ProductController {
 	// 결제 페이지
 	@PostMapping("account")
 	public String account(@ModelAttribute AccountVO vo, HttpSession session, ModelMap model) {
-		String id = (String) session.getAttribute("email");
-		vo.setGbUser(id);
-		model.put("pro", GbService.addAccount(vo));
-		
-		model.put("account", value);
+//		String id = (String) session.getAttribute("email");
+//		vo.setGbUser(id);
+//		model.put("pro", GbService.addAccount(vo));
+//		
+//		model.put("account", value);
 		
 		return "product/account";
 	}

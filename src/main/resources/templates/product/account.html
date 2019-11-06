@@ -1,569 +1,434 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Account Page</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="img/logo/logo.png"/>
+<title>Account Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="icon" type="image/png" href="img/logo/logo.png" />
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<link rel="stylesheet" type="text/css"
+	href="fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css"
+	href="fonts/linearicons-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css"
+	href="vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css"
+	href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/account.css">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
-	
-	<!-- Header -->
-	<div th:replace="~{header :: header}"></div>
+
+ 	<!-- Header --> 
+<!-- 	<div th:replace="~{header :: header}"></div> -->
 	<!-- Header -->
 
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="main" class="stext-109 cl8 hov-cl1 trans-04">
-				Home
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
-
-			<span class="stext-109 cl4">
-				Account Page
-			</span>
+			<a href="main" class="stext-109 cl8 hov-cl1 trans-04"> Home <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a> <span class="stext-109 cl4"> Account Page </span>
 		</div>
 	</div>
-		
+
 
 	<!-- Shoping Cart -->
 	<div id="sp_order">
-            
-            
-            <!-- 주문하시는상품 S -->
-            <h4 class="dpTitle_barNew" style="margin-top:0px"><!-- 20120511 수정 -->
-                <span class="tit"><img src="https://sslimage.interpark.com/_spOrder/title/tit_orderPrda.gif" width="254" height="23" alt="주문하시는 상품&amp;할인내역 입력"></span>
-            </h4>
-            <div class="table_ty1"> <!-- 20130131_ 박태진 ps_rl 제거 -->
-                <div class="mypoint_info">
-                    <div class="mypoint-guide">
-                        <div class="guide-top">
-                            <span class="top-layer"></span>
-                        </div>
-                    </div>
 
-                
-                
+		<!-- 주문하시는상품 S -->
+		<h4 class="dpTitle_barNew" style="margin-top: 0px">
+			<!-- 20120511 수정 -->
+			<span class="tit"><img src="https://sslimage.interpark.com/_spOrder/title/tit_orderPrda.gif" width="254" height="23" alt="주문하시는 상품&amp;할인내역 입력"></span>
+		</h4>
+		<div class="table_ty1">
+			<!-- 20130131_ 박태진 ps_rl 제거 -->
+			<div class="mypoint_info">
+				<div class="mypoint-guide">
+					<div class="guide-top">
+						<span class="top-layer"></span>
+					</div>
+				</div>
+			</div>
+			<!-- 나의 보유포인트 End -->
 
-                <!-- <div class="user_mypoint_box">                                 
-                </div> -->
-            </div>
-                <!-- 나의 보유포인트 End -->
+			<div id="pointDelvCheck" style="display: none">
+				<input type="checkbox" class="chk" name="applyDelvPoint" value="-1" style="display: none;">
+			</div>
+			<input type="checkbox" class="chk" name="applyDelvCoupon" value="-1" style="display: none;"><span id="pointBtn"></span>
+			<table class="orderListTable">
+				<!-- 2015-11-25 -->
+				<colgroup>
+					<col>
+					<col style="width: 44px">
+					<col style="width: 101px">
+					<col style="width: 101px">
+					<col style="width: 101px">
+					<!-- <col style="width:142px"> -->
+					<col style="width: 105px">
+					<col style="width: 83px">
+				</colgroup>
+				<!-- 2015-11-25 -->
+				<tbody>
+					<tr>
+						<th>상품명</th>
+						<th>수량</th>
+						<th>상품금액</th>
+						<th>즉시할인</th>
+						<th>소계금액</th>
+						<!-- <th>미전환 <span>I-Point</span> 사용</th> -->
+						<th>배송비</th>
+						<th class="alt">판매자</th>
+					</tr>
 
-                
-            
-                <div id="pointDelvCheck" style="display:none"><input type="checkbox" class="chk" name="applyDelvPoint" value="-1" style="display:none;"></div><input type="checkbox" class="chk" name="applyDelvCoupon" value="-1" style="display:none;"><span id="pointBtn"></span><table class="orderListTable"><!-- 2015-11-25 -->
-                <colgroup>
-                    <col>
-                    <col style="width:44px">
-                    <col style="width:101px">
-                    <col style="width:101px">
-                    <col style="width:101px">
-                    <!-- <col style="width:142px"> -->
-                    <col style="width:105px">
-                    <col style="width:83px">
-                </colgroup><!-- 2015-11-25 -->
-                <tbody><tr>
-                    <th>상품명</th>
-                    <th>수량</th>
-                    <th>상품금액</th>
-                    <th>즉시할인</th>
-                    <th>소계금액</th>
-                    <!-- <th>미전환 <span>I-Point</span> 사용</th> -->
-                    <th>배송비</th>
-                    <th class="alt">판매자</th>
-                </tr>
+					<tr>
+						<td class="prd_name" style="border-bottom: 1px solid rgb(222, 222, 222);">
+							<a href="http://www.interpark.com/product/MallDisplay.do?_method=detail&amp;sc.shopNo=0000100000&amp;sc.dispNo=001770004005&amp;sc.prdNo=5412744112" target="_blank">#APP특가14,900원# 바른씨 노르웨이생연어 500g 필렛 숙성연어/연어회<br>
+								<span class="txt_option">[선택1 / 01_생연어 500g(몸+뱃살)]</span>
+							</a>
+						</td>
+						<td class="aCenter">2개</td>
+						<td class="price_buy">33,800원</td>
+						<td class="price">0원</td>
+						<td class="price f_gr2" rowspan="1"><strong>33,800원</strong> </td>
+						<td class="ems" rowspan="1">3,500원
+							<div id="pointDelvCheck" style="display: none"></div>
+							<div style="display: none;">
+								<input type="checkbox" class="chk" name="applyDelvCoupon"
+									value="1" onclick="SelectDelvPayment('CP',3500.0,1)"
+									style="vertical-align: baseline; height: 15px; margin-top: 1px"><input
+									type="hidden" name="applyDelvCpAmt" value="3500.0">
+								무료배송쿠폰
+							</div>
+						</td>				
+						<td class="aCenter" rowspan="1">주식회사바른씨</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //주문하시는상품 E -->
 
+		<!-- 090115추가 Start -->
+		<div class="step03e_new">
+			<div class="step03e_btm2">
+				<div class="step03e_top2">
+					<!-- 20121105 수정 -->
+					<table class="sub_step_table">
+						<!-- 2015-11-25 -->
+						<colgroup>
+							<col style="width: 192px">
+							<col style="width: 12px">
+							<col style="width: 580px">
+							<col style="width: 12px">
+							<col>
+						</colgroup>
+						<!-- 2015-11-25 -->
+						<tbody>
+							<tr>
+								<td class="align_bottom">
+									<table class="sub_step2e_table">
+										<!-- 2015-11-25 -->
+										<tbody>
+											<tr>
+												<td class="sum_space"></td>
+											</tr>
+											<tr>
+												<td class="sum_total">
+													<span class="tot">총 주문금액</span>
+													<div style="padding-top: 8px; font: bold 18px" class="f_gr">37,300원</div>														
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="table_ty7">
+														<table>
+															<!-- 2015-11-25 -->
+															<tbody>
+																<tr>
+																	<th><b>상품가격</b></th>
+																	<td><b>33,800원</b></td>
+																</tr>
+																<tr>
+																	<th>선불배송비</th>
+																	<td>3,500원</td>
+																</tr>
+																<tr>
+																	<th>추가배송비</th>
+																	<td><span id="totAddDelvAmt">0</span>원</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td class="align_arrow">
+									<img src="https://sslimage.interpark.com/_spOrder/bg_step03e_arrow.gif" alt="">
+								</td>
+								<td class="align_top">
+									<dl class="sub_step2e new">
+										<dt>
+											<input type="text" name="totDiscountAmt" class="sale_sum" value="0" readonly="">
+										</dt>
+									<dd>
 
-<input type="hidden" name="applyDelvCpAmt" value="0">
-<input type="hidden" name="maxPoint" value="-1">
+									<div class="table_ty8">
+										<table>
+													<!-- 2015-11-25 -->
+											<colgroup>												
+												<col style="width: 120px">
+											</colgroup>
 
-<input type="hidden" name="sumPrice" value="-1">
+											<tbody>
+												<tr>
+													<th class="btn_img">상품할인
+														<span class="f_gr f11 ls_1">(적용가능쿠폰 : 0장)</span>
+														<a href="javascript:alert('지금 주문에서 사용하실 수 있는 할인 쿠폰이 없습니다.');">
+														<img src="https://sslimage.interpark.com/_spOrder/btn/bt_viewOruse.gif" class="btn" alt="조회 및 적용"></a>
+														<div class="coupon-wrap" style="display: none">
 
-<input type="hidden" name="pointParentSeq" value="-1">
+														</div>
+													</tbody>
+												</table>
+											</div>
+										</dd>
+									</dl>
+								</td>
+								<td class="align_arrow"><img
+									src="https://sslimage.interpark.com/_spOrder/bg_step03e_arrow.gif"
+									alt=""></td>
+								<td class="align_bottom">
+									<table class="sub_step3e_table new">
+										<!-- 2015-11-25 -->
+										<tbody>
+											<tr>
+												<td class="sum_space"></td>
+											</tr>
+											<tr>
+												<td class="sum_total">
+													<span class="tot" style= "font: bold 18px">총 결제금액</span>
+													<div style="padding-top: 8px; font: bold 18px" class="f_gr">37,300원</div>														
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="table_ty7">
+														<table>
+															<!-- 2015-11-25 -->
 
-<input type="hidden" name="usePointApply" value="">
-
-<input type="hidden" value="-1" name="usePointAmt">
-
-
-
-
-<input type="hidden" name="optParentSeq" value="-1">
-
-<input type="hidden" name="ordSeq" value="-1">
-
-<input type="hidden" name="prdQty" value="-1">
-
-<input type="hidden" name="saleUnitCost" value="-1">
-
-<input type="hidden" name="preUseUnitcost" value="-1">
-
-<input type="hidden" name="ipointUnitcost" value="">
-
-
-<input type="hidden" name="optParentSeq" value="1">
-
-<input type="hidden" name="ordSeq" value="1">
-
-<input type="hidden" name="prdQty" value="2">
-
-<input type="hidden" name="saleUnitCost" value="16900">
-
-<input type="hidden" name="ipointUnitcost" value="0">
-
-
-<input type="hidden" name="delvReqDts" value="">
-
-<input type="hidden" name="preUseUnitcost" value="0.0">
-
-<input type="hidden" name="preUseRate" value="100.0">
-
-
-            <script>
-                prdNameForMcash = '%23APP%C6%AF%B0%A114%2C900%BF%F8%23+%B9%D9%B8%A5%BE%BE+%B3%EB';
-                prdNameForTmoney = '%23APP%C6%AF%B0%A114%2C900%BF%F8%23+%B9%D9%B8%A5%BE%BE+%B3%EB';
-                prdNameForYelo = '#APP특가14,900원# 바른씨 노';
-                prdNameForYelo2 = '#APP특가14,900원# 바른씨 노';
-                
-            </script>
-
-                <tr>
-                    
-                    <td class="prd_name" style="border-bottom: 1px solid rgb(222, 222, 222);">
-                        <a href="http://www.interpark.com/product/MallDisplay.do?_method=detail&amp;sc.shopNo=0000100000&amp;sc.dispNo=001770004005&amp;sc.prdNo=5412744112" target="_blank">#APP특가14,900원# 바른씨 노르웨이생연어 500g 필렛 숙성연어/연어회<br><span class="txt_option">[선택1 / 01_생연어 500g(몸+뱃살)]</span></a>
-                    </td>
-                    
-                    <td class="aCenter">
-                    2개</td>
-                    
-                    <td class="price_buy">
-                    33,800원
-  
-                    </td>
-                    <td class="price">
-                        0원
-
-                    </td>
-                    <td class="price f_gr2" rowspan="1">
-                        <strong>33,800원</strong>
-
-                    </td>
-                    <!-- <td class="ipoint" rowspan="1">
-                                          
-                            <img src="https://sslimage.interpark.com/_spOrder/icon/icon_point_msg.gif" class="into" alt="포인트 상품이 아닙니다.">
-                        
-                    </td> -->
-                    <td class="ems" rowspan="1">
-                        3,500원
-                        
-                            
-                                <div id="pointDelvCheck" style="display:none"></div>
-
-                            
-                            <div style="display: none;">
-<input type="checkbox" class="chk" name="applyDelvCoupon" value="1" onclick="SelectDelvPayment('CP',3500.0,1)" style="vertical-align:baseline;height:15px;margin-top:1px"><input type="hidden" name="applyDelvCpAmt" value="3500.0"> 무료배송쿠폰</div>
-                        
-                        
-                    </td>
-                    <!--td class="aCenter"></td-->
-                    <td class="aCenter" rowspan="1">                      
-                        주식회사바른씨
-                        
-                    </td>
-                </tr>
-
-
-            <input type="hidden" name="mcashSuppTel" value="0519882105">
-            <input type="hidden" name="mcashSuppNm" value="주식회사바른씨">
-            <input type="hidden" name="SingleEntrYn" value="Y">
-
-
-                <!-- 2015-01-26 S -->
-                
-                    
-                
-                
-                <input type="hidden" name="giftCardRegist" id="giftCardRegist" value="N">
-                <!-- 2015-01-26 E -->
-                </tbody></table>
-                
- 
-                    <div class="ipointDelv">
-                        
-                        <ul>
-                            
-                            <li>상품이 품절되는 경우 SMS 안내와 함께 자동 주문취소처리 및 환불 처리가 진행됩니다.</li>
-                            
-                            <li><span class="f_br">인터파크는 통신판매중개자로서 통신판매의 당사자가 아니므로 개별 판매자가 등록한 오픈마켓 상품에 대해서 인터파크는 일체 책임을 지지 않습니다.</span></li>
-                            
-                            </ul>
-                        
-                    </div>
-
-
-            </div>
-             <!-- <div class="orderBannerWrap" id="adv_banner">  </div> -->
-             <div> <script src="https://addb.interpark.com/RealMedia/ads/adstream_jx.ads/www.interpark.com/order/order_center/980x58@x01"></script></div>
-
-            <!-- //주문하시는상품 E -->
-
-            
-            
-        <!-- 090115추가 Start -->
-        <div class="step03e_new">
-            <div class="step03e_btm2"><div class="step03e_top2"><!-- 20121105 수정 -->
-                <table class="sub_step_table"><!-- 2015-11-25 -->
-                    <colgroup>
-                        <col style="width:192px">
-                        <col style="width:12px">
-                        <col style="width:580px">
-                        <col style="width:12px">
-                        <col>
-                    </colgroup><!-- 2015-11-25 -->
-                    <tbody><tr>
-                        <td class="align_bottom">
-                            <table class="sub_step2e_table"><!-- 2015-11-25 -->
-                                <tbody><tr><td class="sum_space"></td></tr>
-                                <tr>
-                                    <td class="sum_total">
-                                        <dl class="sub_step1e">
-                                            <dt id="swfPrice"><div style="padding-top: 8px; font: bold 18px" class="f_gr">37,300원</div></dt>
-                                        </dl>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="table_ty7">
-                                            <table><!-- 2015-11-25 -->
-                                                <tbody><tr>
-                                                    <th><b>상품가격</b></th>
-                                                    <td><b>33,800원</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>선불배송비</th>
-                                                    <td>3,500원</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>추가배송비</th>
-                                                    <td><span id="totAddDelvAmt">0</span>원</td>
-                                                </tr>
-                                            </tbody></table>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                        </td>
-                        <td class="align_arrow"><img src="https://sslimage.interpark.com/_spOrder/bg_step03e_arrow.gif" alt=""></td>
-                        <td class="align_top">
-                            <dl class="sub_step2e new">
-                                <dt><input type="text" name="totDiscountAmt" class="sale_sum" value="0" readonly=""></dt>
-                                <dd>
-                                    <!-- <div class="event_coupon new">
-                                        <span class="title">Event</span> <span class="txt">옐로페이로 결제 시 <span class="f_gr">전상품 5 % 할인쿠폰으로 즉시할인 & 옐로포인트 1% 적립</span> <a onclick="javascript:getYeloCoupon()" class="f_gr">쿠폰받기</a></span>
-                                    </div> -->
-                                    <!-- <div class="event_coupon new">
-                                        <span class="title">Event</span> <a href="http://www.interpark.com/malls/event/card/yellowPayment.html" target="_blank" ><span class="txt">옐로페이 회원가입시 <span class="f_gr">7%(최대 5천원) 할인쿠폰 증정, </span>매일 <span class="f_gr">3%(최대 2천원) 중복할인 / 결제 시 소득공제 30%!</span></a></span>
-                                    </div> -->
-                                    <div class="event_coupon new">
-                                    <a href="http://benefit.interpark.com/cardBenefit?smid1=s_menu&amp;smid2=card" target="_blank"><span class="title">Event</span> <span class="txt">카드사별 한정수량 할인쿠폰, <span class="f_gr">청구할인 이벤트</span> </span></a>
-                                    </div>
-                                    
-                                    <div class="table_ty8">
-                                        <table><!-- 2015-11-25 -->
-                                        <colgroup>
-                                            <col>
-                                            <col style="width:120px">
-                                        </colgroup>
-                                        
-                                            <input type="hidden" name="txtSalerDirectDis1" id="txtSalerDirectDis1" value="0" readonly="">
-                                        
-                                        
-                                        
-                                        <tbody><tr>
-                                            <th class="btn_img">상품할인 <span class="f_gr f11 ls_1">(적용가능쿠폰 : 0장)</span> <a href="javascript:alert('지금 주문에서 사용하실 수 있는 할인 쿠폰이 없습니다.');
-"><img src="https://sslimage.interpark.com/_spOrder/btn/bt_viewOruse.gif" class="btn" alt="조회 및 적용"></a>
-                                            <div class="coupon-wrap" style="display:none">
-                                                    <div class="wo_txt"><span class="txt_center">P</span>적립 +</div>
-                                                    <div class="wo_ch"><input type="text" class="txt_gr2 txt_blue2 aRight f_bold" style="width: 67px;" name="cpIpointTxt" value="0" readonly=""></div>
-                                                </div>
-                                            
-                                            </th>
-                                            <td>
-                                                <div class="wo_txt"><span class="txt_center"> 원</span>할인</div>
-                                                <div class="wo_ch"><input type="text" class="txt_gr2 aRight f_bold" style="width: 67px;" name="txtAutoCouponPayAmt1" value="0" readonly=""></div>
-                                            </td>
-                                        </tr>
-                                        
-
-            <!-- 2013-12-18 start -->
-            
-            
-
-        
-            <!-- 2013-12-18 end -->
-            
-                                        
-                                        
-                            
-                                        <tr>
-                                            <th class="ipoint_save">
-                                                <div>
-                                                <span class="ipont_txt">I-Point</span> 적립
-                                                <img src="https://sslimage.interpark.com/_spOrder/bl/bl_ipoint.gif" alt="" class="bl_ipoint1"> 
-                                                
-                                                        <span><input type="radio" class="chk" name="chkPreUseIpoint" onclick="selectPreUseIpoint('N')" disabled=""><span class="chk_txt">수동 구매확정 후, <span class="txt_gr1 txt_blue2 aRight f_bold">0P</span> 적립</span></span>
-                                                        <span class="nowSale"><input type="radio" class="chk" name="chkPreUseIpoint" onclick="selectPreUseIpoint('Y')" disabled=""><span class="chk_txt">즉시할인<img src="https://sslimage.interpark.com/_spOrder/icon/icon_help_layer.gif" alt="도움말" class="mid bt_m1" onmouseover="disp_div_new('baro_sale',event); return false;" onmouseout="hide_div_new('baro_sale')"></span></span>
-                                                </div>
-                                            </th>
-                                            <td class="ipoint_save">
-                                                <div class="wo_txt"><span class="txt_center">P</span>할인</div>
-                                                <div class="wo_ch"><input type="text" class="txt_gr2 txt_blue2 aRight f_bold" style="width: 67px;" name="preUseIpointTxt" value="0" readonly=""></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="2" class="pointNoneInfo">  
-                                                <span><span class="ipont_txt">I-Point</span> 적립은 배송완료 후 7일 이내 '마이페이지 &gt; 주문/배송조회'에서 수동으로 '구매확정'시 적립됩니다. </span>
-
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="2">
-                                                <div class="usetxtImg">
-                                                    <div>
-                                                        <span class="ipont_txt">I-Point</span> 사용
-                                                        <img src="https://sslimage.interpark.com/_spOrder/bl/bl_ipoint.gif" class="bl_ipoint2">
-                                                    </div>
-                                                    
-
-                                                </div>
-                                                <div class="imarketWrapper">
-                                                    <div class="ipointsale-wrap">
-                                                        <ul class="ipointsaleCon">
-                                                        
-                                                        <li>    
-                                                        
-                                                            <div>
-                                                                <span class="f_gr">(사용가능금액 :  5,276 P)</span>
-                                                                <span class="ipont_subTxt">1일 최대 50만P사용가능</span>
-                                                            </div>
-                                                        </li>
-                                                        
-                                                        </ul>                                                   
-                                                    </div>  
-                                                    <div class="ponitTxt">
-                                                        <div>
-                                                            <div class="wo_txt"><span class="txt_center">P</span>사용</div>
-                                                            <div class="wo_ch"><input type="text" class="txt_gr1 txt_blue2 aRight f_bold" style="width: 67px;ime-mode: disabled;" name="inNewIpoint" id="inNewIpoint" value="0" onkeypress="chk_number(event);" onblur="return checkNewIpointAmt(this.value)"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" id="ipointType" name="ipointType" value="IPOINT">
-                                                <input type="hidden" id="imkMemNo" name="imkMemNo" value="0.0">
-                                                
-
-   
-                        
-
-                                            </th>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <th>무료배송쿠폰 <span class="f_gr">(적용가능쿠폰 : 0장)</span> <img class="mid bt_m2" onmouseover="disp_div_new('free_coupon',event); return false;" onmouseout="hide_div_new('free_coupon')" alt="도움말" src="https://sslimage.interpark.com/_spOrder/icon/icon_help_layer.gif"></th>
-                                            <td>
-                                                <div class="wo_txt"><span class="txt_center">원</span>할인</div>
-                                                <div class="wo_ch"><input type="text" class="txt_gr2 aRight f_bold" style="width: 67px;" name="txtFreeDelvAmt1" value="0" readonly=""></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><input type="checkbox" class="chk" name="sMoneyCheck" id="sMoneyCheck" value="2" onclick="calculatePayment(this.value)" disabled=""><input name="smoneyDisabledYn" type="hidden" value="Y"> S-Money <span class="f_gr">(사용가능금액 : 0원)</span> <a href="javascript:openSmoneyPopup();"><img src="https://sslimage.interpark.com/_spOrder/btn/bt_saveSmoney.gif" class="btn" alt="S-Money 충전하기"></a> <img src="https://sslimage.interpark.com/_spOrder/icon/icon_help_layer.gif" class="mid bt_m1" alt="도움말" onmouseover="disp_div_new('smoneySave_info',event); return false;" onmouseout="hide_div_new('smoneySave_info')"></th>
-                                            <td>
-                                                <div class="wo_txt"><span class="txt_center">원</span>사용</div>
-                                                <div class="wo_input"><input type="text" class="txt_gr1 aRight f_bold" style="width: 67px;" name="inSMoney" id="inSMoney" onclick="checkSMoneyCheckBox()" onblur="return checkSMoneyAmt(this.value)" readonly="" onkeypress="chk_number(event);"></div>
-                                            </td>
-                                        </tr>
-                                    
-                                        <!-- 인터파크 상품권 영역 삭제 -->
-                                    
-                                      
-                                     
-                                    
-                                    
-                                    <input type="hidden" name="bRdUseYn" value="N">
-                                    <input type="hidden" name="txtRdCouponNo" value="">
-                                    
-                                    
-                                    
-                                    </tbody></table>
-                                </div>
-                            </dd>
-                        </dl>
-                    </td>
-                    <td class="align_arrow"><img src="https://sslimage.interpark.com/_spOrder/bg_step03e_arrow.gif" alt=""></td>
-                    <td class="align_bottom">
-                        <table class="sub_step3e_table new"><!-- 2015-11-25 -->
-                            <tbody><tr><td class="sum_space"></td></tr>
-                            <tr>
-                                <td class="sum_total">
-                                    <dl class="sub_step3e">
-                                        <dt id="swfPrice2"><div style="padding-top: 8px; font: bold 18px" class="f_gr">37,300원</div></dt>
-                                    </dl>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="table_ty7">
-                                        <table><!-- 2015-11-25 -->
-                                        
-                                            <tbody><tr>
-                                                <th class="pointSave"><span class="ipont_txt">I-Point</span>적립</th>
-                                                <td class="pointSave"><span id="saveIpointSum">0</span>P </td>
-                                            </tr>
-                                            <tr>
-                                                <th>착불배송비 <img src="https://sslimage.interpark.com/_spOrder/icon/icon_help_layer.gif" class="mid bt_m1" alt="도움말" onmouseover="disp_div_new('return_prd',event); return false;" onmouseout="hide_div_new('return_prd')"></th>
-                                                <td>0건</td>
-                                            </tr>
-                                        
-                                        </tbody></table>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody></table>
-                    </td>
-                </tr>
-            </tbody></table>
-            </div></div>
-
-            
-            
-            
-            
-            <!-- //쿠폰자동화 S -->
-                     
-          
-          <!-- //쿠폰자동화 E --> 
-          
-            <!-- 쿠폰할인적용 S -->
-            
-            
-            <div class="layout_coupon2_box">
-            <div id="add_coupon_use" class="layout_coupon2 clight" style="display: none;">
-
-                <h1 class="lay_popup2">
-                    <img src="https://sslimage.interpark.com/_spOrder/title/title_addSaleCouponTitle.png" alt="추가쿠폰할인적용"><!-- 01-30 타이틀추가-->
-                </h1>
-
-                <!-- 2014-05-26 S -->
-                <div class="coupon_allview">
-                    <a href="http://www.interpark.com/event/eventCoupon.do?_method=detailMypage" target="_blank">보유 할인쿠폰 모두보기</a>
-                </div>
-                <!-- 2014-05-26 E -->
-                
-                <div class="box_popup">
-
-                    <!-- content Start -->
-                    <div class="box_content_scrl" style="width:617px; *width:629px; height:475px;overflow-y: scroll;overflow-x:hidden; padding-right: 14px;"><!-- 2015-01-30 height조정 -->
-
-                        <!-- 쿠폰할인적용 S -->
-                        <h6 class="tit-h6">추가할인 선택</h6>
-                        <div class="table_orderCoupon_wrap">
-                        <table class="table_orderCoupon">
-                                <colgroup>
-                                    <col style="width:280px">
-                                    <col style="width:320px">
-                                </colgroup><!-- 2015-11-25 -->
-                                <tbody>
-                                
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-
-                        
-
-                        <div class="aCenter">
-                            <a href="javascript:couponApplyNew('0');"><img src="https://sslimage.interpark.com/_spOrder/btn/btn_coupon-apply.gif" class="top mr5" alt="쿠폰 적용"></a>
-                            <a href="javascript:clearAddCouponLayer();"><img src="https://sslimage.interpark.com/_spOrder/btn/btn_coupon-reset.gif" class="top" alt="초기화"></a>
-                            <a href="javascript:openAddCouponLayer();"><img src="https://sslimage.interpark.com/_spOrder/btn/btn_coupon-cancel.gif" class="top" alt="취소"></a>
-                        </div>
-
-                        <!-- 쿠폰 적용시 주의사항 S -->
-                        <div class="coupon_use_caution">
-                            <h6 class="tit-h6">쿠폰적용 시 주의사항</h6>
-                            <ul class="caution_important">
-                                <li>동일 쿠폰을 중복사용 할 수 없으며, 주문 취소 시 쿠폰은 재발급되지 않습니다.</li>
-                            </ul>
-                            <ul class="caution_primary">
-                                <!-- 2015-01-30 문구변경 S -->
-                                <li>장바구니 쿠폰: 한 장바구니를 기준으로 할인됩니다.</li>
-                                <li>카테고리별 쿠폰: 해당 카테고리 내에서만 사용가능하며, 원칙적으로 1개 상품에 대해서만 할인됩니다.(쿠폰사용 가능한 상품종류 중 한 장바구니에, 여러 개 구입시에는 가장 가격이 비싼 상품 1개에 대해서만 할인적용됩니다.)</li>
-                                <li>상품쿠폰: 지정되어진 상품에 한하여 사용 가능합니다.</li>
-                                <li>쿠폰사용 주문제한금액은 판매가(또는 깜짝할인가)를 기준으로 합니다.<br>(옵션의 추가금액이나 추가구성상품의 상품금액은 주문제한금액에 포함되지 않습니다.)</li>
-                                <li>할인율 쿠폰의 경우 쿠폰할인금액 계산시 (-)옵션추가금액은 포함되나 (+)옵션추가금액은 포함되지 않습니다.</li>
-                                <li>자세한 쿠폰 사용 방법은 고객센터 FAQ 내 "이벤트/할인쿠폰&gt; 할인쿠폰문의" 내 "쿠폰 사용 방법에 대해 자세히 알고 싶어요"를 참고하시기 바랍니다. </li>
-                            </ul>
-                        </div>
-                        <!-- 쿠폰 적용시 주의사항 E -->
-
-                    </div><!--//box_scrl-->
-                    <!-- content End -->
-
-                </div>
-                <div class="div_btclose">
-                    <a href="javascript:openAddCouponLayer();"><img src="https://sslimage.interpark.com/_nip/btn/bt_close04.gif" alt="close"></a>
-                </div>
-
-            </div>
-            </div>
-            <!-- //쿠폰할인적용 E -->
-        </div>
-    </div>
-		
+															<tbody>
+																<tr>
+																	<th class="pointSave"><span class="ipont_txt">I-Point</span>적립</th>
+																	<td class="pointSave"><span id="saveIpointSum">0</span>P</td>
+																</tr>
+																<tr>
+																	<th>착불배송비
+																		<img src="https://sslimage.interpark.com/_spOrder/icon/icon_help_layer.gif" class="mid bt_m1" alt="도움말"
+																			onmouseover="disp_div_new('return_prd',event); return false;" onmouseout="hide_div_new('return_prd')">
+																	</th>
+																	<td>0건</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>			
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 	
+	
+			<div class="step_new clearNew">                   
+		        <div class="step01">
+                    <h3><img src="https://sslimage.interpark.com/_spOrder/title/tit_h3_01a.gif" alt="주문하시는 분"></h3>
+                    <div class="brBox437a_top">
+                    	<div class="brBox437a_btm"><!-- 101217수정 -->
+                        	<div class="table_ty2">
+                            	<table><!-- 2015-11-25 -->
+                            		<colgroup>
+                                		<col style="width:90px">
+                                		<col>
+                            		</colgroup><!-- 2015-11-25 -->
+                            		<tbody>
+                            			<tr>                                
+                                    		<th><img src="https://sslimage.interpark.com/_spOrder/th_name01.gif" alt="주문자"></th>                                    
+                                    		<td class="txt">최수빈<input type="hidden" name="ordNm" id="ordNm" value="최수빈"></td>
+                                    
+                            			</tr>                         
+			                            <tr>
+			                                <th><img src="https://sslimage.interpark.com/_spOrder/th_email.gif" alt="이메일"></th>			                                
+			                                <td class="input"><input type="text" class="txt" style="width: 195px;" name="ordEmail" value="tnehfdl2011@gmail.com" maxlength="48"></td>
+			                            </tr>			
+			                            <tr>
+			                                <th>
+			                                	<img src="https://sslimage.interpark.com/_spOrder/th_tel.gif" alt="전화번호">
+			                                </th>
+			                                <td class="input">
+			                                    <input type="text" class="txt" style=" float: left; width: 50px;ime-mode: disabled;" name="ordTelno1" id="ordTelno1" value="02" maxlength="4" onkeypress="chk_number(event);" >
+			                                    <span style=" float: left;">&nbsp;-&nbsp;</span>
+			                                    <input type="text" class="txt" style=" float: left; width: 50px;ime-mode: disabled;" name="ordTelno2" id="ordTelno2" value="989" maxlength="4" onkeypress="chk_number(event);" onkeyup="moveFocus(4,this,'ordTelno3','TmpOrderForm');">
+			                                    <span style=" float: left;">&nbsp;-&nbsp;</span> 
+			                                    <input type="text" class="txt" style=" float: left; width: 50px;ime-mode: disabled;" name="ordTelno3" id="ordTelno3" value="6392" maxlength="4" onkeypress="chk_number(event);" onkeyup="checkPhoneNum('ordTelno')">
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <th><img src="https://sslimage.interpark.com/_spOrder/th_hp.gif" alt="휴대폰번호"></th>
+			                                <td class="input">
+			
+			                                    <input type="text" class="txt" style=" float: left; width: 50px;ime-mode: disabled;" name="ordMpno1" id="ordMpno1" value="010" maxlength="4" onkeypress="chk_number(event);">
+			                                    <span style=" float: left;">&nbsp;-&nbsp;</span> 
+			                                    <input type="text" class="txt" style=" float: left; width: 50px;ime-mode: disabled;" name="ordMpno2" id="ordMpno2" value="2042" maxlength="4" onkeypress="chk_number(event);" onkeyup="moveFocus(4,this,'ordMpno3','TmpOrderForm');">
+			                                    <span style=" float: left;">&nbsp;-&nbsp;</span> 
+			                                    <input type="text" class="txt" style=" float: left; width: 50px;ime-mode: disabled;" name="ordMpno3" id="ordMpno3" value="1992" maxlength="4" onkeypress="chk_number(event);" onkeyup="checkPhoneNum('ordMpno')">
+			                                </td>
+			                            </tr>			                           
+									</tbody>
+								</table>
+							</div>
+			             </div>
+			         </div>			
+			     </div>
+                          
+                <div class="step_arrow"><img src="https://sslimage.interpark.com/_spOrder/icon/icon_arrow.gif" alt=""></div>
+
+                <div class="step02">
+                	<div class="brBox513a_top"><div class="brBox513a_btm"><!-- 101217수정 -->
+                        <div class="table_ty2">
+                            <table>
+	                            <colgroup>
+		                            <col width="90px">
+	    	                        <col width="387px">
+            	                </colgroup>
+        	                        <tbody>
+		                                <tr>
+	    	                                <th>
+	    	                                    <img src="https://sslimage.interpark.com/_spOrder/th_addCheck.gif" alt="배송지확인">
+	    	                                </th>
+	                                        <td class="txt3" style=" display: inline; ">
+	                                            <input type="radio" name="deliverySel" class="chk" id="baseSel">
+	                                            <label for="baseSel">기본배송지</label>
+	                                            <input type="radio" name="deliverySel" class="chk" id="latelySel">
+	                                            <label for="latelySel">최근배송지</label>
+	                                            <input type="radio" name="deliverySel" class="chk" id="newSel">
+	                                            <label for="newSel">새로입력</label>	                                     
+	                                        </td>
+	                                    </tr>
+	                                    
+                            
+			                            <tr>
+			                                <th><img src="https://sslimage.interpark.com/_spOrder/th_name02.gif" alt="받으실 분"></th>
+			                                <td class="input f_glay"><input type="text" class="txt" style="float: left; width: 100px;" name="recipientNm" id="recipientNm" value="최수빈" maxlength="20">
+			                                <span style=" float: left;">&nbsp;(성과 이름을 붙여주세요)&nbsp;</span> </td>
+			                            </tr>
+			                            <tr>
+			                            
+			                                <th rowspan="3">
+			                                	<img src="https://sslimage.interpark.com/_spOrder/th_add.gif" alt="주소">
+			                                </th>
+			                                <td class="input noborder">
+			                                	<input type="text" class="txt" style="float: left; width: 50px;" name="delvZipcdDoro" id="delvZipcdDoro" value="" onkeydown="return false;" readonly="">
+			                                	<a><img src="https://sslimage.interpark.com/_spOrder/btn/btn_addrSearchBtn.png" style="float: left;" class="ml5" alt="주소찾기"></a>			                                
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="input noline noborder"><input type="text" class="txt" style="width: 295px;" name="delvZipAddrDoro" id="delvZipAddrDoro" value="" onkeydown="return false;" readonly=""></td>
+			                            </tr>
+			                            <tr>
+			                                <td class="last noline">
+			                                    <input type="text" class="txt" style="width: 295px; ime-mode:active;display:block;" name="delvAddrDoro" id="delvAddrDoro" value="" maxlength="245" onkeydown="return false;" readonly="">
+			                                </td>
+			                            </tr>			                           
+			                            <tr>
+<!-- 			                            style=" float: left; -->
+			                                <th><img src="https://sslimage.interpark.com/_spOrder/th_tel.gif" alt="전화번호"></th>
+			                                <td class="input">
+			                                    <input type="text" class="txt" style="float: left; width: 50px;ime-mode: disabled;" name="recipientTelno1" id="recipientTelno1" value="02" maxlength="4">
+			                               		<span style=" float: left;">&nbsp;-&nbsp;</span> 
+			                                    <input type="text" class="txt" style="float: left; width: 50px;ime-mode: disabled;" name="recipientTelno2" id="recipientTelno2" value="989" maxlength="4">
+			                                	<span style=" float: left;">&nbsp;-&nbsp;</span> 
+			                                    <input type="text" class="txt" style="float: left; width: 50px;ime-mode: disabled;" name="recipientTelno3" id="recipientTelno3" value="6392" maxlength="4">
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <th><img src="https://sslimage.interpark.com/_spOrder/th_hp.gif" alt="휴대폰번호"></th>
+			                                <td class="input">
+			                                     <input type="text" class="txt" style="float: left; width: 50px;ime-mode: disabled;" name="recipientMpno1" id="recipientMpno1" value="010" maxlength="4" onkeypress="chk_number(event);">
+			                                     <span style=" float: left;">&nbsp;-&nbsp;</span>
+			                                     <input type="text" class="txt" style="float: left; width: 50px;ime-mode: disabled;" name="recipientMpno2" id="recipientMpno2" value="2042" maxlength="4" onkeyup="moveFocus(4,this,'recipientMpno3','TmpOrderForm');" onkeypress="chk_number(event);">
+			                                     <span style=" float: left;">&nbsp;-&nbsp;</span> 
+			                                     <input type="text" class="txt" style="float: left; width: 50px;ime-mode: disabled;" name="recipientMpno3" id="recipientMpno3" value="1992" maxlength="4" onkeypress="chk_number(event);" onkeyup="checkPhoneNum('recipientMpno')">
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <th class="noborder"><img src="https://sslimage.interpark.com/_spOrder/th_txt2.gif" alt="배송 요청사항"></th>
+			                                <td class="input3 noborder">
+			                                    <div class="messageSelectWrap">
+			                                    	<select>
+			                                    		<option>요청사항이 있으실 경우 직접 입력해주세요.</option>
+			                                    		<option>배송 전 연락 바랍니다.</option>
+			                                    		<option>부재 시 휴대폰으로 연락 바랍니다.</option>
+			                                    		<option>부재 시 경비실에 맡겨주세요.</option>
+			                                    		<option>경비실이 없습니다. 배송 전 연락 바랍니다.</option>			                                    	
+			                                    	</select>			                                      
+			                                    </div>
+			                                </td>			                                
+			                            </tr>                         
+			                        </tbody>
+			      				</table>
+			                </div>
+			            </div>
+					</div>			
+				</div>                  			
+			</div>
+
+
 	<!-- footer section -->
-	<div th:replace="~{footer :: footer}"></div>
+<!-- 	<div th:replace="~{footer :: footer}"></div> -->
 	<!-- footer section end -->
 
 
 	<!-- Back to top -->
 	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
+		<span class="symbol-btn-back-to-top"> <i
+			class="zmdi zmdi-chevron-up"></i>
 		</span>
 	</div>
 
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 	<script>
 		$(".js-select2").each(function(){
@@ -573,9 +438,9 @@
 			});
 		})
 	</script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>
 		$('.js-pscroll').each(function(){
@@ -592,12 +457,8 @@
 			})
 		});
 		
-		function detail(num){
-			location.href="detail?gdNum=" + num;
-		}
-		
 	</script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
 </body>
